@@ -1,0 +1,172 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\close_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Remove="Views\Content\Icons\account-plus.png" />
+    <None Remove="Views\Content\Icons\account.png" />
+    <None Remove="Views\Content\Icons\api_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Remove="Views\Content\Icons\arrow-u-left-top.png" />
+    <None Remove="Views\Content\Icons\arrow-u-right-top.png" />
+    <None Remove="Views\Content\Icons\cog.png" />
+    <None Remove="Views\Content\Icons\content-copy.png" />
+    <None Remove="Views\Content\Icons\content-cut.png" />
+    <None Remove="Views\Content\Icons\content-paste.png" />
+    <None Remove="Views\Content\Icons\content-save.png" />
+    <None Remove="Views\Content\Icons\delete_forever_FILL0_wght400_GRAD0_opsz40.png" />
+    <None Remove="Views\Content\Icons\file-document-outline.png" />
+    <None Remove="Views\Content\Icons\file-document-plus-outline.png" />
+    <None Remove="Views\Content\Icons\group_FILL0_wght400_GRAD0_opsz40.png" />
+    <None Remove="Views\Content\Icons\help-circle.png" />
+    <None Remove="Views\Content\Icons\home_FILL0_wght400_GRAD0_opsz40.png" />
+    <None Remove="Views\Content\Icons\inventory_2_FILL0_wght400_GRAD0_opsz40.png" />
+    <None Remove="Views\Content\Icons\package-variant-closed-plus.png" />
+    <None Remove="Views\Content\Icons\package-variant-closed.png" />
+    <None Remove="Views\Content\Icons\person_FILL0_wght400_GRAD0_opsz40.png" />
+    <None Remove="Views\Content\Icons\plus.png" />
+    <None Remove="Views\Content\Icons\receipt_FILL0_wght400_GRAD0_opsz40.png" />
+    <None Remove="Views\Content\Icons\search.png" />
+    <None Remove="Views\Content\Icons\sell.png" />
+    <None Remove="Views\Content\Icons\UniversalEditButton.png" />
+    <None Remove="Views\Content\Icons\UniversalEditButton3.png" />
+    <None Remove="Views\Content\Icons\update_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Remove="Views\draft_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Remove="Views\edit_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Remove="Views\functions_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Remove="Views\home_black_24dp.svg" />
+    <None Remove="Views\outline_build_black_24dp.png" />
+    <None Remove="Views\outline_done_black_24dp.png" />
+    <None Remove="Views\outline_filter_alt_black_24dp.png" />
+    <None Remove="Views\outline_info_black_24dp.png" />
+    <None Remove="Views\outline_question_answer_black_24dp.png" />
+    <None Remove="Views\outline_schedule_black_24dp.png" />
+    <None Remove="Views\outline_store_black_24dp.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Content\Icons\api_FILL0_wght400_GRAD0_opsz48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\close_FILL0_wght400_GRAD0_opsz48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\account-plus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\account.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\arrow-u-left-top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\arrow-u-right-top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\cog.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\content-copy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\content-cut.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\content-paste.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\content-save.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\delete_forever_FILL0_wght400_GRAD0_opsz40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\file-document-outline.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\file-document-plus-outline.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\group_FILL0_wght400_GRAD0_opsz40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\help-circle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\home_FILL0_wght400_GRAD0_opsz40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\inventory_2_FILL0_wght400_GRAD0_opsz40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\package-variant-closed-plus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\package-variant-closed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\person_FILL0_wght400_GRAD0_opsz40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\plus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\receipt_FILL0_wght400_GRAD0_opsz40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\sell.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\UniversalEditButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\UniversalEditButton3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\draft_FILL0_wght400_GRAD0_opsz48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\edit_FILL0_wght400_GRAD0_opsz48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\functions_FILL0_wght400_GRAD0_opsz48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\home_black_24dp.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\outline_build_black_24dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\outline_done_black_24dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\outline_filter_alt_black_24dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\outline_info_black_24dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\outline_question_answer_black_24dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\outline_schedule_black_24dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\outline_store_black_24dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\update_FILL0_wght400_GRAD0_opsz48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

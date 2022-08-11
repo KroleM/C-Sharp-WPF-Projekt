@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="Firma.Views.NowaFakturaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="StyleZakladekResources.xaml"/>
+    </UserControl.Resources>
+    <Grid Style="{StaticResource GridStandardowy}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Expander Grid.Row="0" IsExpanded="True" Header="Ogólne">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Data wystawienia:" Style="{StaticResource LabelStandardowy}"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource ComboBoxStandardowy}" SelectedIndex="0">
+                    <ComboBoxItem Content="08.04.2022"/>
+                </ComboBox>
+                <Label Grid.Row="0" Grid.Column="2" Content="Magazyn:" Style="{StaticResource LabelStandardowy}"/>
+                <ComboBox Grid.Row="0" Grid.Column="3" Style="{StaticResource ComboBoxNieaktywny}" SelectedIndex="0">
+                    <ComboBoxItem Content="Firma"/>
+                </ComboBox>
+                <Label Grid.Row="0" Grid.Column="4" Content="Kontrahent:" Style="{StaticResource LabelStandardowy}"/>
+                <ComboBox Grid.Row="0" Grid.Column="5" Style="{StaticResource ComboBoxStandardowy}"/>
+            </Grid>
+        </Expander>
+        <Expander Grid.Row="1" IsExpanded="True" Header="Pozycje">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="150"/>
+                </Grid.RowDefinitions>
+                <ToolBar Grid.Row="0" Background="White">
+                    <Button Width="auto" Height="20" Margin="2" >
+                        <Image Source="/Views/Content/Icons/draft_FILL0_wght400_GRAD0_opsz48.png"/>
+                    </Button>
+                    <Button Width="auto" Height="20" Margin="2" IsEnabled="False">
+                        <Image Source="/Views/Content/Icons/close_FILL0_wght400_GRAD0_opsz48.png"/>
+                    </Button>
+                    <Button Width="auto" Height="20" Margin="2">
+                        <Image Source="/Views/Content/Icons/edit_FILL0_wght400_GRAD0_opsz48.png"/>
+                    </Button>
+                    <Button Width="auto" Height="20" Margin="2">
+                        <Image Source="/Views/Content/Icons/functions_FILL0_wght400_GRAD0_opsz48.png"/>
+                    </Button>
+                </ToolBar>
+                <DataGrid Grid.Row="1" AutoGenerateColumns="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header=""/>
+                        <DataGridTextColumn Header="Lp /"/>
+                        <DataGridTextColumn Header="Towar" Width="*"/>
+                        <DataGridTextColumn Header="Ilość" MinWidth="80"/>
+                        <DataGridTextColumn Header="Cena" MinWidth="80"/>
+                        <DataGridTextColumn Header="Rabat" MinWidth="60"/>
+                        <DataGridTextColumn Header="Cena po rabacie"/>
+                        <DataGridTextColumn Header="Wartość" MinWidth="80"/>
+                        <DataGridTextColumn Header="St. VAT" MinWidth="50"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
+        </Expander>
+        <Expander Grid.Row="2" IsExpanded="True" Header="Wartości">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Dostępny limit:" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="0.00 PLN" TextAlignment="Right" Style="{StaticResource TextBoxNieaktywny}"/>
+                <Label Grid.Row="0" Grid.Column="2" Content="Rabat %:" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="0" Grid.Column="3" Text="0.00%" TextAlignment="Right" Style="{StaticResource TextBoxStandardowy}"/>
+                <Label Grid.Row="0" Grid.Column="4" Content="Netto:" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="0" Grid.Column="5" Text="0.00" TextAlignment="Right" Style="{StaticResource TextBoxNieaktywny}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Po terminie:" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" TextAlignment="Right" Style="{StaticResource TextBoxNieaktywny}"/>
+                <Label Grid.Row="1" Grid.Column="2" Content="Kwota rabatu:" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="1" Grid.Column="3" TextAlignment="Right" Style="{StaticResource TextBoxStandardowy}"/>
+                <Label Grid.Row="1" Grid.Column="4" Content="VAT:" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="1" Grid.Column="5"  Text="0.00" TextAlignment="Right" Style="{StaticResource TextBoxNieaktywny}"/>
+                <Label Grid.Row="1" Grid.Column="6" Content="Wartość:" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="1" Grid.Column="7" Text="0.00 PLN" TextAlignment="Right" Style="{StaticResource TextBoxStandardowy}"/>
+            </Grid>
+        </Expander>
+        <Expander Grid.Row="3" IsExpanded="True" Header="Pierwsza płatność">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Content="Forma:" Style="{StaticResource LabelStandardowy}"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource ComboBoxStandardowy}" SelectedIndex="0">
+                    <ComboBoxItem Content="Gotówka"/>
+                    <ComboBoxItem Content="Przelew"/>
+                    <ComboBoxItem Content="Karta"/>
+                </ComboBox>
+                <ComboBox Grid.Row="0" Grid.Column="2" Style="{StaticResource ComboBoxStandardowy}"/>
+                <Label Grid.Row="0" Grid.Column="3" Content="Termin (dni):" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="0" Grid.Column="4" Text="0" TextAlignment="Right" Style="{StaticResource TextBoxNieaktywny}"/>
+                <Label Grid.Row="0" Grid.Column="5" Content="Termin:" Style="{StaticResource LabelStandardowy}"/>
+                <ComboBox Grid.Row="0" Grid.Column="6" Background="Silver" Style="{StaticResource ComboBoxNieaktywny}"/>
+                <Label Grid.Row="0" Grid.Column="7" Content="Raty:" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="0" Grid.Column="8" Text="0" TextAlignment="Right" Style="{StaticResource TextBoxNieaktywny}"/>
+                <Label Grid.Row="0" Grid.Column="9" Content="Kwota:" Style="{StaticResource LabelStandardowy}"/>
+                <TextBox Grid.Row="0" Grid.Column="10" Text="0.00 PLN" TextAlignment="Right" Style="{StaticResource TextBoxNieaktywny}"/>
+            </Grid>
+        </Expander>
+    </Grid>
+</UserControl>
