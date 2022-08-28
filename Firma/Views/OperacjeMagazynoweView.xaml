@@ -196,11 +196,13 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
-                            <CheckBox Grid.Column="0" Content="bufor" IsChecked="False" Style="{StaticResource Checkbox}"/>
-                            <CheckBox Grid.Column="1" Content="zatwierdzone" IsChecked="False" Style="{StaticResource Checkbox}"/>
-                            <CheckBox Grid.Column="2" Content="wszystkie" IsChecked="True" Style="{StaticResource Checkbox}"/>
+                            <CheckBox Grid.Column="0" Content="zlecone" Name="cbZlecone" Checked="cb_CheckedChanged" Unchecked="cb_CheckedChanged" Style="{StaticResource Checkbox}"/>
+                            <CheckBox Grid.Column="1" Content="bufor" Name="cbBufor" Checked="cb_CheckedChanged" Unchecked="cb_CheckedChanged" Style="{StaticResource Checkbox}"/>
+                            <CheckBox Grid.Column="2" Content="zatwierdzone" Name="cbZatwierdzone" Checked="cb_CheckedChanged" Unchecked="cb_CheckedChanged" Style="{StaticResource Checkbox}"/>
+                            <CheckBox Grid.Column="3" Content="wszystkie" IsThreeState="True" Name="cbWszystkie" Checked="cbWszystkie_CheckedChanged" Unchecked="cbWszystkie_CheckedChanged" Style="{StaticResource Checkbox}"/>
                         </Grid>
                     </Border>
                 </Grid>
