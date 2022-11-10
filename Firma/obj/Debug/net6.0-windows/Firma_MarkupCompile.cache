@@ -1,20 +1,20 @@
 ﻿Firma
-
+1.0.0.0
 
 winexe
 C#
 .cs
-E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net6.0-windows\
+e:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net6.0-windows\
 Firma
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\App.xaml
+e:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\App.xaml
 10-1832123864
 
-232037658678
-194-200944676
+25-889517219
+194618410957
 Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\NowaFakturaView.xaml;Views\NowyKontrahentView.xaml;Views\NowyTowarView.xaml;Views\OperacjeMagazynoweView.xaml;Views\SprzedazView.xaml;Views\StyleZakladekResources.xaml;Views\WszystkieFakturyView.xaml;Views\WszystkieTowaryView.xaml;
 
-False
+True
 
