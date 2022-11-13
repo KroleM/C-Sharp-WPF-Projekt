@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UmBrVhFDZ8+172iNh3afrdqqWkcKG54dHEZUc0MCqRVI4Hz4mxeaDMNDSa2Bc7OYlot4Q6E9zRnYHOBpcidfqw==",
+  "dgSpecHash": "h+s4A9boGuk4IgnJ8RgHTC5NFvO2AuqvpTeIPFMJKa6nRpXIZHEdmuLqeYgY29MvyVeKI6dhfyd+JArejpKdsw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Karol\\Documents\\KAROL\\Studia\\WSB-NLU Informatyka\\Tworzenie interfejsów użytkownika II\\Projekt\\C-Sharp-WPF-Projekt\\Firma\\Firma.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\Uczelnia\\WSB-NLU Informatyka\\Tworzenie interfejsów użytkownika II\\Projekt\\Firma\\Firma.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marci\\.nuget\\packages\\entityframework\\5.0.0\\entityframework.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

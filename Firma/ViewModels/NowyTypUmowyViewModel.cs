@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Firma.ViewModels
 {
-    internal class NowyTypUmowyViewModel
+    public class NowyTypUmowyViewModel
     {
     }
 }

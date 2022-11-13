@@ -1,4 +1,5 @@
-﻿using Firma.ViewModels.Abstract;
+﻿using Firma.Models.Entities;
+using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,8 +23,8 @@ namespace Firma.ViewModels
         {
             List = new ObservableCollection<GrupaTowarowa>
                 (
-                from grupa in FakturyEntities.GrupaTowarowa
-                where grupa.CzyAktywny == true
+                from grupa in ProjektTIUEntities.GrupaTowarowa
+                //where grupa.CzyAktywny == true
                 select grupa
                 );
         }

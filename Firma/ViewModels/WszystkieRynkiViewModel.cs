@@ -1,4 +1,5 @@
-﻿using Firma.ViewModels.Abstract;
+﻿using Firma.Models.Entities;
+using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,7 +24,7 @@ namespace Firma.ViewModels
             List = new ObservableCollection<Rynek>
                 (
                 //zapytanie LINQ (obiektowa wersja SQL)
-                from rynek in FakturyEntities.Rynek // dla każdego typu umowy z tabeli TypUmowy (w SQL: select * from TypUmowy)
+                from rynek in ProjektTIUEntities.Rynek // dla każdego typu umowy z tabeli TypUmowy (w SQL: select * from TypUmowy)
                 where rynek.CzyAktywny == true
                 select rynek    //wybierz typ umowy
                 );

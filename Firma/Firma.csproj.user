@@ -16,9 +16,6 @@
     <Compile Update="Views\NowyTowarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\NowyTypUmowyView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\SprzedazView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,9 +67,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowyTowarView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\NowyTypUmowyView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SprzedazView.xaml">

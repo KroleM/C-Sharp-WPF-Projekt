@@ -1,4 +1,5 @@
-﻿using Firma.ViewModels.Abstract;
+﻿using Firma.Models.Entities;
+using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,8 +23,8 @@ namespace Firma.ViewModels
         {
             List = new ObservableCollection<Adres>
                 (
-                from adres in FakturyEntities.Adres
-                where adres.CzyAktywny == true
+                from adres in ProjektTIUEntities.Adres
+                //where adres.CzyAktywny == true
                 select adres
                 );
         }

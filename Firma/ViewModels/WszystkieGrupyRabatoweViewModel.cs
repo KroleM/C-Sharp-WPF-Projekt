@@ -1,4 +1,5 @@
-﻿using Firma.ViewModels.Abstract;
+﻿using Firma.Models.Entities;
+using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,7 +24,7 @@ namespace Firma.ViewModels
             List = new ObservableCollection<GrupaRabatowa>
                 (
                 //zapytanie LINQ (obiektowa wersja SQL)
-                from grupa in FakturyEntities.GrupaRabatowa // dla każdego typu umowy z tabeli TypUmowy (w SQL: select * from TypUmowy)
+                from grupa in ProjektTIUEntities.GrupaRabatowa // dla każdego typu umowy z tabeli TypUmowy (w SQL: select * from TypUmowy)
                 where grupa.CzyAktywny == true
                 select grupa    //wybierz typ umowy
                 );

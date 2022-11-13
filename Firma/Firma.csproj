@@ -2,12 +2,16 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFramework>net48</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\NowyTypUmowyView.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Models\Entities\ModelFirma.edmx" />
     <None Remove="Views\close_FILL0_wght400_GRAD0_opsz48.png" />
     <None Remove="Views\Content\Icons\account-plus.png" />
     <None Remove="Views\Content\Icons\account.png" />
@@ -47,6 +51,25 @@
     <None Remove="Views\outline_question_answer_black_24dp.png" />
     <None Remove="Views\outline_schedule_black_24dp.png" />
     <None Remove="Views\outline_store_black_24dp.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Views\NowyTypUmowyView.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EntityDeploy Include="Models\Entities\ModelFirma.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelFirma.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Security" />
   </ItemGroup>
 
   <ItemGroup>
@@ -167,6 +190,14 @@
     <Resource Include="Views\Content\Icons\update_FILL0_wght400_GRAD0_opsz48.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Models\Entities\ModelFirma.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ModelFirma.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjektTIUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Adres">
+    <Key>
+      <PropertyRef Name="IdAdresu" />
+    </Key>
+    <Property Name="IdAdresu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ulica" Type="nvarchar" MaxLength="50" />
+    <Property Name="Miejscowosc" Type="nvarchar" MaxLength="50" />
+    <Property Name="NrDomu" Type="nchar" MaxLength="10" />
+    <Property Name="NrLokalu" Type="nchar" MaxLength="10" />
+    <Property Name="KodPocztowy" Type="nchar" MaxLength="10" />
+    <Property Name="Poczta" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kraj" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Dzial">
+    <Key>
+      <PropertyRef Name="IdDzialu" />
+    </Key>
+    <Property Name="IdDzialu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kierownik" Type="int" />
+    <Property Name="CzyAktywny" Type="bit" />
+  </EntityType>
+  <EntityType Name="GrupaRabatowa">
+    <Key>
+      <PropertyRef Name="IdGrupyRabatowej" />
+    </Key>
+    <Property Name="IdGrupyRabatowej" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rabat" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="CzyAktywny" Type="bit" />
+  </EntityType>
+  <EntityType Name="GrupaTowarowa">
+    <Key>
+      <PropertyRef Name="IdGrupyTowarowej" />
+    </Key>
+    <Property Name="IdGrupyTowarowej" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kod" Type="nchar" MaxLength="10" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdGrupyNadrzednej" Type="int" />
+    <Property Name="CzyAktywna" Type="bit" />
+  </EntityType>
+  <EntityType Name="Kontrahent">
+    <Key>
+      <PropertyRef Name="IdKontrahenta" />
+    </Key>
+    <Property Name="IdKontrahenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kod" Type="nchar" MaxLength="10" />
+    <Property Name="NIP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" />
+    <Property Name="IdRodzaju" Type="int" />
+    <Property Name="IdAdresu" Type="int" />
+    <Property Name="IdGrupyRabatowej" Type="int" />
+  </EntityType>
+  <EntityType Name="NumerTelefonu">
+    <Key>
+      <PropertyRef Name="IdNumeru" />
+    </Key>
+    <Property Name="IdNumeru" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Numer" Type="nchar" MaxLength="20" />
+    <Property Name="Kraj" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdPracownika" Type="int" />
+  </EntityType>
+  <EntityType Name="Pracownik">
+    <Key>
+      <PropertyRef Name="IdPracownika" />
+    </Key>
+    <Property Name="IdPracownika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+    <Property Name="PESEL" Type="nchar" MaxLength="10" />
+    <Property Name="IdAdresu" Type="int" />
+    <Property Name="IdTypuUmowy" Type="int" />
+    <Property Name="IdDzialu" Type="int" />
+    <Property Name="CzyAktywny" Type="bit" />
+  </EntityType>
+  <EntityType Name="Rezerwacja">
+    <Key>
+      <PropertyRef Name="IdRezerwacji" />
+    </Key>
+    <Property Name="IdRezerwacji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdKontrahenta" Type="int" />
+    <Property Name="IdTowaru" Type="int" />
+    <Property Name="Sztuki" Type="int" />
+    <Property Name="Termin" Type="date" />
+  </EntityType>
+  <EntityType Name="Rodzaj">
+    <Key>
+      <PropertyRef Name="IdRodzaju" />
+    </Key>
+    <Property Name="IdRodzaju" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Opis" Type="nvarchar(max)" />
+    <Property Name="CzyAktywny" Type="bit" />
+  </EntityType>
+  <EntityType Name="Rynek">
+    <Key>
+      <PropertyRef Name="IdRynku" />
+    </Key>
+    <Property Name="IdRynku" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Skrot" Type="nchar" MaxLength="4" />
+    <Property Name="CzyAktywny" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Towar">
+    <Key>
+      <PropertyRef Name="IdTowaru" />
+    </Key>
+    <Property Name="IdTowaru" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kod" Type="nchar" MaxLength="10" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="StawkaVatSprzedazy" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="StawkaVatZakupu" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CenaNetto" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Waluta" Type="nchar" MaxLength="10" />
+    <Property Name="Marza" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IdGrupyTowarowej" Type="int" />
+    <Property Name="IdRynku" Type="int" />
+    <Property Name="CzyAktywny" Type="int" />
+  </EntityType>
+  <EntityType Name="TypUmowy">
+    <Key>
+      <PropertyRef Name="IdTypuUmowy" />
+    </Key>
+    <Property Name="IdTypuUmowy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Skrot" Type="nvarchar" MaxLength="50" />
+    <Property Name="CzyAktywny" Type="bit" />
+  </EntityType>
+  <EntityType Name="TypWyplaty">
+    <Key>
+      <PropertyRef Name="IdTypuWyplaty" />
+    </Key>
+    <Property Name="IdTypuWyplaty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Skrot" Type="nchar" MaxLength="10" />
+    <Property Name="CzyAktywny" Type="bit" />
+  </EntityType>
+  <EntityType Name="Wyplata">
+    <Key>
+      <PropertyRef Name="IdWyplaty" />
+    </Key>
+    <Property Name="IdWyplaty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPracownika" Type="int" />
+    <Property Name="IdTypuWyplaty" Type="int" />
+    <Property Name="Kwota" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Waluta" Type="nchar" MaxLength="10" />
+    <Property Name="DataOd" Type="date" />
+    <Property Name="DataDo" Type="date" />
+  </EntityType>
+  <EntityType Name="Zamowienie">
+    <Key>
+      <PropertyRef Name="IdZamowienia" />
+    </Key>
+    <Property Name="IdZamowienia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdKontrahenta" Type="int" />
+    <Property Name="IdTowaru" Type="int" />
+    <Property Name="Sztuki" Type="int" />
+    <Property Name="DataWypelnienia" Type="date" />
+    <Property Name="DataWyslania" Type="date" />
+  </EntityType>
+  <Association Name="FK_GrupaTowarowa_GrupaTowarowa1">
+    <End Role="GrupaTowarowa" Type="Self.GrupaTowarowa" Multiplicity="0..1" />
+    <End Role="GrupaTowarowa1" Type="Self.GrupaTowarowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupaTowarowa">
+        <PropertyRef Name="IdGrupyTowarowej" />
+      </Principal>
+      <Dependent Role="GrupaTowarowa1">
+        <PropertyRef Name="IdGrupyNadrzednej" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontrahent_Adres">
+    <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adres">
+        <PropertyRef Name="IdAdresu" />
+      </Principal>
+      <Dependent Role="Kontrahent">
+        <PropertyRef Name="IdAdresu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontrahent_GrupaRabatowa">
+    <End Role="GrupaRabatowa" Type="Self.GrupaRabatowa" Multiplicity="0..1" />
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupaRabatowa">
+        <PropertyRef Name="IdGrupyRabatowej" />
+      </Principal>
+      <Dependent Role="Kontrahent">
+        <PropertyRef Name="IdGrupyRabatowej" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontrahent_Rodzaj">
+    <End Role="Rodzaj" Type="Self.Rodzaj" Multiplicity="0..1" />
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rodzaj">
+        <PropertyRef Name="IdRodzaju" />
+      </Principal>
+      <Dependent Role="Kontrahent">
+        <PropertyRef Name="IdRodzaju" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NumerTelefonu_Pracownik">
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="0..1" />
+    <End Role="NumerTelefonu" Type="Self.NumerTelefonu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pracownik">
+        <PropertyRef Name="IdPracownika" />
+      </Principal>
+      <Dependent Role="NumerTelefonu">
+        <PropertyRef Name="IdPracownika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pracownik_Adres">
+    <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adres">
+        <PropertyRef Name="IdAdresu" />
+      </Principal>
+      <Dependent Role="Pracownik">
+        <PropertyRef Name="IdAdresu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pracownik_Dzial">
+    <End Role="Dzial" Type="Self.Dzial" Multiplicity="0..1" />
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dzial">
+        <PropertyRef Name="IdDzialu" />
+      </Principal>
+      <Dependent Role="Pracownik">
+        <PropertyRef Name="IdDzialu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pracownik_TypUmowy">
+    <End Role="TypUmowy" Type="Self.TypUmowy" Multiplicity="0..1" />
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypUmowy">
+        <PropertyRef Name="IdTypuUmowy" />
+      </Principal>
+      <Dependent Role="Pracownik">
+        <PropertyRef Name="IdTypuUmowy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezerwacja_Kontrahent">
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="0..1" />
+    <End Role="Rezerwacja" Type="Self.Rezerwacja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kontrahent">
+        <PropertyRef Name="IdKontrahenta" />
+      </Principal>
+      <Dependent Role="Rezerwacja">
+        <PropertyRef Name="IdKontrahenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezerwacja_Towar">
+    <End Role="Towar" Type="Self.Towar" Multiplicity="0..1" />
+    <End Role="Rezerwacja" Type="Self.Rezerwacja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towar">
+        <PropertyRef Name="IdTowaru" />
+      </Principal>
+      <Dependent Role="Rezerwacja">
+        <PropertyRef Name="IdTowaru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Towar_GrupaTowarowa">
+    <End Role="GrupaTowarowa" Type="Self.GrupaTowarowa" Multiplicity="0..1" />
+    <End Role="Towar" Type="Self.Towar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupaTowarowa">
+        <PropertyRef Name="IdGrupyTowarowej" />
+      </Principal>
+      <Dependent Role="Towar">
+        <PropertyRef Name="IdGrupyTowarowej" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Towar_Rynek">
+    <End Role="Rynek" Type="Self.Rynek" Multiplicity="0..1" />
+    <End Role="Towar" Type="Self.Towar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rynek">
+        <PropertyRef Name="IdRynku" />
+      </Principal>
+      <Dependent Role="Towar">
+        <PropertyRef Name="IdRynku" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Wyplata_Pracownik">
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="0..1" />
+    <End Role="Wyplata" Type="Self.Wyplata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pracownik">
+        <PropertyRef Name="IdPracownika" />
+      </Principal>
+      <Dependent Role="Wyplata">
+        <PropertyRef Name="IdPracownika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Wyplata_TypWyplaty">
+    <End Role="TypWyplaty" Type="Self.TypWyplaty" Multiplicity="0..1" />
+    <End Role="Wyplata" Type="Self.Wyplata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypWyplaty">
+        <PropertyRef Name="IdTypuWyplaty" />
+      </Principal>
+      <Dependent Role="Wyplata">
+        <PropertyRef Name="IdTypuWyplaty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zamowienie_Kontrahent">
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="0..1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kontrahent">
+        <PropertyRef Name="IdKontrahenta" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="IdKontrahenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zamowienie_Towar">
+    <End Role="Towar" Type="Self.Towar" Multiplicity="0..1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towar">
+        <PropertyRef Name="IdTowaru" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="IdTowaru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjektTIUModelStoreContainer">
+    <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dzial" EntityType="Self.Dzial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrupaRabatowa" EntityType="Self.GrupaRabatowa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrupaTowarowa" EntityType="Self.GrupaTowarowa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kontrahent" EntityType="Self.Kontrahent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NumerTelefonu" EntityType="Self.NumerTelefonu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pracownik" EntityType="Self.Pracownik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rezerwacja" EntityType="Self.Rezerwacja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rodzaj" EntityType="Self.Rodzaj" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rynek" EntityType="Self.Rynek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Towar" EntityType="Self.Towar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypUmowy" EntityType="Self.TypUmowy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypWyplaty" EntityType="Self.TypWyplaty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Wyplata" EntityType="Self.Wyplata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zamowienie" EntityType="Self.Zamowienie" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_GrupaTowarowa_GrupaTowarowa1" Association="Self.FK_GrupaTowarowa_GrupaTowarowa1">
+      <End Role="GrupaTowarowa" EntitySet="GrupaTowarowa" />
+      <End Role="GrupaTowarowa1" EntitySet="GrupaTowarowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontrahent_Adres" Association="Self.FK_Kontrahent_Adres">
+      <End Role="Adres" EntitySet="Adres" />
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontrahent_GrupaRabatowa" Association="Self.FK_Kontrahent_GrupaRabatowa">
+      <End Role="GrupaRabatowa" EntitySet="GrupaRabatowa" />
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontrahent_Rodzaj" Association="Self.FK_Kontrahent_Rodzaj">
+      <End Role="Rodzaj" EntitySet="Rodzaj" />
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NumerTelefonu_Pracownik" Association="Self.FK_NumerTelefonu_Pracownik">
+      <End Role="Pracownik" EntitySet="Pracownik" />
+      <End Role="NumerTelefonu" EntitySet="NumerTelefonu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pracownik_Adres" Association="Self.FK_Pracownik_Adres">
+      <End Role="Adres" EntitySet="Adres" />
+      <End Role="Pracownik" EntitySet="Pracownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pracownik_Dzial" Association="Self.FK_Pracownik_Dzial">
+      <End Role="Dzial" EntitySet="Dzial" />
+      <End Role="Pracownik" EntitySet="Pracownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pracownik_TypUmowy" Association="Self.FK_Pracownik_TypUmowy">
+      <End Role="TypUmowy" EntitySet="TypUmowy" />
+      <End Role="Pracownik" EntitySet="Pracownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezerwacja_Kontrahent" Association="Self.FK_Rezerwacja_Kontrahent">
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+      <End Role="Rezerwacja" EntitySet="Rezerwacja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezerwacja_Towar" Association="Self.FK_Rezerwacja_Towar">
+      <End Role="Towar" EntitySet="Towar" />
+      <End Role="Rezerwacja" EntitySet="Rezerwacja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Towar_GrupaTowarowa" Association="Self.FK_Towar_GrupaTowarowa">
+      <End Role="GrupaTowarowa" EntitySet="GrupaTowarowa" />
+      <End Role="Towar" EntitySet="Towar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Towar_Rynek" Association="Self.FK_Towar_Rynek">
+      <End Role="Rynek" EntitySet="Rynek" />
+      <End Role="Towar" EntitySet="Towar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Wyplata_Pracownik" Association="Self.FK_Wyplata_Pracownik">
+      <End Role="Pracownik" EntitySet="Pracownik" />
+      <End Role="Wyplata" EntitySet="Wyplata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Wyplata_TypWyplaty" Association="Self.FK_Wyplata_TypWyplaty">
+      <End Role="TypWyplaty" EntitySet="TypWyplaty" />
+      <End Role="Wyplata" EntitySet="Wyplata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zamowienie_Kontrahent" Association="Self.FK_Zamowienie_Kontrahent">
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zamowienie_Towar" Association="Self.FK_Zamowienie_Towar">
+      <End Role="Towar" EntitySet="Towar" />
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,4 +1,5 @@
 ﻿using Firma.Helpers;
+using Firma.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,14 @@ namespace Firma.ViewModels.Abstract
     public abstract class JedenViewModel<T> : WorkspaceViewModel
     {
         #region Fields
-        public FakturyEntities Db { get; set; }
+        public ProjektTIUEntities Db { get; set; }
         public T Item { get; set; }
         #endregion
         #region Konstruktor
         public JedenViewModel(string displayName)
         {
             base.DisplayName = displayName;//tu ustawiamy nazwę zakładki
-            Db = new FakturyEntities();
+            Db = new ProjektTIUEntities();
         }
         #endregion
 
@@ -41,14 +42,12 @@ namespace Firma.ViewModels.Abstract
         #endregion
         #region Save
         public abstract void Save();
-        private void saveAndClose()
+        public void saveAndClose()
         {
             Save();                 //zapisuje towar
             base.OnRequestClose();  //zamyka zakładkę
         }
         #endregion
 
-    }
-     {
     }
 }

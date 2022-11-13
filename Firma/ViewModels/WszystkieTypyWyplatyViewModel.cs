@@ -1,4 +1,5 @@
-﻿using Firma.ViewModels.Abstract;
+﻿using Firma.Models.Entities;
+using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,7 +23,7 @@ namespace Firma.ViewModels
         {
             List = new ObservableCollection<TypWyplaty>
                 (
-                from typWyplaty in FakturyEntities.TypWyplaty
+                from typWyplaty in ProjektTIUEntities.TypWyplaty
                 where typWyplaty.CzyAktywny == true
                 select typWyplaty
                 );

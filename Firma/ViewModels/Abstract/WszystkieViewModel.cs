@@ -1,4 +1,5 @@
 ﻿using Firma.Helpers;
+using Firma.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,12 +14,12 @@ namespace Firma.ViewModels.Abstract
     {
         #region Fields
         // Obiekt do operacji na bazie danych
-        private readonly FakturyEntities fakturyEntities;   //ewentualnie to może być protected, a wtedy nie będzie Propertisa
-        public FakturyEntities FakturyEntities
+        private readonly ProjektTIUEntities projektTIUEntities;   //ewentualnie to może być protected, a wtedy nie będzie Propertisa
+        public ProjektTIUEntities ProjektTIUEntities
         {
             get
             {
-                return fakturyEntities;
+                return projektTIUEntities;
             }
         }
         // To jest komenda do załadowania towarów
@@ -55,7 +56,7 @@ namespace Firma.ViewModels.Abstract
         public WszystkieViewModel(string displayName)
         {
             base.DisplayName = displayName; //tu ustawiamy nazwę zakładki
-            this.fakturyEntities = new FakturyEntities();
+            this.projektTIUEntities = new ProjektTIUEntities();
         }
         #endregion
         #region Helpers
