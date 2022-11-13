@@ -16,10 +16,28 @@
     <Compile Update="Views\NowyTowarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NowyTypUmowyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\SprzedazView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\WszystkieAdresyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\WszystkieFakturyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieGrupyRabatoweView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieGrupyTowaroweView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieRodzajeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieRynkiView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\WszystkieTowaryView.xaml.cs">
@@ -28,8 +46,17 @@
     <Compile Update="Views\OperacjeMagazynoweView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\WszystkieTypyUmowyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieTypyWyplatyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -45,19 +72,43 @@
     <Page Update="Views\NowyTowarView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\NowyTypUmowyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\SprzedazView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\StyleZakladekResources.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\WszystkieAdresyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\WszystkieFakturyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieGrupyRabatoweView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieGrupyTowaroweView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieRodzajeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieRynkiView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieTowaryView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\OperacjeMagazynoweView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieTypyUmowyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieTypyWyplatyView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
