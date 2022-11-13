@@ -11,7 +11,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=IdRynku}" />
                 <DataGridTextColumn Header="Nazwa rynku" Binding="{Binding Path=Nazwa}" />
-                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Skrot}" />
+                <DataGridTextColumn Header="Skrót" Binding="{Binding Path=Skrot}" />
                 <DataGridTextColumn Header="Aktywny" Binding="{Binding Path=CzyAktywny}" />
             </DataGrid.Columns>
         </DataGrid>    

@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\NowyTypUmowyView.xaml.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Models\Entities\ModelFirma.edmx" />
     <None Remove="Views\close_FILL0_wght400_GRAD0_opsz48.png" />
     <None Remove="Views\Content\Icons\account-plus.png" />
@@ -51,10 +47,6 @@
     <None Remove="Views\outline_question_answer_black_24dp.png" />
     <None Remove="Views\outline_schedule_black_24dp.png" />
     <None Remove="Views\outline_store_black_24dp.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Remove="Views\NowyTypUmowyView.xaml" />
   </ItemGroup>
 
   <ItemGroup>

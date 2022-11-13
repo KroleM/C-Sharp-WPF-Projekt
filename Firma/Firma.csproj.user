@@ -10,10 +10,25 @@
     <Compile Update="Views\NowaFakturaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NowaGrupaRabatowaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\NowyAdresView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\NowyKontrahentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NowyRodzajView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\NowyRynekView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\NowyTowarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\NowyTypWyplatyView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\SprzedazView.xaml.cs">
@@ -63,10 +78,28 @@
     <Page Update="Views\NowaFakturaView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\NowaGrupaRabatowaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NowyAdresView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\NowyKontrahentView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\NowyRodzajView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NowyRynekView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\NowyTowarView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NowyTypUmowyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NowyTypWyplatyView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SprzedazView.xaml">

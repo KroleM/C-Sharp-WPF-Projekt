@@ -116,6 +116,42 @@ namespace Firma.ViewModels
                 new CommandViewModel(
                     "Operacje magazynowe",
                     new BaseCommand(() => this.showOperacjeMagazynowe())),
+                new CommandViewModel(
+                    "Nowy typ umowy",
+                    new BaseCommand(() =>createView(new NowyTypUmowyViewModel()))),
+                new CommandViewModel(
+                    "Typy umowy",
+                    new BaseCommand(() => this.showTypyUmowy())),
+                new CommandViewModel(
+                    "Nowy typ wypłaty",
+                    new BaseCommand(()  =>createView(new NowyTypWyplatyViewModel()))),
+                new CommandViewModel(
+                    "Typy wypłaty",
+                    new BaseCommand(() => this.showTypyWyplaty())),
+                new CommandViewModel(
+                    "Nowy adres",
+                    new BaseCommand(()  =>createView(new NowyAdresViewModel()))),
+                new CommandViewModel(
+                    "Wszystkie adresy",
+                    new BaseCommand(() => this.showAllAdresy())),                
+                new CommandViewModel(
+                    "Nowy rodzaj kontrah.",
+                    new BaseCommand(()  =>createView(new NowyRodzajViewModel()))),
+                new CommandViewModel(
+                    "Rodzaje kontrahentów",
+                    new BaseCommand(() => this.showAllRodzaje())),                
+                new CommandViewModel(
+                    "Nowa grupa rabatowa",
+                    new BaseCommand(()  =>createView(new NowaGrupaRabatowaViewModel()))),
+                new CommandViewModel(
+                    "Grupy rabatowe",
+                    new BaseCommand(() => this.showGrupyRabatowe())),                
+                new CommandViewModel(
+                    "Nowy rynek",
+                    new BaseCommand(()  =>createView(new NowyRynekViewModel()))),
+                new CommandViewModel(
+                    "Rynki",
+                    new BaseCommand(() => this.showAllRynki())),
             };
         }
         #endregion
@@ -218,6 +254,66 @@ namespace Firma.ViewModels
                 this.Workspaces.Add(workspace);
             }
             //aktywujemy zakładkę
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showTypyUmowy()
+        {
+            WszystkieTypyUmowyViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieTypyUmowyViewModel) as WszystkieTypyUmowyViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieTypyUmowyViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showTypyWyplaty()
+        {
+            WszystkieTypyWyplatyViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieTypyWyplatyViewModel) as WszystkieTypyWyplatyViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieTypyWyplatyViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllAdresy()
+        {
+            WszystkieAdresyViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieAdresyViewModel) as WszystkieAdresyViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieAdresyViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllRodzaje()
+        {
+            WszystkieRodzajeViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieRodzajeViewModel) as WszystkieRodzajeViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieRodzajeViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showGrupyRabatowe()
+        {
+            WszystkieGrupyRabatoweViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieGrupyRabatoweViewModel) as WszystkieGrupyRabatoweViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieGrupyRabatoweViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllRynki()
+        {
+            WszystkieRynkiViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieRynkiViewModel) as WszystkieRynkiViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieRynkiViewModel();
+                this.Workspaces.Add(workspace);
+            }
             this.SetActiveWorkspace(workspace);
         }
         private void zamykanieKart()

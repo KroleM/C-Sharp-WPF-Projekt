@@ -33,6 +33,54 @@
         <vw:SprzedazView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:NowyTypUmowyViewModel}">
+        <vw:NowyTypUmowyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieTypyUmowyViewModel}">
+        <vw:WszystkieTypyUmowyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NowyTypWyplatyViewModel}">
+        <vw:NowyTypWyplatyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieTypyWyplatyViewModel}">
+        <vw:WszystkieTypyWyplatyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NowyAdresViewModel}">
+        <vw:NowyAdresView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieAdresyViewModel}">
+        <vw:WszystkieAdresyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NowyRodzajViewModel}">
+        <vw:NowyRodzajView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieRodzajeViewModel}">
+        <vw:WszystkieRodzajeView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NowaGrupaRabatowaViewModel}">
+        <vw:NowaGrupaRabatowaView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieGrupyRabatoweViewModel}">
+        <vw:WszystkieGrupyRabatoweView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NowyRynekViewModel}">
+        <vw:NowyRynekView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieRynkiViewModel}">
+        <vw:WszystkieRynkiView/>
+    </DataTemplate>
+
     <!--TU jest koniec łączenia View z ViewModel zakładek-->
     
     
