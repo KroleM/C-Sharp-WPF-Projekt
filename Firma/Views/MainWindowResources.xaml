@@ -81,6 +81,10 @@
         <vw:WszystkieRynkiView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:WszystkieWyplatyViewModel}">
+        <vw:WszystkieWyplatyView/>
+    </DataTemplate>
+
     <!--TU jest koniec łączenia View z ViewModel zakładek-->
     
     

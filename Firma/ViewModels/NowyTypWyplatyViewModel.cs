@@ -12,7 +12,7 @@ namespace Firma.ViewModels
     {
         #region Konstruktor
         public NowyTypWyplatyViewModel()
-            : base("Typ umowy")
+            : base("Typ wypłaty")
         {
             Item = new TypWyplaty();
         }

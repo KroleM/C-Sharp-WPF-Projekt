@@ -61,3 +61,5 @@ E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\F
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowaGrupaRabatowaView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyRynekView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyRynekView.baml
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieWyplatyView.g.cs
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieWyplatyView.baml

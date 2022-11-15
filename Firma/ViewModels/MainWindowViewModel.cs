@@ -152,6 +152,9 @@ namespace Firma.ViewModels
                 new CommandViewModel(
                     "Rynki",
                     new BaseCommand(() => this.showAllRynki())),
+                new CommandViewModel(
+                    "Wszystkie wypłaty",
+                    new BaseCommand(() => this.showAllWyplaty())),
             };
         }
         #endregion
@@ -312,6 +315,16 @@ namespace Firma.ViewModels
             if (workspace == null)
             {
                 workspace = new WszystkieRynkiViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllWyplaty()
+        {
+            WszystkieWyplatyViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieWyplatyViewModel) as WszystkieWyplatyViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieWyplatyViewModel();
                 this.Workspaces.Add(workspace);
             }
             this.SetActiveWorkspace(workspace);

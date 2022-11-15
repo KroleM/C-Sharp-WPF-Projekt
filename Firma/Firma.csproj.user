@@ -64,6 +64,9 @@
     <Compile Update="Views\WszystkieTypyWyplatyView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\WszystkieWyplatyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Themes\Generic.xaml">
@@ -136,6 +139,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieTypyWyplatyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieWyplatyView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

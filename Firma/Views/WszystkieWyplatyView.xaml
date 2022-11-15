@@ -1,0 +1,24 @@
+﻿<local:WszystkieViewBase x:Class="Firma.Views.WszystkieWyplatyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=IdWyplaty}" />
+                <DataGridTextColumn Header="Imie i Nazwisko" Binding="{Binding Path=PracownikImieNazwisko}" />
+                <DataGridTextColumn Header="ID pracownika" Binding="{Binding Path=IdPracownika}" />
+                <DataGridTextColumn Header="Typ wypłaty" Binding="{Binding Path=TypWyplatyNazwa}" />
+                <DataGridTextColumn Header="Kwota" Binding="{Binding Path=Kwota}" />
+                <DataGridTextColumn Header="Waluta" Binding="{Binding Path=Waluta}" />
+                <DataGridTextColumn Header="Data od" Binding="{Binding Path=DataOd, 
+                                    StringFormat={}{0:dd MMMM yyyy}, ConverterCulture=pl-PL}" />
+                <DataGridTextColumn Header="Data do" Binding="{Binding Path=DataDo}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:WszystkieViewBase>
