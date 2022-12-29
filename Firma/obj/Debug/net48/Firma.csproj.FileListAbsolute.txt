@@ -7,9 +7,11 @@ E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\F
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\StyleZakladekResources.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\MainWindow.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowaFakturaView.g.cs
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowaGrupaRabatowaView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyAdresView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyKontrahentView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyRodzajView.g.cs
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyRynekView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyTowarView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyTypUmowyView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyTypWyplatyView.g.cs
@@ -24,6 +26,7 @@ E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\F
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieTowaryView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieTypyUmowyView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieTypyWyplatyView.g.cs
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieWyplatyView.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\App.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\GeneratedInternalTypeHelper.g.cs
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma_MarkupCompile.cache
@@ -32,9 +35,11 @@ E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\F
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\MainWindow.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\MainWindowResources.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowaFakturaView.baml
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowaGrupaRabatowaView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyAdresView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyKontrahentView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyRodzajView.baml
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyRynekView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyTowarView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyTypUmowyView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyTypWyplatyView.baml
@@ -49,6 +54,7 @@ E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\F
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieTowaryView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieTypyUmowyView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieTypyWyplatyView.baml
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieWyplatyView.baml
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma.g.resources
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma.GeneratedMSBuildEditorConfig.editorconfig
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma.AssemblyInfoInputs.cache
@@ -57,9 +63,3 @@ E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\F
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma.csproj.CopyComplete
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma.exe
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma.pdb
-E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowaGrupaRabatowaView.g.cs
-E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowaGrupaRabatowaView.baml
-E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyRynekView.g.cs
-E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\NowyRynekView.baml
-E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieWyplatyView.g.cs
-E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\WszystkieWyplatyView.baml

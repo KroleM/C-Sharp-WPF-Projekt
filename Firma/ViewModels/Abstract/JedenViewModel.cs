@@ -12,14 +12,14 @@ namespace Firma.ViewModels.Abstract
     public abstract class JedenViewModel<T> : WorkspaceViewModel
     {
         #region Fields
-        public ProjektTIUEntities Db { get; set; }
+        public ProjektDesktopyEntities Db { get; set; }
         public T Item { get; set; }
         #endregion
         #region Konstruktor
         public JedenViewModel(string displayName)
         {
             base.DisplayName = displayName;//tu ustawiamy nazwę zakładki
-            Db = new ProjektTIUEntities();
+            Db = new ProjektDesktopyEntities();
         }
         #endregion
 

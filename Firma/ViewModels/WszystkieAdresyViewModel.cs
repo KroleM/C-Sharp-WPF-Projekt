@@ -23,7 +23,7 @@ namespace Firma.ViewModels
         {
             List = new ObservableCollection<Adres>
                 (
-                from adres in ProjektTIUEntities.Adres
+                from adres in ProjektDesktopyEntities.Adres
                 //where adres.CzyAktywny == true
                 select adres
                 );

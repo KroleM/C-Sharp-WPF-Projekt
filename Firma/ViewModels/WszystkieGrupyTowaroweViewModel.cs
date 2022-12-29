@@ -23,7 +23,7 @@ namespace Firma.ViewModels
         {
             List = new ObservableCollection<GrupaTowarowa>
                 (
-                from grupa in ProjektTIUEntities.GrupaTowarowa
+                from grupa in ProjektDesktopyEntities.GrupaTowarowa
                 //where grupa.CzyAktywny == true
                 select grupa
                 );

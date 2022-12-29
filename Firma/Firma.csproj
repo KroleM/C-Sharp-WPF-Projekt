@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Models\Entities\ModelFirma.edmx" />
+    <None Remove="Models\Entities\ModelAplikacji.edmx" />
     <None Remove="Views\close_FILL0_wght400_GRAD0_opsz48.png" />
     <None Remove="Views\Content\Icons\account-plus.png" />
     <None Remove="Views\Content\Icons\account.png" />
@@ -50,9 +50,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EntityDeploy Include="Models\Entities\ModelFirma.edmx">
+    <EntityDeploy Include="Models\Entities\ModelAplikacji.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelFirma.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelAplikacji.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
 
@@ -185,10 +185,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Models\Entities\ModelFirma.Designer.cs">
+    <Compile Update="Models\Entities\ModelAplikacji.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ModelFirma.edmx</DependentUpon>
+      <DependentUpon>ModelAplikacji.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
 

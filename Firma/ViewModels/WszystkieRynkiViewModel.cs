@@ -24,7 +24,7 @@ namespace Firma.ViewModels
             List = new ObservableCollection<Rynek>
                 (
                 //zapytanie LINQ (obiektowa wersja SQL)
-                from rynek in ProjektTIUEntities.Rynek // dla każdego typu umowy z tabeli TypUmowy (w SQL: select * from TypUmowy)
+                from rynek in ProjektDesktopyEntities.Rynek // dla każdego typu umowy z tabeli TypUmowy (w SQL: select * from TypUmowy)
                 where rynek.CzyAktywny == true
                 select rynek    //wybierz typ umowy
                 );

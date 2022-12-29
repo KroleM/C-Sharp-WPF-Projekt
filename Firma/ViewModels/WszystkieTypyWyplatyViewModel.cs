@@ -23,7 +23,7 @@ namespace Firma.ViewModels
         {
             List = new ObservableCollection<TypWyplaty>
                 (
-                from typWyplaty in ProjektTIUEntities.TypWyplaty
+                from typWyplaty in ProjektDesktopyEntities.TypWyplaty
                 where typWyplaty.CzyAktywny == true
                 select typWyplaty
                 );

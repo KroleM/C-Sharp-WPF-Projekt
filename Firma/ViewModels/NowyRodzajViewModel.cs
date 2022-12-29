@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Firma.ViewModels
 {
-    public class NowyRodzajViewModel : JedenViewModel<Rodzaj>
+    public class NowyRodzajViewModel : JedenViewModel<RodzajKontrahenta>
     {
         #region Konstruktor
         public NowyRodzajViewModel()
             : base("Nowy rodzaj")
         {
-            Item = new Rodzaj();
+            Item = new RodzajKontrahenta();
         }
         #endregion
         #region Properties
@@ -54,7 +54,7 @@ namespace Firma.ViewModels
         public override void Save()
         {
             Item.CzyAktywny = true;
-            Db.Rodzaj.AddObject(Item);
+            Db.RodzajKontrahenta.AddObject(Item);
             Db.SaveChanges();
         }
         #endregion

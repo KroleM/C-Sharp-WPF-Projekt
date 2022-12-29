@@ -14,8 +14,8 @@ namespace Firma.ViewModels.Abstract
     {
         #region Fields
         // Obiekt do operacji na bazie danych
-        private readonly ProjektTIUEntities projektTIUEntities;   //ewentualnie to może być protected, a wtedy nie będzie Propertisa
-        public ProjektTIUEntities ProjektTIUEntities
+        private readonly ProjektDesktopyEntities projektTIUEntities;   //ewentualnie to może być protected, a wtedy nie będzie Propertisa
+        public ProjektDesktopyEntities ProjektDesktopyEntities
         {
             get
             {
@@ -56,7 +56,7 @@ namespace Firma.ViewModels.Abstract
         public WszystkieViewModel(string displayName)
         {
             base.DisplayName = displayName; //tu ustawiamy nazwę zakładki
-            this.projektTIUEntities = new ProjektTIUEntities();
+            this.projektTIUEntities = new ProjektDesktopyEntities();
         }
         #endregion
         #region Helpers

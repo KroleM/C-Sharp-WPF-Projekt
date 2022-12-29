@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Firma.ViewModels
 {
-    public class WszystkieRodzajeViewModel : WszystkieViewModel<Rodzaj>
+    public class WszystkieRodzajeViewModel : WszystkieViewModel<RodzajKontrahenta>
     {
         #region Konstruktor
         public WszystkieRodzajeViewModel()
@@ -21,10 +21,10 @@ namespace Firma.ViewModels
 
         public override void Load()
         {
-            List = new ObservableCollection<Rodzaj>
+            List = new ObservableCollection<RodzajKontrahenta>
                 (
                 //zapytanie LINQ (obiektowa wersja SQL)
-                from rodzaj in ProjektTIUEntities.Rodzaj // dla każdego typu umowy z tabeli TypUmowy (w SQL: select * from TypUmowy)
+                from rodzaj in ProjektDesktopyEntities.RodzajKontrahenta // dla każdego typu umowy z tabeli TypUmowy (w SQL: select * from TypUmowy)
                 where rodzaj.CzyAktywny == true
                 select rodzaj    //wybierz typ umowy
                 );

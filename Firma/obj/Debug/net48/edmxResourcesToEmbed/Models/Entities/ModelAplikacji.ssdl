@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjektDesktopyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Adres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Ulica" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="Miejscowosc" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="NrDomu" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="NrLokalu" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="KodPocztowy" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="Poczta" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="Kraj" Type="nvarchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dzial">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="GrupaRabatowa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Rabat" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrupaTowarowa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Kod" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="GrupaNadrzednaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kontrahent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Kod" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="NIP" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="RodzajId" Type="int" Nullable="false" />
+    <Property Name="AdresId" Type="int" Nullable="false" />
+    <Property Name="GrupaRabatowaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NumerTelefonu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Numer" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Kraj" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="PracownikId" Type="int" />
+  </EntityType>
+  <EntityType Name="PozycjaZamowienia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="TowarId" Type="int" Nullable="false" />
+    <Property Name="ZamowienieId" Type="int" Nullable="false" />
+    <Property Name="Sztuki" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pracownik">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="PESEL" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="AdresId" Type="int" Nullable="false" />
+    <Property Name="TypUmowyId" Type="int" Nullable="false" />
+    <Property Name="DzialId" Type="int" Nullable="false" />
+    <Property Name="StanowiskoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RodzajKontrahenta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Opis" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rynek">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Skrot" Type="nchar" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stanowisko">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Kategoria" Type="nchar" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Towar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Kod" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="StawkaVatZakupu" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StawkaVatSprzedazy" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CenaNetto" Type="money" Nullable="false" />
+    <Property Name="Waluta" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="Marza" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GrupaTowarowaId" Type="int" Nullable="false" />
+    <Property Name="RynekId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypUmowy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Skrot" Type="nchar" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypWyplaty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="Skrot" Type="nchar" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Wyplata">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="PracownikId" Type="int" Nullable="false" />
+    <Property Name="TypWyplatyId" Type="int" Nullable="false" />
+    <Property Name="Kwota" Type="money" Nullable="false" />
+    <Property Name="Waluta" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="OkresOd" Type="datetime" Nullable="false" />
+    <Property Name="OkresDo" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zamowienie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DataUtworzenia" Type="datetime" Nullable="false" />
+    <Property Name="DataModyfikacji" Type="datetime" Nullable="false" />
+    <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+    <Property Name="Notatki" Type="nvarchar(max)" />
+    <Property Name="KtoUtworzyl" Type="nvarchar" MaxLength="64" />
+    <Property Name="KtoZmodyfikowal" Type="nvarchar" MaxLength="64" />
+    <Property Name="KontrahentId" Type="int" Nullable="false" />
+    <Property Name="DataWyslania" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__GrupaTowa__Grupa__4316F928">
+    <End Role="GrupaTowarowa" Type="Self.GrupaTowarowa" Multiplicity="1" />
+    <End Role="GrupaTowarowa1" Type="Self.GrupaTowarowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupaTowarowa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GrupaTowarowa1">
+        <PropertyRef Name="GrupaNadrzednaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Kontrahen__Adres__3F466844">
+    <End Role="Adres" Type="Self.Adres" Multiplicity="1" />
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adres">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Kontrahent">
+        <PropertyRef Name="AdresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Kontrahen__Grupa__403A8C7D">
+    <End Role="GrupaRabatowa" Type="Self.GrupaRabatowa" Multiplicity="1" />
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupaRabatowa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Kontrahent">
+        <PropertyRef Name="GrupaRabatowaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Kontrahen__Rodza__3E52440B">
+    <End Role="RodzajKontrahenta" Type="Self.RodzajKontrahenta" Multiplicity="1" />
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RodzajKontrahenta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Kontrahent">
+        <PropertyRef Name="RodzajId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NumerTele__Praco__33D4B598">
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="0..1" />
+    <End Role="NumerTelefonu" Type="Self.NumerTelefonu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pracownik">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NumerTelefonu">
+        <PropertyRef Name="PracownikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PozycjaZa__Towar__4E88ABD4">
+    <End Role="Towar" Type="Self.Towar" Multiplicity="1" />
+    <End Role="PozycjaZamowienia" Type="Self.PozycjaZamowienia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towar">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PozycjaZamowienia">
+        <PropertyRef Name="TowarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PozycjaZa__Zamow__4F7CD00D">
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="1" />
+    <End Role="PozycjaZamowienia" Type="Self.PozycjaZamowienia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zamowienie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PozycjaZamowienia">
+        <PropertyRef Name="ZamowienieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pracownik__Adres__2E1BDC42">
+    <End Role="Adres" Type="Self.Adres" Multiplicity="1" />
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adres">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pracownik">
+        <PropertyRef Name="AdresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pracownik__Dzial__300424B4">
+    <End Role="Dzial" Type="Self.Dzial" Multiplicity="1" />
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dzial">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pracownik">
+        <PropertyRef Name="DzialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pracownik__Stano__30F848ED">
+    <End Role="Stanowisko" Type="Self.Stanowisko" Multiplicity="1" />
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stanowisko">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pracownik">
+        <PropertyRef Name="StanowiskoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pracownik__TypUm__2F10007B">
+    <End Role="TypUmowy" Type="Self.TypUmowy" Multiplicity="1" />
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypUmowy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pracownik">
+        <PropertyRef Name="TypUmowyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Towar__GrupaTowa__47DBAE45">
+    <End Role="GrupaTowarowa" Type="Self.GrupaTowarowa" Multiplicity="1" />
+    <End Role="Towar" Type="Self.Towar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupaTowarowa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Towar">
+        <PropertyRef Name="GrupaTowarowaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Towar__RynekId__48CFD27E">
+    <End Role="Rynek" Type="Self.Rynek" Multiplicity="1" />
+    <End Role="Towar" Type="Self.Towar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rynek">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Towar">
+        <PropertyRef Name="RynekId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Wyplata__Pracown__36B12243">
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="1" />
+    <End Role="Wyplata" Type="Self.Wyplata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pracownik">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Wyplata">
+        <PropertyRef Name="PracownikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Wyplata__TypWypl__37A5467C">
+    <End Role="TypWyplaty" Type="Self.TypWyplaty" Multiplicity="1" />
+    <End Role="Wyplata" Type="Self.Wyplata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypWyplaty">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Wyplata">
+        <PropertyRef Name="TypWyplatyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Zamowieni__Kontr__4BAC3F29">
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kontrahent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="KontrahentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjektDesktopyModelStoreContainer">
+    <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dzial" EntityType="Self.Dzial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrupaRabatowa" EntityType="Self.GrupaRabatowa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrupaTowarowa" EntityType="Self.GrupaTowarowa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kontrahent" EntityType="Self.Kontrahent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NumerTelefonu" EntityType="Self.NumerTelefonu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PozycjaZamowienia" EntityType="Self.PozycjaZamowienia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pracownik" EntityType="Self.Pracownik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RodzajKontrahenta" EntityType="Self.RodzajKontrahenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rynek" EntityType="Self.Rynek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stanowisko" EntityType="Self.Stanowisko" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Towar" EntityType="Self.Towar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypUmowy" EntityType="Self.TypUmowy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypWyplaty" EntityType="Self.TypWyplaty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Wyplata" EntityType="Self.Wyplata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zamowienie" EntityType="Self.Zamowienie" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__GrupaTowa__Grupa__4316F928" Association="Self.FK__GrupaTowa__Grupa__4316F928">
+      <End Role="GrupaTowarowa" EntitySet="GrupaTowarowa" />
+      <End Role="GrupaTowarowa1" EntitySet="GrupaTowarowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Kontrahen__Adres__3F466844" Association="Self.FK__Kontrahen__Adres__3F466844">
+      <End Role="Adres" EntitySet="Adres" />
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Kontrahen__Grupa__403A8C7D" Association="Self.FK__Kontrahen__Grupa__403A8C7D">
+      <End Role="GrupaRabatowa" EntitySet="GrupaRabatowa" />
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Kontrahen__Rodza__3E52440B" Association="Self.FK__Kontrahen__Rodza__3E52440B">
+      <End Role="RodzajKontrahenta" EntitySet="RodzajKontrahenta" />
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NumerTele__Praco__33D4B598" Association="Self.FK__NumerTele__Praco__33D4B598">
+      <End Role="Pracownik" EntitySet="Pracownik" />
+      <End Role="NumerTelefonu" EntitySet="NumerTelefonu" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PozycjaZa__Towar__4E88ABD4" Association="Self.FK__PozycjaZa__Towar__4E88ABD4">
+      <End Role="Towar" EntitySet="Towar" />
+      <End Role="PozycjaZamowienia" EntitySet="PozycjaZamowienia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PozycjaZa__Zamow__4F7CD00D" Association="Self.FK__PozycjaZa__Zamow__4F7CD00D">
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+      <End Role="PozycjaZamowienia" EntitySet="PozycjaZamowienia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pracownik__Adres__2E1BDC42" Association="Self.FK__Pracownik__Adres__2E1BDC42">
+      <End Role="Adres" EntitySet="Adres" />
+      <End Role="Pracownik" EntitySet="Pracownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pracownik__Dzial__300424B4" Association="Self.FK__Pracownik__Dzial__300424B4">
+      <End Role="Dzial" EntitySet="Dzial" />
+      <End Role="Pracownik" EntitySet="Pracownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pracownik__Stano__30F848ED" Association="Self.FK__Pracownik__Stano__30F848ED">
+      <End Role="Stanowisko" EntitySet="Stanowisko" />
+      <End Role="Pracownik" EntitySet="Pracownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pracownik__TypUm__2F10007B" Association="Self.FK__Pracownik__TypUm__2F10007B">
+      <End Role="TypUmowy" EntitySet="TypUmowy" />
+      <End Role="Pracownik" EntitySet="Pracownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Towar__GrupaTowa__47DBAE45" Association="Self.FK__Towar__GrupaTowa__47DBAE45">
+      <End Role="GrupaTowarowa" EntitySet="GrupaTowarowa" />
+      <End Role="Towar" EntitySet="Towar" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Towar__RynekId__48CFD27E" Association="Self.FK__Towar__RynekId__48CFD27E">
+      <End Role="Rynek" EntitySet="Rynek" />
+      <End Role="Towar" EntitySet="Towar" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Wyplata__Pracown__36B12243" Association="Self.FK__Wyplata__Pracown__36B12243">
+      <End Role="Pracownik" EntitySet="Pracownik" />
+      <End Role="Wyplata" EntitySet="Wyplata" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Wyplata__TypWypl__37A5467C" Association="Self.FK__Wyplata__TypWypl__37A5467C">
+      <End Role="TypWyplaty" EntitySet="TypWyplaty" />
+      <End Role="Wyplata" EntitySet="Wyplata" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Zamowieni__Kontr__4BAC3F29" Association="Self.FK__Zamowieni__Kontr__4BAC3F29">
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

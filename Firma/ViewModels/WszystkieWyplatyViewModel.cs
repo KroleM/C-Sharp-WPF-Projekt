@@ -22,17 +22,17 @@ namespace Firma.ViewModels
         {
             List = new ObservableCollection<WyplataForAllView>
                 (
-                    from wyplata in ProjektTIUEntities.Wyplata
+                    from wyplata in ProjektDesktopyEntities.Wyplata
                     select new WyplataForAllView
                     {
-                        IdWyplaty = wyplata.IdWyplaty,
+                        IdWyplaty = wyplata.Id,
                         PracownikImieNazwisko = wyplata.Pracownik.Imie + " " + wyplata.Pracownik.Nazwisko,
-                        IdPracownika = wyplata.Pracownik.IdPracownika,
+                        IdPracownika = wyplata.Pracownik.Id,
                         TypWyplatyNazwa = wyplata.TypWyplaty.Nazwa,
                         Kwota = wyplata.Kwota,
                         Waluta = wyplata.Waluta,
-                        DataOd = wyplata.DataOd,
-                        DataDo = wyplata.DataDo
+                        DataOd = wyplata.OkresOd,
+                        DataDo = wyplata.OkresDo
                     }
                 );
         }

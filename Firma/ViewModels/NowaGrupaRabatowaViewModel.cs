@@ -33,7 +33,7 @@ namespace Firma.ViewModels
                 }
             }
         }
-        public decimal? Rabat
+        public decimal Rabat
         {
             get
             {
