@@ -17,10 +17,17 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="80"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Nazwa" Margin="0,8,0,8"/>
         <TextBox Grid.Row="0" Grid.Column="1" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Nazwa, UpdateSourceTrigger=PropertyChanged}"/>
         <Label Grid.Row="1" Grid.Column="0" Content="Opis" Margin="0,8,0,8"/>
         <TextBox Grid.Row="1" Grid.Column="1" Margin="0,8,0,8" Width="400" HorizontalAlignment="Left" Text="{Binding Path=Opis, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Notatka" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="0,8,0,8" Width="300" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Użytkownik" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </local:JedenViewBase>

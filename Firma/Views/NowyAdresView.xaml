@@ -12,9 +12,13 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
@@ -24,15 +28,21 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Ulica" Margin="0,8,0,8"/>
         <TextBox Grid.Row="0" Grid.Column="1" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Ulica, UpdateSourceTrigger=PropertyChanged}"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Miejscowość" Margin="0,8,0,8"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Miejscowosc, UpdateSourceTrigger=PropertyChanged}"/>
-        <Label Grid.Row="2" Grid.Column="0" Content="Numer domu" Margin="0,8,0,8"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="0,8,0,8" Width="100" HorizontalAlignment="Left" Text="{Binding Path=NrDomu, UpdateSourceTrigger=PropertyChanged}"/>
-        <Label Grid.Row="3" Grid.Column="0" Content="Numer lokalu" Margin="0,8,0,8"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="0,8,0,8" Width="100" HorizontalAlignment="Left" Text="{Binding Path=NrLokalu, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Numer domu" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="0,8,0,8" Width="100" HorizontalAlignment="Left" Text="{Binding Path=NrDomu, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Numer lokalu" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="0,8,0,8" Width="100" HorizontalAlignment="Left" Text="{Binding Path=NrLokalu, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Miejscowość" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Miejscowosc, UpdateSourceTrigger=PropertyChanged}"/>
         <Label Grid.Row="4" Grid.Column="0" Content="Kod pocztowy" Margin="0,8,0,8"/>
         <TextBox Grid.Row="4" Grid.Column="1" Margin="0,8,0,8" Width="100" HorizontalAlignment="Left" Text="{Binding Path=KodPocztowy, UpdateSourceTrigger=PropertyChanged}"/>
         <Label Grid.Row="5" Grid.Column="0" Content="Poczta" Margin="0,8,0,8"/>
         <TextBox Grid.Row="5" Grid.Column="1" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Poczta, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Kraj" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Kraj, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="7" Grid.Column="0" Content="Notatka" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="7" Grid.Column="1" Grid.RowSpan="2" Margin="0,8,0,8" Width="300" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="9" Grid.Column="0" Content="Użytkownik" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="9" Grid.Column="1" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </local:JedenViewBase>

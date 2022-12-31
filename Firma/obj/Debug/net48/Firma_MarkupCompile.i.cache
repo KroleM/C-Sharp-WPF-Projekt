@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETFRAMEWORK;NET48;
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\App.xaml
-251230900177
+2939460535
 
-59566792143
+67-876189581
 23-967291966
-Themes\Generic.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\NowaFakturaView.xaml;Views\NowaGrupaRabatowaView.xaml;Views\NowyAdresView.xaml;Views\NowyKontrahentView.xaml;Views\NowyRodzajView.xaml;Views\NowyRynekView.xaml;Views\NowyTowarView.xaml;Views\NowyTypUmowyView.xaml;Views\NowyTypWyplatyView.xaml;Views\OperacjeMagazynoweView.xaml;Views\SprzedazView.xaml;Views\StyleZakladekResources.xaml;Views\WszystkieAdresyView.xaml;Views\WszystkieFakturyView.xaml;Views\WszystkieGrupyRabatoweView.xaml;Views\WszystkieGrupyTowaroweView.xaml;Views\WszystkieRodzajeView.xaml;Views\WszystkieRynkiView.xaml;Views\WszystkieTowaryView.xaml;Views\WszystkieTypyUmowyView.xaml;Views\WszystkieTypyWyplatyView.xaml;Views\WszystkieWyplatyView.xaml;
+Themes\Generic.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\NowaFakturaView.xaml;Views\NowaGrupaRabatowaView.xaml;Views\NoweStanowiskoView.xaml;Views\NowyAdresView.xaml;Views\NowyDzialView.xaml;Views\NowyKontrahentView.xaml;Views\NowyRodzajView.xaml;Views\NowyRynekView.xaml;Views\NowyTowarView.xaml;Views\NowyTypUmowyView.xaml;Views\NowyTypWyplatyView.xaml;Views\OperacjeMagazynoweView.xaml;Views\SprzedazView.xaml;Views\StyleZakladekResources.xaml;Views\WszystkieAdresyView.xaml;Views\WszystkieDzialyView.xaml;Views\WszystkieFakturyView.xaml;Views\WszystkieGrupyRabatoweView.xaml;Views\WszystkieGrupyTowaroweView.xaml;Views\WszystkieRodzajeView.xaml;Views\WszystkieRynkiView.xaml;Views\WszystkieStanowiskaView.xaml;Views\WszystkieTowaryView.xaml;Views\WszystkieTypyUmowyView.xaml;Views\WszystkieTypyWyplatyView.xaml;Views\WszystkieWyplatyView.xaml;
 
-False
+True
 

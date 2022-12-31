@@ -48,12 +48,45 @@ namespace Firma.ViewModels
                 }
             }
         }
+        public string Notatka
+        {
+            get
+            {
+                return Item.Notatki;
+            }
+            set
+            {
+                if (value != Item.Notatki)
+                {
+                    Item.Notatki = value;
+                    base.OnPropertyChanged(() => Notatka);
+                }
+            }
+        }
+        public string Uzytkownik
+        {
+            get
+            {
+                return Item.KtoUtworzyl;
+            }
+            set
+            {
+                if (value != Item.KtoUtworzyl)
+                {
+                    Item.KtoUtworzyl = value;
+                    base.OnPropertyChanged(() => Uzytkownik);
+                }
+            }
+        }
         #endregion
 
         #region Save
         public override void Save()
         {
             Item.CzyAktywny = true;
+            Item.DataUtworzenia = DateTime.Now;
+            Item.DataModyfikacji = DateTime.Now;
+            Item.KtoZmodyfikowal = Uzytkownik;
             Db.GrupaRabatowa.AddObject(Item);
             Db.SaveChanges();
         }

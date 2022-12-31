@@ -9,10 +9,15 @@
     <Grid>
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path=IdRynku}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" />
                 <DataGridTextColumn Header="Nazwa rynku" Binding="{Binding Path=Nazwa}" />
                 <DataGridTextColumn Header="Skrót" Binding="{Binding Path=Skrot}" />
                 <DataGridTextColumn Header="Aktywny" Binding="{Binding Path=CzyAktywny}" />
+                <DataGridTextColumn Header="Data utworzenia" Binding="{Binding Path=DataUtworzenia}" />
+                <DataGridTextColumn Header="Data modyfikacji" Binding="{Binding Path=DataModyfikacji}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Kto utworzył" Binding="{Binding Path=KtoUtworzyl}" />
+                <DataGridTextColumn Header="Kto zmodyfikował" Binding="{Binding Path=KtoZmodyfikowal}" />
+                <DataGridTextColumn Header="Notatka" Binding="{Binding Path=Notatki}" />
             </DataGrid.Columns>
         </DataGrid>    
     </Grid>

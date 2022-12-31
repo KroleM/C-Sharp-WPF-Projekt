@@ -108,12 +108,61 @@ namespace Firma.ViewModels
                 }
             }
         }
+        public string Kraj
+        {
+            get
+            {
+                return Item.Kraj;
+            }
+            set
+            {
+                if (value != Item.Kraj)
+                {
+                    Item.Kraj = value;
+                    base.OnPropertyChanged(() => Kraj);
+                }
+            }
+        }
+        public string Notatka
+        {
+            get
+            {
+                return Item.Notatki;
+            }
+            set
+            {
+                if (value != Item.Notatki)
+                {
+                    Item.Notatki = value;
+                    base.OnPropertyChanged(() => Notatka);
+                }
+            }
+        }
+        public string Uzytkownik
+        {
+            get
+            {
+                return Item.KtoUtworzyl;
+            }
+            set
+            {
+                if (value != Item.KtoUtworzyl)
+                {
+                    Item.KtoUtworzyl = value;
+                    base.OnPropertyChanged(() => Uzytkownik);
+                }
+            }
+        }
         #endregion
 
         #region Save
         public override void Save()
         {
-            //Item.CzyAktywny = true;
+            Item.CzyAktywny = true;
+            Item.DataUtworzenia = DateTime.Now;
+            Item.DataModyfikacji = DateTime.Now;
+            Item.KtoZmodyfikowal = Uzytkownik;
+            Item.Nazwa = $"{Ulica} {NrDomu}" + (String.IsNullOrEmpty(NrLokalu) ? "" : $"/{NrLokalu}") + $", {Miejscowosc}";
             Db.Adres.AddObject(Item);
             Db.SaveChanges();
         }

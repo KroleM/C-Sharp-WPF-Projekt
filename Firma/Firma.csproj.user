@@ -13,7 +13,13 @@
     <Compile Update="Views\NowaGrupaRabatowaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NoweStanowiskoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\NowyAdresView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\NowyDzialView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\NowyKontrahentView.xaml.cs">
@@ -37,6 +43,9 @@
     <Compile Update="Views\WszystkieAdresyView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\WszystkieDzialyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\WszystkieFakturyView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -50,6 +59,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\WszystkieRynkiView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieStanowiskaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\WszystkieTowaryView.xaml.cs">
@@ -84,7 +96,13 @@
     <Page Update="Views\NowaGrupaRabatowaView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\NoweStanowiskoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\NowyAdresView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NowyDzialView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowyKontrahentView.xaml">
@@ -114,6 +132,9 @@
     <Page Update="Views\WszystkieAdresyView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\WszystkieDzialyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\WszystkieFakturyView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -127,6 +148,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieRynkiView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieStanowiskaView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieTowaryView.xaml">

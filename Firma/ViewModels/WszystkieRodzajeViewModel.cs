@@ -24,9 +24,9 @@ namespace Firma.ViewModels
             List = new ObservableCollection<RodzajKontrahenta>
                 (
                 //zapytanie LINQ (obiektowa wersja SQL)
-                from rodzaj in ProjektDesktopyEntities.RodzajKontrahenta // dla każdego typu umowy z tabeli TypUmowy (w SQL: select * from TypUmowy)
+                from rodzaj in ProjektDesktopyEntities.RodzajKontrahenta
                 where rodzaj.CzyAktywny == true
-                select rodzaj    //wybierz typ umowy
+                select rodzaj
                 );
         }
         #endregion

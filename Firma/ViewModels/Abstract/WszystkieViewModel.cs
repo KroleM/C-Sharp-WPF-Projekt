@@ -12,14 +12,15 @@ namespace Firma.ViewModels.Abstract
 {
     public abstract class WszystkieViewModel<T> : WorkspaceViewModel
     {
-        #region Fields
+        #region Fields & Properties
+        public T SelectedItem { get; set; }
         // Obiekt do operacji na bazie danych
-        private readonly ProjektDesktopyEntities projektTIUEntities;   //ewentualnie to może być protected, a wtedy nie będzie Propertisa
+        private readonly ProjektDesktopyEntities projektDesktopyEntities;   //ewentualnie to może być protected, a wtedy nie będzie Propertisa
         public ProjektDesktopyEntities ProjektDesktopyEntities
         {
             get
             {
-                return projektTIUEntities;
+                return projektDesktopyEntities;
             }
         }
         // To jest komenda do załadowania towarów
@@ -35,7 +36,7 @@ namespace Firma.ViewModels.Abstract
                 return _LoadCommand;
             }
         }
-        // W tym obiekcie będą wszystkie towary
+        // W tym obiekcie będą wszystkie przedstawiane obiekty T
         private ObservableCollection<T> _List;
         public ObservableCollection<T> List
         {
@@ -56,7 +57,7 @@ namespace Firma.ViewModels.Abstract
         public WszystkieViewModel(string displayName)
         {
             base.DisplayName = displayName; //tu ustawiamy nazwę zakładki
-            this.projektTIUEntities = new ProjektDesktopyEntities();
+            this.projektDesktopyEntities = new ProjektDesktopyEntities();
         }
         #endregion
         #region Helpers

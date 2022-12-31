@@ -98,6 +98,16 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
+            <MenuItem Header="Widoki '_Nowy'">
+                <MenuItem Header="Nowy dział" Command="{Binding NowyDzialCommand}"/>
+                <MenuItem Header="Nowe stanowisko" Command="{Binding NoweStanowiskoCommand}"/>
+                <MenuItem Header="Nowy typ umowy" Command="{Binding NowyTypUmowyCommand}"/>
+                <MenuItem Header="Nowy typ wypłaty" Command="{Binding NowyTypWyplatyCommand}"/>
+                <MenuItem Header="Nowy rynek" Command="{Binding NowyRynekCommand}"/>
+                <MenuItem Header="Nowa grupa rabatowa" Command="{Binding NowaGrupaRabatowaCommand}"/>
+                <MenuItem Header="Nowy rodzaj kontrahenta" Command="{Binding NowyRodzajKontrahentaCommand}"/>
+                <MenuItem Header="Nowy adres" Command="{Binding NowyAdresCommand}"/>
+            </MenuItem>
         </Menu>
 
         <ToolBar Grid.Row="1" Grid.Column="0">

@@ -14,12 +14,12 @@ using System.Windows;
 
 namespace Firma.ViewModels
 {
-    public class MainWindowViewModel: BaseViewModel
+    public class MainWindowViewModel : BaseViewModel
     {
         //będzie zawierała kolekcję komend pojawiających się w lewym menu oraz kolekcję zakładek
         #region Komendy menu i paska narzędzi
         public ICommand NowyTowarCommand //ta komenda zostanie podpięta pod menu i pasek narzędzi
-        { 
+        {
             get
             {
                 //return new BaseCommand(createTowar);//to jest komenda, która wywołuje funkcję createTowar
@@ -27,48 +27,27 @@ namespace Firma.ViewModels
             }
         }
         public ICommand TowaryCommand
-        {
-            get
-            {
-                return new BaseCommand(showAllTowary);
-            }
-        }
+        { get { return new BaseCommand(showAllTowary); } }
 
-        public ICommand NowaFakturaCommand 
-        {
-            get
-            {
-                return new BaseCommand(()=>createView(new NowaFakturaViewModel()));
-            }
-        }
-        public ICommand FakturyCommand
-        {
-            get
-            {
-                return new BaseCommand(showAllFaktury);
-            }
-        }
-        public ICommand NowyKontrahentCommand
-        {
-            get
-            {
-                return new BaseCommand(() =>createView(new NowyKontrahentViewModel()));
-            }
-        }
-        public ICommand OperacjeMagazynoweCommand
-        {
-            get
-            {
-                return new BaseCommand(showOperacjeMagazynowe);
-            }
-        }
-        public ICommand SprzedazCommand
-        {
-            get
-            {
-                return new BaseCommand(() => createView(new SprzedazViewModel()));
-            }
-        }
+        public ICommand NowaFakturaCommand => new BaseCommand(() => createView(new NowaFakturaViewModel()));
+        public ICommand FakturyCommand => new BaseCommand(showAllFaktury);
+        public ICommand NowyKontrahentCommand => new BaseCommand(() => createView(new NowyKontrahentViewModel()));
+        public ICommand OperacjeMagazynoweCommand => new BaseCommand(showOperacjeMagazynowe); 
+        public ICommand SprzedazCommand => new BaseCommand(() => createView(new SprzedazViewModel()));
+
+        public ICommand NowyTypUmowyCommand => new BaseCommand(() => createView(new NowyTypUmowyViewModel()));
+        public ICommand TypyUmowyCommand => new BaseCommand(showTypyUmowy);
+        public ICommand NowyTypWyplatyCommand => new BaseCommand(() => createView(new NowyTypWyplatyViewModel()));
+        public ICommand TypyWyplatyCommand => new BaseCommand(() => this.showTypyWyplaty()); //składnia lambdy na próbę
+        public ICommand NowyRynekCommand => new BaseCommand(() => createView(new NowyRynekViewModel()));
+        public ICommand NowaGrupaRabatowaCommand => new BaseCommand(() => createView(new NowaGrupaRabatowaViewModel()));
+        public ICommand NowyDzialCommand => new BaseCommand(() => createView(new NowyDzialViewModel()));
+        public ICommand NoweStanowiskoCommand => new BaseCommand(() => createView(new NoweStanowiskoViewModel()));
+        public ICommand NowyRodzajKontrahentaCommand => new BaseCommand(() => createView(new NowyRodzajViewModel()));
+        public ICommand NowyAdresCommand => new BaseCommand(() => createView(new NowyAdresViewModel()));
+
+
+
         //public ICommand ZamykanieCommand
         //{
         //    get
@@ -84,14 +63,14 @@ namespace Firma.ViewModels
         private ReadOnlyCollection<CommandViewModel> _Commands; //to jest kolekcja komend w menu lewym
         public ReadOnlyCollection<CommandViewModel> Commands
         {
-            get 
-            { 
-                if(_Commands == null) //sprawdza, czy przyciski z lewej strony menu nie zostały już zainicjalizowane
+            get
+            {
+                if (_Commands == null) //sprawdza, czy przyciski z lewej strony menu nie zostały już zainicjalizowane
                 {
                     List<CommandViewModel> cmds = this.CreateCommands();//tworzę listę przycisków za pomocą funkcji CreateCommands
                     _Commands = new ReadOnlyCollection<CommandViewModel>(cmds);//tę listę przypisuję do ReadOnlyCollection (bo ReadOnlyCollection można tylko tworzyć, nie można do niej dodawać)
                 }
-                return _Commands; 
+                return _Commands;
             }
         }
         private List<CommandViewModel> CreateCommands() //tu decydujemy jakie przyciski są w lewym menu
@@ -99,19 +78,19 @@ namespace Firma.ViewModels
             return new List<CommandViewModel>
             {
                 new CommandViewModel(
-                    "Towary", 
+                    "Towary",
                     new BaseCommand(() => this.showAllTowary())), //to tworzy pierwszy przycisk o nazwie Towary, który pokaże zakładkę wszystkie towary
                 new CommandViewModel(
-                    "Nowy towar", 
+                    "Nowy towar",
                     new BaseCommand(()=>createView(new NowyTowarViewModel()))), //drugi przycisk, w nawiasie jest nazwa funkcji
                 new CommandViewModel(
-                    "Nowa faktura", 
+                    "Nowa faktura",
                     new BaseCommand(()=>createView(new NowaFakturaViewModel()))),
                 new CommandViewModel(
                     "Faktury",
                     new BaseCommand(() => this.showAllFaktury())),
                 new CommandViewModel(
-                    "Nowy kontrahent", 
+                    "Nowy kontrahent",
                     new BaseCommand(() =>createView(new NowyKontrahentViewModel()))),
                 new CommandViewModel(
                     "Operacje magazynowe",
@@ -133,19 +112,19 @@ namespace Firma.ViewModels
                     new BaseCommand(()  =>createView(new NowyAdresViewModel()))),
                 new CommandViewModel(
                     "Wszystkie adresy",
-                    new BaseCommand(() => this.showAllAdresy())),                
+                    new BaseCommand(() => this.showAllAdresy())),
                 new CommandViewModel(
                     "Nowy rodzaj kontrah.",
                     new BaseCommand(()  =>createView(new NowyRodzajViewModel()))),
                 new CommandViewModel(
                     "Rodzaje kontrahentów",
-                    new BaseCommand(() => this.showAllRodzaje())),                
+                    new BaseCommand(() => this.showAllRodzaje())),
                 new CommandViewModel(
                     "Nowa grupa rabatowa",
                     new BaseCommand(()  =>createView(new NowaGrupaRabatowaViewModel()))),
                 new CommandViewModel(
                     "Grupy rabatowe",
-                    new BaseCommand(() => this.showGrupyRabatowe())),                
+                    new BaseCommand(() => this.showGrupyRabatowe())),
                 new CommandViewModel(
                     "Nowy rynek",
                     new BaseCommand(()  =>createView(new NowyRynekViewModel()))),
@@ -166,7 +145,7 @@ namespace Firma.ViewModels
         {
             get
             {
-                if(_Workspaces == null)
+                if (_Workspaces == null)
                 {
                     _Workspaces = new ObservableCollection<WorkspaceViewModel>();
                     _Workspaces.CollectionChanged += this.onWorkspacesChange;
@@ -175,21 +154,21 @@ namespace Firma.ViewModels
             }
         }
 
-        private void onWorkspacesChange(object sender, NotifyCollectionChangedEventArgs e) 
+        private void onWorkspacesChange(object sender, NotifyCollectionChangedEventArgs e)
         {
-            if (e.NewItems != null && e.NewItems.Count != 0) 
-                foreach (WorkspaceViewModel workspace in e.NewItems) 
-                    workspace.RequestClose += this.OnWorkspaceRequestClose; 
-            
-            if (e.OldItems != null && e.OldItems.Count != 0) 
-                foreach (WorkspaceViewModel workspace in e.OldItems) 
-                    workspace.RequestClose -= this.OnWorkspaceRequestClose; 
+            if (e.NewItems != null && e.NewItems.Count != 0)
+                foreach (WorkspaceViewModel workspace in e.NewItems)
+                    workspace.RequestClose += this.OnWorkspaceRequestClose;
+
+            if (e.OldItems != null && e.OldItems.Count != 0)
+                foreach (WorkspaceViewModel workspace in e.OldItems)
+                    workspace.RequestClose -= this.OnWorkspaceRequestClose;
         }
         private void OnWorkspaceRequestClose(object sender, EventArgs e)
         {
-            WorkspaceViewModel workspace = sender as WorkspaceViewModel; 
+            WorkspaceViewModel workspace = sender as WorkspaceViewModel;
             //workspace.Dispose();
-            this.Workspaces.Remove(workspace); 
+            this.Workspaces.Remove(workspace);
         }
         #endregion
 
@@ -236,7 +215,7 @@ namespace Firma.ViewModels
             //szukamy w kolekcji zakładek takiej zakładki (vm), która jest wszystkimi towarami
             WszystkieTowaryViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieTowaryViewModel) as WszystkieTowaryViewModel;
             //jeżeli takiej zakładki nie ma, to będziemy ją tworzyć
-            if(workspace == null)
+            if (workspace == null)
             {
                 //tworzymy nową zakładkę Wszystkie Towary
                 workspace = new WszystkieTowaryViewModel();
@@ -338,12 +317,12 @@ namespace Firma.ViewModels
             Application.Current.Shutdown();
         }
 
-        private void SetActiveWorkspace(WorkspaceViewModel workspace) 
-        { 
-            Debug.Assert(this.Workspaces.Contains(workspace)); 
-            ICollectionView collectionView = CollectionViewSource.GetDefaultView(this.Workspaces); 
-            if (collectionView != null) 
-                collectionView.MoveCurrentTo(workspace); 
+        private void SetActiveWorkspace(WorkspaceViewModel workspace)
+        {
+            Debug.Assert(this.Workspaces.Contains(workspace));
+            ICollectionView collectionView = CollectionViewSource.GetDefaultView(this.Workspaces);
+            if (collectionView != null)
+                collectionView.MoveCurrentTo(workspace);
         }
 
         #endregion

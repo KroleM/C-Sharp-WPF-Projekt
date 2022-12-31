@@ -85,6 +85,22 @@
         <vw:WszystkieWyplatyView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:WszystkieDzialyViewModel}">
+        <vw:WszystkieDzialyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NowyDzialViewModel}">
+        <vw:NowyDzialView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieStanowiskaViewModel}">
+        <vw:WszystkieStanowiskaView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NoweStanowiskoViewModel}">
+        <vw:NoweStanowiskoView/>
+    </DataTemplate>
+
     <!--TU jest koniec łączenia View z ViewModel zakładek-->
     
     
