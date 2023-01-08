@@ -34,20 +34,31 @@ namespace Firma.ViewModels
         public ICommand NowyKontrahentCommand => new BaseCommand(() => createView(new NowyKontrahentViewModel()));
         public ICommand OperacjeMagazynoweCommand => new BaseCommand(showOperacjeMagazynowe); 
         public ICommand SprzedazCommand => new BaseCommand(() => createView(new SprzedazViewModel()));
-
-        public ICommand NowyTypUmowyCommand => new BaseCommand(() => createView(new NowyTypUmowyViewModel()));
-        public ICommand TypyUmowyCommand => new BaseCommand(showTypyUmowy);
-        public ICommand NowyTypWyplatyCommand => new BaseCommand(() => createView(new NowyTypWyplatyViewModel()));
-        public ICommand TypyWyplatyCommand => new BaseCommand(() => this.showTypyWyplaty()); //składnia lambdy na próbę
-        public ICommand NowyRynekCommand => new BaseCommand(() => createView(new NowyRynekViewModel()));
-        public ICommand NowaGrupaRabatowaCommand => new BaseCommand(() => createView(new NowaGrupaRabatowaViewModel()));
+        // Nowy...  bez klucza obcego        
         public ICommand NowyDzialCommand => new BaseCommand(() => createView(new NowyDzialViewModel()));
         public ICommand NoweStanowiskoCommand => new BaseCommand(() => createView(new NoweStanowiskoViewModel()));
+        public ICommand NowyTypUmowyCommand => new BaseCommand(() => createView(new NowyTypUmowyViewModel()));
+        public ICommand NowyTypWyplatyCommand => new BaseCommand(() => createView(new NowyTypWyplatyViewModel()));
+        public ICommand NowyRynekCommand => new BaseCommand(() => createView(new NowyRynekViewModel()));
+        public ICommand NowaGrupaRabatowaCommand => new BaseCommand(() => createView(new NowaGrupaRabatowaViewModel()));
         public ICommand NowyRodzajKontrahentaCommand => new BaseCommand(() => createView(new NowyRodzajViewModel()));
         public ICommand NowyAdresCommand => new BaseCommand(() => createView(new NowyAdresViewModel()));
-
-
-
+        // Wszystkie... bez klucza obcego
+        public ICommand WszystkieDzialyCommand => new BaseCommand(showAllDzialy);
+        public ICommand WszystkieStanowiskaCommand => new BaseCommand(showAllStanowiska);
+        public ICommand WszystkieTypyUmowyCommand => new BaseCommand(showTypyUmowy);
+        public ICommand WszystkieTypyWyplatyCommand => new BaseCommand(() => this.showTypyWyplaty()); //składnia lambdy na próbę (działa)
+        public ICommand WszystkieRynkiCommand => new BaseCommand(showAllRynki);
+        public ICommand WszystkieGrupyRabatoweCommand => new BaseCommand(showGrupyRabatowe);
+        public ICommand WszystkieRodzajeKontrahetnowCommand => new BaseCommand(showAllRodzaje);
+        public ICommand WszystkieAdresyCommand => new BaseCommand(showAllAdresy);
+        // Wszystkie... z kluczem obcym
+        public ICommand WszystkieWyplatyCommand => new BaseCommand(showAllWyplaty);
+        public ICommand WszystkieNumeryTelefonuCommand => new BaseCommand(showAllNumeryTelefonu);
+        public ICommand WszyscyPracownicyCommand => new BaseCommand(showAllPracownicy);
+        public ICommand WszyscyKontrahenciCommand => new BaseCommand(showAllKontrahenci);
+        public ICommand WszystkieZamowieniaCommand => new BaseCommand(showAllZamowienia);
+        public ICommand WszystkieGrupyTowaroweCommand => new BaseCommand(showAllGrupyTowarowe);
         //public ICommand ZamykanieCommand
         //{
         //    get
@@ -268,7 +279,7 @@ namespace Firma.ViewModels
             }
             this.SetActiveWorkspace(workspace);
         }
-        private void showAllRodzaje()
+        private void showAllRodzaje()   //Wszystkie rodzaje kontrahentów
         {
             WszystkieRodzajeViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieRodzajeViewModel) as WszystkieRodzajeViewModel;
             if (workspace == null)
@@ -308,6 +319,77 @@ namespace Firma.ViewModels
             }
             this.SetActiveWorkspace(workspace);
         }
+        private void showAllDzialy()
+        {
+            WszystkieDzialyViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieDzialyViewModel) as WszystkieDzialyViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieDzialyViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllStanowiska()
+        {
+            WszystkieStanowiskaViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieStanowiskaViewModel) as WszystkieStanowiskaViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieStanowiskaViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllNumeryTelefonu()
+        {
+            WszystkieNumeryTelefonuViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieNumeryTelefonuViewModel) as WszystkieNumeryTelefonuViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieNumeryTelefonuViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllPracownicy()
+        {
+            WszyscyPracownicyViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszyscyPracownicyViewModel) as WszyscyPracownicyViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszyscyPracownicyViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllKontrahenci()
+        {
+            WszyscyKontrahenciViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszyscyKontrahenciViewModel) as WszyscyKontrahenciViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszyscyKontrahenciViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllZamowienia()
+        {
+            WszystkieZamowieniaViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieZamowieniaViewModel) as WszystkieZamowieniaViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieZamowieniaViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        private void showAllGrupyTowarowe()
+        {
+            WszystkieGrupyTowaroweViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is WszystkieGrupyTowaroweViewModel) as WszystkieGrupyTowaroweViewModel;
+            if (workspace == null)
+            {
+                workspace = new WszystkieGrupyTowaroweViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            this.SetActiveWorkspace(workspace);
+        }
+        
         private void zamykanieKart()
         {
             this.Workspaces.Clear();

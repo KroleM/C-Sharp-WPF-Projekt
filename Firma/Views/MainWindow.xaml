@@ -99,14 +99,37 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Widoki '_Nowy'">
-                <MenuItem Header="Nowy dział" Command="{Binding NowyDzialCommand}"/>
-                <MenuItem Header="Nowe stanowisko" Command="{Binding NoweStanowiskoCommand}"/>
-                <MenuItem Header="Nowy typ umowy" Command="{Binding NowyTypUmowyCommand}"/>
-                <MenuItem Header="Nowy typ wypłaty" Command="{Binding NowyTypWyplatyCommand}"/>
-                <MenuItem Header="Nowy rynek" Command="{Binding NowyRynekCommand}"/>
-                <MenuItem Header="Nowa grupa rabatowa" Command="{Binding NowaGrupaRabatowaCommand}"/>
-                <MenuItem Header="Nowy rodzaj kontrahenta" Command="{Binding NowyRodzajKontrahentaCommand}"/>
-                <MenuItem Header="Nowy adres" Command="{Binding NowyAdresCommand}"/>
+                <MenuItem Header="BEZ Klucza Obcego">
+                    <MenuItem Header="Nowy dział" Command="{Binding NowyDzialCommand}"/>
+                    <MenuItem Header="Nowe stanowisko" Command="{Binding NoweStanowiskoCommand}"/>
+                    <MenuItem Header="Nowy typ umowy" Command="{Binding NowyTypUmowyCommand}"/>
+                    <MenuItem Header="Nowy typ wypłaty" Command="{Binding NowyTypWyplatyCommand}"/>
+                    <MenuItem Header="Nowy rynek" Command="{Binding NowyRynekCommand}"/>
+                    <MenuItem Header="Nowa grupa rabatowa" Command="{Binding NowaGrupaRabatowaCommand}"/>
+                    <MenuItem Header="Nowy rodzaj kontrahenta" Command="{Binding NowyRodzajKontrahentaCommand}"/>
+                    <MenuItem Header="Nowy adres" Command="{Binding NowyAdresCommand}"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Widoki '_Wszystkie'">
+                <MenuItem Header="BEZ Klucza Obcego">
+                    <MenuItem Header="Wszystkie działy" Command="{Binding WszystkieDzialyCommand}"/>
+                    <MenuItem Header="Wszystkie stanowiska" Command="{Binding WszystkieStanowiskaCommand}"/>
+                    <MenuItem Header="Wszystkie typy umowy" Command="{Binding WszystkieTypyUmowyCommand}"/>
+                    <MenuItem Header="Wszystkie typy wypłaty" Command="{Binding WszystkieTypyWyplatyCommand}"/>
+                    <MenuItem Header="Wszystkie rynki" Command="{Binding WszystkieRynkiCommand}"/>
+                    <MenuItem Header="Wszystkie grupy rabatowe" Command="{Binding WszystkieGrupyRabatoweCommand}"/>
+                    <MenuItem Header="Wszystkie rodzaje kontrahentów" Command="{Binding WszystkieRodzajeKontrahetnowCommand}"/>
+                    <MenuItem Header="Wszystkie adresy" Command="{Binding WszystkieAdresyCommand}"/>
+                </MenuItem>
+                <MenuItem Header="Z Kluczem Obcym">
+                    <MenuItem Header="Wszystkie wyplaty" Command="{Binding WszystkieWyplatyCommand}"/>
+                    <MenuItem Header="Wszystkie numery telefonu" Command="{Binding WszystkieNumeryTelefonuCommand}"/>
+                    <MenuItem Header="Wszyscy pracownicy" Command="{Binding WszyscyPracownicyCommand}"/>
+                    <MenuItem Header="Wszyscy kontrahenci" Command="{Binding WszyscyKontrahenciCommand}"/>
+                    <MenuItem Header="Wszystkie towary" Command="{Binding TowaryCommand}"/>
+                    <MenuItem Header="Wszystkie zamowienia" Command="{Binding WszystkieZamowieniaCommand}"/>
+                    <MenuItem Header="Wszystkie grupy towarowe" Command="{Binding WszystkieGrupyTowaroweCommand}"/>
+                </MenuItem>
             </MenuItem>
         </Menu>
 

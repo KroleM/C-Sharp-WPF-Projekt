@@ -4,11 +4,7 @@
                     xmlns:vw="clr-namespace:Firma.Views"
                     >
     
-    <!--TU będziemy łączyć View z ViewModel-->
-    <DataTemplate DataType="{x:Type vm:WszystkieTowaryViewModel}">
-        <vw:WszystkieTowaryView/>
-    </DataTemplate>
-    
+    <!--TU będziemy łączyć View z ViewModel-->  
     <DataTemplate DataType="{x:Type vm:NowyTowarViewModel}">
         <vw:NowyTowarView/>
     </DataTemplate>
@@ -32,7 +28,8 @@
     <DataTemplate DataType="{x:Type vm:SprzedazViewModel}">
         <vw:SprzedazView/>
     </DataTemplate>
-
+    
+    <!--Tabele bez klucza obcego-->
     <DataTemplate DataType="{x:Type vm:NowyTypUmowyViewModel}">
         <vw:NowyTypUmowyView/>
     </DataTemplate>
@@ -81,10 +78,6 @@
         <vw:WszystkieRynkiView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:WszystkieWyplatyViewModel}">
-        <vw:WszystkieWyplatyView/>
-    </DataTemplate>
-
     <DataTemplate DataType="{x:Type vm:WszystkieDzialyViewModel}">
         <vw:WszystkieDzialyView/>
     </DataTemplate>
@@ -101,9 +94,48 @@
         <vw:NoweStanowiskoView/>
     </DataTemplate>
 
+    <!--Tabele z kluczem obcym-->
+    <DataTemplate DataType="{x:Type vm:WszystkieWyplatyViewModel}">
+        <vw:WszystkieWyplatyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszyscyKontrahenciViewModel}">
+        <vw:WszyscyKontrahenciView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieNumeryTelefonuViewModel}">
+        <vw:WszystkieNumeryTelefonuView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszyscyPracownicyViewModel}">
+        <vw:WszyscyPracownicyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieZamowieniaViewModel}">
+        <vw:WszystkieZamowieniaView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieTowaryViewModel}">
+        <vw:WszystkieTowaryView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WszystkieGrupyTowaroweViewModel}">
+        <vw:WszystkieGrupyTowaroweView/>
+    </DataTemplate>
     <!--TU jest koniec łączenia View z ViewModel zakładek-->
-    
-    
+
+    <!--To jest styl, który wyświetla błąd walidacji w ToolTip-->
+    <Style	TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger  Property="Validation.HasError"  Value="true">
+                <Setter Property="ToolTip"
+ 	                    Value="{Binding  RelativeSource={x:Static RelativeSource.Self},
+ 	                    Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">
             <Setter.Value>

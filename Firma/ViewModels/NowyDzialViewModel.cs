@@ -1,18 +1,21 @@
 ﻿using Firma.Models.Entities;
+using Firma.Models.Validators;
 using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Firma.ViewModels
 {
-    public class NowyDzialViewModel : JedenViewModel<Dzial>
+    public class NowyDzialViewModel : JedenViewModel<Dzial>, IDataErrorInfo
     {
         #region Konstruktor
         public NowyDzialViewModel()
-            : base("Typ wypłaty")
+            : base("Nowy dział")
         {
             Item = new Dzial();
         }
@@ -74,6 +77,24 @@ namespace Firma.ViewModels
             Item.KtoZmodyfikowal = Uzytkownik;
             Db.Dzial.AddObject(Item);
             Db.SaveChanges();
+        }
+        public string Error => string.Empty;
+        public string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(Nazwa):
+                        return StringValidator.CannotBeTooLong(Nazwa) + StringValidator.CannotBeNull(Nazwa);
+                    default:
+                        return string.Empty;
+                }
+            }
+        }
+        protected override bool IsValid()
+        {
+            return this[nameof(Nazwa)] == string.Empty;
         }
         #endregion
     }

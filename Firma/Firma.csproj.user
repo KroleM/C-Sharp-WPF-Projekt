@@ -40,6 +40,12 @@
     <Compile Update="Views\SprzedazView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\WszyscyKontrahenciView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszyscyPracownicyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\WszystkieAdresyView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -53,6 +59,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\WszystkieGrupyTowaroweView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieNumeryTelefonuView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\WszystkieRodzajeView.xaml.cs">
@@ -77,6 +86,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\WszystkieWyplatyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieZamowieniaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -129,6 +141,12 @@
     <Page Update="Views\StyleZakladekResources.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\WszyscyKontrahenciView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszyscyPracownicyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\WszystkieAdresyView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -142,6 +160,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieGrupyTowaroweView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieNumeryTelefonuView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieRodzajeView.xaml">
@@ -166,6 +187,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieWyplatyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieZamowieniaView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

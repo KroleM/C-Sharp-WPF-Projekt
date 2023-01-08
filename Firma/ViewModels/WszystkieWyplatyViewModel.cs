@@ -1,4 +1,5 @@
-﻿using Firma.Models.EntitiesForView;
+﻿using Firma.Models.Entities;
+using Firma.Models.EntitiesForView;
 using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
@@ -25,14 +26,21 @@ namespace Firma.ViewModels
                     from wyplata in ProjektDesktopyEntities.Wyplata
                     select new WyplataForAllView
                     {
-                        IdWyplaty = wyplata.Id,
+                        Id = wyplata.Id,
                         PracownikImieNazwisko = wyplata.Pracownik.Imie + " " + wyplata.Pracownik.Nazwisko,
-                        IdPracownika = wyplata.Pracownik.Id,
                         TypWyplatyNazwa = wyplata.TypWyplaty.Nazwa,
                         Kwota = wyplata.Kwota,
                         Waluta = wyplata.Waluta,
                         DataOd = wyplata.OkresOd,
-                        DataDo = wyplata.OkresDo
+                        DataDo = wyplata.OkresDo,
+
+                        Nazwa = wyplata.Nazwa,
+                        CzyAktywny = wyplata.CzyAktywny,
+                        DataUtworzenia = wyplata.DataUtworzenia,
+                        DataModyfikacji = wyplata.DataModyfikacji,
+                        KtoUtworzyl = wyplata.KtoUtworzyl,
+                        KtoZmodyfikowal = wyplata.KtoZmodyfikowal,
+                        Notatki = wyplata.Notatki
                     }
                 );
         }
