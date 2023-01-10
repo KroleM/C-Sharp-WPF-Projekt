@@ -64,7 +64,7 @@
     <Property Name="KtoUtworzyl" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
     <Property Name="KtoZmodyfikowal" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
     <Property Name="Kod" Type="String" MaxLength="8" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="GrupaNadrzednaId" Type="Int32" Nullable="false" />
+    <Property Name="GrupaNadrzednaId" Type="Int32" />
     <NavigationProperty Name="GrupaTowarowa1" Relationship="Self.FK__GrupaTowa__Grupa__4316F928" FromRole="GrupaTowarowa" ToRole="GrupaTowarowa1" />
     <NavigationProperty Name="GrupaTowarowa2" Relationship="Self.FK__GrupaTowa__Grupa__4316F928" FromRole="GrupaTowarowa1" ToRole="GrupaTowarowa" />
     <NavigationProperty Name="Towar" Relationship="Self.FK__Towar__GrupaTowa__47DBAE45" FromRole="GrupaTowarowa" ToRole="Towar" />
@@ -348,7 +348,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__GrupaTowa__Grupa__4316F928">
-    <End Role="GrupaTowarowa" Type="Self.GrupaTowarowa" Multiplicity="1" />
+    <End Role="GrupaTowarowa" Type="Self.GrupaTowarowa" Multiplicity="0..1" />
     <End Role="GrupaTowarowa1" Type="Self.GrupaTowarowa" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="GrupaTowarowa">

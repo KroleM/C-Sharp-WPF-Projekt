@@ -23,7 +23,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("ProjektDesktopyModel", "FK__Pracownik__Adres__2E1BDC42", "Adres", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Firma.Models.Entities.Adres), "Pracownik", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Firma.Models.Entities.Pracownik), true)]
 [assembly: EdmRelationshipAttribute("ProjektDesktopyModel", "FK__Pracownik__Dzial__300424B4", "Dzial", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Firma.Models.Entities.Dzial), "Pracownik", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Firma.Models.Entities.Pracownik), true)]
 [assembly: EdmRelationshipAttribute("ProjektDesktopyModel", "FK__Kontrahen__Grupa__403A8C7D", "GrupaRabatowa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Firma.Models.Entities.GrupaRabatowa), "Kontrahent", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Firma.Models.Entities.Kontrahent), true)]
-[assembly: EdmRelationshipAttribute("ProjektDesktopyModel", "FK__GrupaTowa__Grupa__4316F928", "GrupaTowarowa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Firma.Models.Entities.GrupaTowarowa), "GrupaTowarowa1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Firma.Models.Entities.GrupaTowarowa), true)]
+[assembly: EdmRelationshipAttribute("ProjektDesktopyModel", "FK__GrupaTowa__Grupa__4316F928", "GrupaTowarowa", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Firma.Models.Entities.GrupaTowarowa), "GrupaTowarowa1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Firma.Models.Entities.GrupaTowarowa), true)]
 [assembly: EdmRelationshipAttribute("ProjektDesktopyModel", "FK__Towar__GrupaTowa__47DBAE45", "GrupaTowarowa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Firma.Models.Entities.GrupaTowarowa), "Towar", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Firma.Models.Entities.Towar), true)]
 [assembly: EdmRelationshipAttribute("ProjektDesktopyModel", "FK__Kontrahen__Rodza__3E52440B", "RodzajKontrahenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Firma.Models.Entities.RodzajKontrahenta), "Kontrahent", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Firma.Models.Entities.Kontrahent), true)]
 [assembly: EdmRelationshipAttribute("ProjektDesktopyModel", "FK__Zamowieni__Kontr__4BAC3F29", "Kontrahent", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Firma.Models.Entities.Kontrahent), "Zamowienie", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Firma.Models.Entities.Zamowienie), true)]
@@ -1529,8 +1529,7 @@ namespace Firma.Models.Entities
         /// <param name="dataModyfikacji">Initial value of the DataModyfikacji property.</param>
         /// <param name="czyAktywny">Initial value of the CzyAktywny property.</param>
         /// <param name="kod">Initial value of the Kod property.</param>
-        /// <param name="grupaNadrzednaId">Initial value of the GrupaNadrzednaId property.</param>
-        public static GrupaTowarowa CreateGrupaTowarowa(global::System.Int32 id, global::System.String nazwa, global::System.DateTime dataUtworzenia, global::System.DateTime dataModyfikacji, global::System.Boolean czyAktywny, global::System.String kod, global::System.Int32 grupaNadrzednaId)
+        public static GrupaTowarowa CreateGrupaTowarowa(global::System.Int32 id, global::System.String nazwa, global::System.DateTime dataUtworzenia, global::System.DateTime dataModyfikacji, global::System.Boolean czyAktywny, global::System.String kod)
         {
             GrupaTowarowa grupaTowarowa = new GrupaTowarowa();
             grupaTowarowa.Id = id;
@@ -1539,7 +1538,6 @@ namespace Firma.Models.Entities
             grupaTowarowa.DataModyfikacji = dataModyfikacji;
             grupaTowarowa.CzyAktywny = czyAktywny;
             grupaTowarowa.Kod = kod;
-            grupaTowarowa.GrupaNadrzednaId = grupaNadrzednaId;
             return grupaTowarowa;
         }
 
@@ -1769,9 +1767,9 @@ namespace Firma.Models.Entities
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 GrupaNadrzednaId
+        public Nullable<global::System.Int32> GrupaNadrzednaId
         {
             get
             {
@@ -1786,8 +1784,8 @@ namespace Firma.Models.Entities
                 OnGrupaNadrzednaIdChanged();
             }
         }
-        private global::System.Int32 _GrupaNadrzednaId;
-        partial void OnGrupaNadrzednaIdChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _GrupaNadrzednaId;
+        partial void OnGrupaNadrzednaIdChanging(Nullable<global::System.Int32> value);
         partial void OnGrupaNadrzednaIdChanged();
 
         #endregion
