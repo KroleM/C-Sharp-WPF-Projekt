@@ -109,6 +109,10 @@
                     <MenuItem Header="Nowy rodzaj kontrahenta" Command="{Binding NowyRodzajKontrahentaCommand}"/>
                     <MenuItem Header="Nowy adres" Command="{Binding NowyAdresCommand}"/>
                 </MenuItem>
+                <MenuItem Header="Z Kluczem Obcym">
+                    <MenuItem Header="Nowy towar" Command="{Binding NowyTowarCommand}"/>
+                    <MenuItem Header="Nowa grupa towarowa" Command="{Binding NowaGrupaTowarowaCommand}"/>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Widoki '_Wszystkie'">
                 <MenuItem Header="BEZ Klucza Obcego">

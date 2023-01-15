@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace Firma.ViewModels
 {
@@ -43,6 +44,8 @@ namespace Firma.ViewModels
         public ICommand NowaGrupaRabatowaCommand => new BaseCommand(() => createView(new NowaGrupaRabatowaViewModel()));
         public ICommand NowyRodzajKontrahentaCommand => new BaseCommand(() => createView(new NowyRodzajViewModel()));
         public ICommand NowyAdresCommand => new BaseCommand(() => createView(new NowyAdresViewModel()));
+        // Nowy... z kluczem obcym
+        public ICommand NowaGrupaTowarowaCommand => new BaseCommand(() => createView(new NowaGrupaTowarowaViewModel()));
         // Wszystkie... bez klucza obcego
         public ICommand WszystkieDzialyCommand => new BaseCommand(showAllDzialy);
         public ICommand WszystkieStanowiskaCommand => new BaseCommand(showAllStanowiska);
@@ -86,6 +89,10 @@ namespace Firma.ViewModels
         }
         private List<CommandViewModel> CreateCommands() //tu decydujemy jakie przyciski są w lewym menu
         {
+            // Użycie Windows Community Toolkit MVVM (Ulepszenie MVVM Light)
+            // W Lambdzie: m - message, r - object (the sender)
+            WeakReferenceMessenger.Default.Register<string>(this, (r, m) => open(m));
+
             return new List<CommandViewModel>
             {
                 new CommandViewModel(
@@ -184,6 +191,34 @@ namespace Firma.ViewModels
         #endregion
 
         #region Funkcje Pomocnicze
+        /// <summary>
+        /// Ta metoda zostanie wywołana przez Messenger w momencie otrzymania określonej wiadomości
+        /// </summary>
+        /// <param name="name">Wiadomość</param>
+        private void open(string name)
+        {
+            switch (name) 
+            {
+                case "Adresy Add":
+                    createView(new NowyAdresViewModel());
+                    break;
+                case "Adresy Show":
+                    showAllAdresy();
+                    break;
+            }
+            
+            /*
+            if (name == "Adresy Add")
+            {
+                createView(new NowyAdresViewModel());
+            }
+            else if (name == "Adresy Show")
+            {
+                showAllAdresy();
+            }
+            */
+        }
+
         //uniwersalny kreator widoku - niepowtarzalnosc kodu!!
         private void createView(WorkspaceViewModel workspace)
         {

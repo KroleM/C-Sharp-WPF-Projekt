@@ -122,6 +122,10 @@
     <DataTemplate DataType="{x:Type vm:WszystkieGrupyTowaroweViewModel}">
         <vw:WszystkieGrupyTowaroweView/>
     </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NowaGrupaTowarowaViewModel}">
+        <vw:NowaGrupaTowarowaView/>
+    </DataTemplate>
     <!--TU jest koniec łączenia View z ViewModel zakładek-->
 
     <!--To jest styl, który wyświetla błąd walidacji w ToolTip-->
@@ -130,7 +134,16 @@
             <Trigger  Property="Validation.HasError"  Value="true">
                 <Setter Property="ToolTip"
  	                    Value="{Binding  RelativeSource={x:Static RelativeSource.Self},
- 	                    Path=(Validation.Errors)[0].ErrorContent}"/>
+ 	                    Path=(Validation.Errors)/ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style	TargetType="ComboBox">
+        <Style.Triggers>
+            <Trigger  Property="Validation.HasError"  Value="true">
+                <Setter Property="ToolTip"
+ 	                    Value="{Binding RelativeSource={RelativeSource Self},
+ 	                    Path=(Validation.Errors)/ErrorContent}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -141,7 +154,7 @@
             <Setter.Value>
                 <DataTemplate>
                     <!--Poniższy Border można zakomentować - on dodaje nazwy sekcji "Operacje" i "Przestrzeń robocza" w MainWindow-->
-                    <Border 
+                    <!--<Border 
                         Background="DodgerBlue" 
                         BorderBrush="LightGray" 
                         BorderThickness="1" 
@@ -157,7 +170,7 @@
                             HorizontalAlignment="Center"  
                             Text="{TemplateBinding Content}" 
                             />
-                    </Border>
+                    </Border>-->
                 </DataTemplate>
             </Setter.Value>
         </Setter>

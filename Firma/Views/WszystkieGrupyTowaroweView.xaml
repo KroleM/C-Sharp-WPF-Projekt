@@ -9,7 +9,7 @@
     <Grid>
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path=IdGrupyTowarowej}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" />
                 <DataGridTextColumn Header="Kod" Binding="{Binding Path=Kod}" />
                 <DataGridTextColumn Header="Nazwa" Binding="{Binding Path=Nazwa}" />
                 <DataGridTextColumn Header="Id grupy nadrzednej" Binding="{Binding Path=GrupaNadrzednaId}" />

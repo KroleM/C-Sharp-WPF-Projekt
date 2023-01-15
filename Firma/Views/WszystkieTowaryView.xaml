@@ -19,7 +19,6 @@
                 <DataGridTextColumn Header="Marża" Binding="{Binding Path=Marza}" />
                 <DataGridTextColumn Header="Stawka VAT zakupu" Binding="{Binding Path=StawkaVatZakupu}" />
                 <DataGridTextColumn Header="Stawka VAT sprzedaży" Binding="{Binding Path=StawkaVatSprzedazy}" />
-                <DataGridTextColumn Header="Stanowisko" Binding="{Binding Path=PracownikStanowisko}" />
 
                 <DataGridTextColumn Header="Aktywny" Binding="{Binding Path=CzyAktywny}" />
                 <DataGridTextColumn Header="Data utworzenia" Binding="{Binding Path=DataUtworzenia}" />

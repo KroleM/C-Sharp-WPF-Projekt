@@ -5,15 +5,16 @@ using Firma.Models.Validators;
 using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Firma.ViewModels
 {
-    public class NowyTowarViewModel : JedenViewModel<Towar>
+    public class NowyTowarViewModel : JedenViewModel<Towar>, IDataErrorInfo
     {
-        #region Pola i Właściwośći
+        #region Pola i Właściwości
         public List<Rynek> Rynki { get; set; }
         public List<ComboBoxKeyAndValue> GrupyTowarowe { get; set; }
         public string Nazwa
@@ -24,6 +25,7 @@ namespace Firma.ViewModels
             }
             set
             {
+                Console.WriteLine("Nazwa = {0}", value);
                 if (value != Item.Nazwa)
                 {
                     Item.Nazwa = value;
@@ -137,7 +139,7 @@ namespace Firma.ViewModels
                 return Item.GrupaTowarowaId;
             }
             set
-            {
+            {                
                 if (value != Item.GrupaTowarowaId)
                 {
                     Item.GrupaTowarowaId = value;
@@ -152,7 +154,7 @@ namespace Firma.ViewModels
                 return Item.RynekId;
             }
             set
-            {
+            {               
                 if (value != Item.RynekId)
                 {
                     Item.RynekId = value;
@@ -201,7 +203,7 @@ namespace Firma.ViewModels
             GrupyTowarowe = Db.GrupaTowarowa.Where(arg => arg.CzyAktywny == true).Select(arg => new ComboBoxKeyAndValue()
             {
                 Key = arg.Id,
-                Value = arg.Nazwa + " (" + arg.Kod + ")"
+                Value = arg.Nazwa + " (" + arg.Kod.Trim() + ")"
             }).ToList();
         }
         #endregion
@@ -225,7 +227,7 @@ namespace Firma.ViewModels
                     case nameof(Kod):
                         return StringValidator.CannotBeNull(Kod);
                     case nameof(Nazwa):
-                        return StringValidator.CannotBeTooLong(Nazwa) + StringValidator.CannotBeNull(Nazwa);
+                        return StringValidator.CannotBeTooLong(Nazwa) + StringValidator.CannotBeNull(Nazwa) + StringValidator.CannotBeEmpty(Nazwa);
                     case nameof(StawkaVatZakupu):
                         return DecimalValidator.CzyProcent(StawkaVatZakupu);
                     case nameof(StawkaVatSprzedazy):
@@ -237,9 +239,9 @@ namespace Firma.ViewModels
                     case nameof(Waluta):
                         return StringValidator.CannotBeNull(Waluta);
                     case nameof(GrupaTowarowaId):
-                        return StringValidator.CannotBeNull(GrupaTowarowaId);
+                        return DecimalValidator.CzyWybranyComboBox(GrupaTowarowaId);
                     case nameof(RynekId):
-                        return StringValidator.CannotBeNull(RynekId);
+                        return DecimalValidator.CzyWybranyComboBox(RynekId);
                     default:
                         return string.Empty;
                 }

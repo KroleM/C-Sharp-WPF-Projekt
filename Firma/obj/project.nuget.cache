@@ -1,10 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "wm9zPSQSBjiUEnBBtjEf65Zjsmjwo6h+3aOzekCg1i1M0ijw6u62M6T91htsFdx6stGusBVdQKtNIDi7HoW4EA==",
+  "dgSpecHash": "RcNJe2oTvAt28t7OoAKbsefsRUz05WF985Mn+cSQtRIrKAJ5EYlxm3b5CpngFn0HT9lCiFn/FHAMdU/aWCWfbg==",
   "success": true,
   "projectFilePath": "E:\\Uczelnia\\WSB-NLU Informatyka\\Tworzenie interfejsów użytkownika II\\Projekt\\Firma\\Firma.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\marci\\.nuget\\packages\\entityframework\\5.0.0\\entityframework.5.0.0.nupkg.sha512"
+    "C:\\Users\\marci\\.nuget\\packages\\communitytoolkit.mvvm\\8.0.0\\communitytoolkit.mvvm.8.0.0.nupkg.sha512",
+    "C:\\Users\\marci\\.nuget\\packages\\entityframework\\5.0.0\\entityframework.5.0.0.nupkg.sha512",
+    "C:\\Users\\marci\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\marci\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\marci\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\marci\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\marci\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\marci\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\marci\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }
