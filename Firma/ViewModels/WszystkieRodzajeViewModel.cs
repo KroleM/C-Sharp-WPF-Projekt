@@ -13,13 +13,13 @@ namespace Firma.ViewModels
     {
         #region Konstruktor
         public WszystkieRodzajeViewModel()
-            : base("Rodzaje kontrahenta")
+            : base("Rodzaje kontrahentów")
         {
         }
         #endregion
         #region Helpers
 
-        public override void Load()
+        protected override void Load()
         {
             List = new ObservableCollection<RodzajKontrahenta>
                 (

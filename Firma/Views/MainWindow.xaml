@@ -112,6 +112,7 @@
                 <MenuItem Header="Z Kluczem Obcym">
                     <MenuItem Header="Nowy towar" Command="{Binding NowyTowarCommand}"/>
                     <MenuItem Header="Nowa grupa towarowa" Command="{Binding NowaGrupaTowarowaCommand}"/>
+                    <MenuItem Header="Nowy pracownik" Command="{Binding NowyPracownikCommand}"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Widoki '_Wszystkie'">

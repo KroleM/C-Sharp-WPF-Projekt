@@ -46,6 +46,7 @@ namespace Firma.ViewModels
         public ICommand NowyAdresCommand => new BaseCommand(() => createView(new NowyAdresViewModel()));
         // Nowy... z kluczem obcym
         public ICommand NowaGrupaTowarowaCommand => new BaseCommand(() => createView(new NowaGrupaTowarowaViewModel()));
+        public ICommand NowyPracownikCommand => new BaseCommand(() => createView(new NowyPracownikViewModel()));
         // Wszystkie... bez klucza obcego
         public ICommand WszystkieDzialyCommand => new BaseCommand(showAllDzialy);
         public ICommand WszystkieStanowiskaCommand => new BaseCommand(showAllStanowiska);
@@ -90,7 +91,7 @@ namespace Firma.ViewModels
         private List<CommandViewModel> CreateCommands() //tu decydujemy jakie przyciski są w lewym menu
         {
             // Użycie Windows Community Toolkit MVVM (Ulepszenie MVVM Light)
-            // W Lambdzie: m - message, r - object (the sender)
+            // W Lambdzie: m - message, r - object (the receiver -> MainWindowViewModel)
             WeakReferenceMessenger.Default.Register<string>(this, (r, m) => open(m));
 
             return new List<CommandViewModel>
@@ -199,10 +200,34 @@ namespace Firma.ViewModels
         {
             switch (name) 
             {
-                case "Adresy Add":
+                case "Adresy Add":      // "Adresy Add" ponieważ polecenie wysyłane jest z WszystkieAdresyViewModel przy pomocy DisplayName, czyli "Adresy"
                     createView(new NowyAdresViewModel());
                     break;
+                case "Działy Add":
+                    createView(new NowyDzialViewModel());
+                    break;
+                case "Stanowiska Add":
+                    createView(new NoweStanowiskoViewModel());
+                    break;
+                case "Typy umowy Add":
+                    createView(new NowyTypUmowyViewModel());
+                    break;
+                case "Typy wypłaty Add":
+                    createView(new NowyTypWyplatyViewModel());
+                    break;
+                case "Rynki Add":
+                    createView(new NowyRynekViewModel());
+                    break;
+                case "Grupy rabatowe Add":
+                    createView(new NowaGrupaRabatowaViewModel());
+                    break;
+                case "Rodzaje kontrahentów Add":
+                    createView(new NowyRodzajViewModel());
+                    break;
                 case "Adresy Show":
+                    showAllAdresy();
+                    break;
+                case "Kontrahenci Show":
                     showAllAdresy();
                     break;
             }

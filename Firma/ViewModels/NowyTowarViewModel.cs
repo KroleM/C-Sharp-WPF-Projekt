@@ -25,7 +25,6 @@ namespace Firma.ViewModels
             }
             set
             {
-                Console.WriteLine("Nazwa = {0}", value);
                 if (value != Item.Nazwa)
                 {
                     Item.Nazwa = value;

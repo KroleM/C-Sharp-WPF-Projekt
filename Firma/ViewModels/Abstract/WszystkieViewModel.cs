@@ -1,4 +1,5 @@
-﻿using Firma.Helpers;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using Firma.Helpers;
 using Firma.Models.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,6 @@ namespace Firma.ViewModels.Abstract
     public abstract class WszystkieViewModel<T> : WorkspaceViewModel
     {
         #region Fields & Properties
-        public T SelectedItem { get; set; }
         // Obiekt do operacji na bazie danych
         private readonly ProjektDesktopyEntities projektDesktopyEntities;   //ewentualnie to może być protected, a wtedy nie będzie Propertisa
         public ProjektDesktopyEntities ProjektDesktopyEntities
@@ -36,6 +36,18 @@ namespace Firma.ViewModels.Abstract
                 return _LoadCommand;
             }
         }
+        private BaseCommand _AddCommand;
+        public ICommand AddCommand
+        {
+            get
+            {
+                if (_AddCommand == null)
+                {
+                    _AddCommand = new BaseCommand(() => Add());
+                }
+                return _AddCommand;
+            }
+        }
         // W tym obiekcie będą wszystkie przedstawiane obiekty T
         private ObservableCollection<T> _List;
         public ObservableCollection<T> List
@@ -53,7 +65,7 @@ namespace Firma.ViewModels.Abstract
             }
         }
         #endregion
-        #region Konstruktor
+        #region Constructor
         public WszystkieViewModel(string displayName)
         {
             base.DisplayName = displayName; //tu ustawiamy nazwę zakładki
@@ -61,7 +73,11 @@ namespace Firma.ViewModels.Abstract
         }
         #endregion
         #region Helpers
-        public abstract void Load();
+        private void Add()
+        {
+            WeakReferenceMessenger.Default.Send(DisplayName + " Add");
+        }
+        protected abstract void Load();
         #endregion
     }
 }

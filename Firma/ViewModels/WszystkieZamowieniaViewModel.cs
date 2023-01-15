@@ -14,7 +14,7 @@ namespace Firma.ViewModels
         public WszystkieZamowieniaViewModel() : base("Zamówienia")
         {
         }
-        public override void Load()
+        protected override void Load()
         {
             List = new ObservableCollection<ZamowienieForAllView>
                 (

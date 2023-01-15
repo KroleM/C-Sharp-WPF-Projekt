@@ -16,7 +16,7 @@ namespace Firma.ViewModels
         {
         }
         #endregion
-        public override void Load()
+        protected override void Load()
         {
             List = new ObservableCollection<TowarForAllView>
                 (

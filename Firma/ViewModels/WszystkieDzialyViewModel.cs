@@ -19,7 +19,7 @@ namespace Firma.ViewModels
         #endregion
         #region Helpers
 
-        public override void Load()
+        protected override void Load()
         {
             List = new ObservableCollection<Dzial>
                 (

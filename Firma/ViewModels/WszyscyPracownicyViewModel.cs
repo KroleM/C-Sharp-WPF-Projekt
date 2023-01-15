@@ -14,7 +14,7 @@ namespace Firma.ViewModels
         public WszyscyPracownicyViewModel() : base("Pracownicy")
         {
         }
-        public override void Load()
+        protected override void Load()
         {
             List = new ObservableCollection<PracownikForAllView>
                 (
@@ -28,7 +28,7 @@ namespace Firma.ViewModels
                         PracownikAdres = pracownik.Adres.Nazwa,
                         PracownikTypUmowy = pracownik.TypUmowy.Nazwa,
                         PracownikDzial = pracownik.Dzial.Nazwa,
-                        PracownikStanowisko = pracownik.Stanowisko.Nazwa + " (" + pracownik.Stanowisko.Kategoria + ")",
+                        PracownikStanowisko = pracownik.Stanowisko.Nazwa + " (" + pracownik.Stanowisko.Kategoria.Trim() + ")",
 
                         Nazwa = pracownik.Nazwa,
                         CzyAktywny = pracownik.CzyAktywny,

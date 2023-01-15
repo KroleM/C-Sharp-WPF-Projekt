@@ -16,7 +16,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0" Height="30" Margin="0,2,0,0">
-                            <ToggleButton Content="Dodaj" Margin="0,2,0,0"/>
+                            <ToggleButton Content="Dodaj" Margin="0,2,0,0" Command="{Binding AddCommand}"/>
                             <ToggleButton Content="Modyfikuj" Margin="0,2,0,0"/>
                             <ToggleButton Content="Kasuj" Margin="0,2,0,0"/>
                             <ToggleButton Content="Odswiez" Margin="0,2,0,0"/>
