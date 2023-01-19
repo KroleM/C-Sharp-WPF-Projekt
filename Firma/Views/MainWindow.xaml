@@ -113,6 +113,8 @@
                     <MenuItem Header="Nowy towar" Command="{Binding NowyTowarCommand}"/>
                     <MenuItem Header="Nowa grupa towarowa" Command="{Binding NowaGrupaTowarowaCommand}"/>
                     <MenuItem Header="Nowy pracownik" Command="{Binding NowyPracownikCommand}"/>
+                    <MenuItem Header="Nowa wypłata" Command="{Binding NowaWyplataCommand}"/>
+                    <MenuItem Header="Nowy numer telefonu" Command="{Binding NowyNumerTelefonuCommand}"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Widoki '_Wszystkie'">
@@ -127,12 +129,12 @@
                     <MenuItem Header="Wszystkie adresy" Command="{Binding WszystkieAdresyCommand}"/>
                 </MenuItem>
                 <MenuItem Header="Z Kluczem Obcym">
-                    <MenuItem Header="Wszystkie wyplaty" Command="{Binding WszystkieWyplatyCommand}"/>
+                    <MenuItem Header="Wszystkie wypłaty" Command="{Binding WszystkieWyplatyCommand}"/>
                     <MenuItem Header="Wszystkie numery telefonu" Command="{Binding WszystkieNumeryTelefonuCommand}"/>
                     <MenuItem Header="Wszyscy pracownicy" Command="{Binding WszyscyPracownicyCommand}"/>
                     <MenuItem Header="Wszyscy kontrahenci" Command="{Binding WszyscyKontrahenciCommand}"/>
                     <MenuItem Header="Wszystkie towary" Command="{Binding TowaryCommand}"/>
-                    <MenuItem Header="Wszystkie zamowienia" Command="{Binding WszystkieZamowieniaCommand}"/>
+                    <MenuItem Header="Wszystkie zamówienia" Command="{Binding WszystkieZamowieniaCommand}"/>
                     <MenuItem Header="Wszystkie grupy towarowe" Command="{Binding WszystkieGrupyTowaroweCommand}"/>
                 </MenuItem>
             </MenuItem>
@@ -200,19 +202,35 @@
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" >
-                <HeaderedContentControl Margin="3"
-                    Header="Operacje"
-                    Background="Aqua"
-                    Content="{Binding Path=Commands}"
-                    ContentTemplate="{StaticResource CommandsTemplate}"
-                    Style="{StaticResource MainHCCStyle}"
-                    />
+            <Border Grid.Column="0" BorderThickness="0">
+                <DockPanel>
+                    <Button Background="AliceBlue" BorderThickness="0"
+                            Command="{Binding ChangeButtonsVisibilityCommand}">
+                        <StackPanel>
+                            <Image Source="/Views/Content/Icons/keyboard_double_arrow_right.png"
+                                   Visibility="{Binding Path=ButtonsNotVisible, Converter={StaticResource boolToVisibility}}"/>
+                            <Image Source="/Views/Content/Icons/keyboard_double_arrow_left.png"
+                                   Visibility="{Binding Path=ButtonsVisible, Converter={StaticResource boolToVisibility}}"/>
+                        </StackPanel>
+                    </Button>
+                </DockPanel>
             </Border>
-            <Border Grid.Column="1" Margin="3">
+            <Border Grid.Column="1" >
+                <HeaderedContentControl Margin="3"
+                        Width="200"
+                        Visibility="{Binding Path=ButtonsVisible, Converter={StaticResource boolToVisibility}, Mode=TwoWay}"
+                        Header="Operacje"
+                        Background="Aqua"
+                        Content="{Binding Path=Commands}"
+                        ContentTemplate="{StaticResource CommandsTemplate}"
+                        Style="{StaticResource MainHCCStyle}"
+                        />
+            </Border>
+            <Border Grid.Column="2" Margin="3">
                 <HeaderedContentControl
                     Header="Przestrzeń robocza"
                     Background="Aqua"

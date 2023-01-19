@@ -124,7 +124,7 @@ namespace Firma.ViewModels
                     case nameof(Kod):
                         return StringValidator.CannotBeNull(Kod);
                     case nameof(Nazwa):
-                        return StringValidator.CannotBeTooLong(Nazwa) + StringValidator.CannotBeEmpty(Nazwa) + StringValidator.CannotBeNull(Nazwa);
+                        return StringValidator.CannotBeTooLong(Nazwa, 64) + StringValidator.CannotBeEmpty(Nazwa) + StringValidator.CannotBeNull(Nazwa);
                     case nameof(GrupaNadrzednaId):
                         return DecimalValidator.CzyWybranyComboBox(GrupaNadrzednaId);
                     default:

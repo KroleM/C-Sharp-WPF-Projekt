@@ -64,12 +64,27 @@ namespace Firma.ViewModels.Abstract
                 OnPropertyChanged(() => List);
             }
         }
+        private bool _CzyNieaktywne;
+        public bool CzyNieaktywne
+        {
+            get => _CzyNieaktywne;
+            set
+            {
+                if(_CzyNieaktywne != value)
+                {
+                    _CzyNieaktywne = value;
+                    Load();
+                    OnPropertyChanged(() => CzyNieaktywne);
+                }
+            }
+        }
         #endregion
         #region Constructor
         public WszystkieViewModel(string displayName)
         {
             base.DisplayName = displayName; //tu ustawiamy nazwę zakładki
             this.projektDesktopyEntities = new ProjektDesktopyEntities();
+            _CzyNieaktywne = true;
         }
         #endregion
         #region Helpers

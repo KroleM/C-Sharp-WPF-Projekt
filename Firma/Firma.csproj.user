@@ -16,6 +16,9 @@
     <Compile Update="Views\NowaGrupaTowarowaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NowaWyplataView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\NoweStanowiskoView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -26,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\NowyKontrahentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\NowyNumerTelefonuView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\NowyPracownikView.xaml.cs">
@@ -117,6 +123,9 @@
     <Page Update="Views\NowaGrupaTowarowaView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\NowaWyplataView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\NoweStanowiskoView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -127,6 +136,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowyKontrahentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NowyNumerTelefonuView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowyPracownikView.xaml">

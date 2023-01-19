@@ -244,7 +244,7 @@ namespace Firma.ViewModels
         private void wybierzAdres()
         {
             //Tutaj należałoby jeszcze załączać nadawcę wiadomości!! FIXME
-            WeakReferenceMessenger.Default.Send("Kontrahenci Show");
+            WeakReferenceMessenger.Default.Send("Adresy Show");
         }
         public override void Save()
         {
@@ -264,9 +264,9 @@ namespace Firma.ViewModels
                 switch (columnName)
                 {
                     case nameof(Imie):
-                        return StringValidator.CannotBeTooLong(Imie) + StringValidator.CannotBeNull(Imie) + StringValidator.CannotBeEmpty(Imie);
+                        return StringValidator.CannotBeTooLong(Imie, 64) + StringValidator.CannotBeNull(Imie) + StringValidator.CannotBeEmpty(Imie);
                     case nameof(Nazwisko):
-                        return StringValidator.CannotBeTooLong(Nazwisko) + StringValidator.CannotBeNull(Nazwisko) + StringValidator.CannotBeEmpty(Nazwisko);
+                        return StringValidator.CannotBeTooLong(Nazwisko, 64) + StringValidator.CannotBeNull(Nazwisko) + StringValidator.CannotBeEmpty(Nazwisko);
                     case nameof(Pesel):
                         return StringValidator.CannotBeNull(Pesel);
                     case nameof(AdresId):

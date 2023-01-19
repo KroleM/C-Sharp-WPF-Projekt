@@ -22,12 +22,7 @@ namespace Firma.ViewModels
         protected override void Load()
         {
             List = new ObservableCollection<Rynek>
-                (
-                //zapytanie LINQ (obiektowa wersja SQL)
-                from rynek in ProjektDesktopyEntities.Rynek
-                where rynek.CzyAktywny == true
-                select rynek
-                );
+                (ProjektDesktopyEntities.Rynek.Where(arg => arg.CzyAktywny == true || arg.CzyAktywny != CzyNieaktywne).ToList());
         }
         #endregion
     }

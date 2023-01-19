@@ -3,6 +3,7 @@
                     xmlns:vm="clr-namespace:Firma.ViewModels"
                     xmlns:vw="clr-namespace:Firma.Views"
                     >
+    <BooleanToVisibilityConverter x:Key="boolToVisibility" />
     
     <!--TU będziemy łączyć View z ViewModel-->  
     <DataTemplate DataType="{x:Type vm:NowyTowarViewModel}">
@@ -130,6 +131,14 @@
     <DataTemplate DataType="{x:Type vm:NowyPracownikViewModel}">
         <vw:NowyPracownikView/>
     </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NowaWyplataViewModel}">
+        <vw:NowaWyplataView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NowyNumerTelefonuViewModel}">
+        <vw:NowyNumerTelefonuView/>
+    </DataTemplate>
     <!--TU jest koniec łączenia View z ViewModel zakładek-->
 
     <!--To jest styl, który wyświetla błąd walidacji w ToolTip-->
@@ -143,6 +152,15 @@
         </Style.Triggers>
     </Style>
     <Style	TargetType="ComboBox">
+        <Style.Triggers>
+            <Trigger  Property="Validation.HasError"  Value="true">
+                <Setter Property="ToolTip"
+ 	                    Value="{Binding RelativeSource={RelativeSource Self},
+ 	                    Path=(Validation.Errors)/ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style	TargetType="DatePicker">
         <Style.Triggers>
             <Trigger  Property="Validation.HasError"  Value="true">
                 <Setter Property="ToolTip"

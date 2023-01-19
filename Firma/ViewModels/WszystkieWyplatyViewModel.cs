@@ -24,6 +24,7 @@ namespace Firma.ViewModels
             List = new ObservableCollection<WyplataForAllView>
                 (
                     from wyplata in ProjektDesktopyEntities.Wyplata
+                    where wyplata.CzyAktywny == CzyNieaktywne
                     select new WyplataForAllView
                     {
                         Id = wyplata.Id,

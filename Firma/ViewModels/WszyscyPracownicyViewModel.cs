@@ -1,4 +1,6 @@
-﻿using Firma.Models.EntitiesForView;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using Firma.Models.Entities;
+using Firma.Models.EntitiesForView;
 using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
@@ -6,14 +8,32 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Automation.Peers;
 
 namespace Firma.ViewModels
 {
     public class WszyscyPracownicyViewModel : WszystkieViewModel<PracownikForAllView>
     {
-        public WszyscyPracownicyViewModel() : base("Pracownicy")
+        #region Pola i Właściwości
+        private int _PracownikId;
+        public int PracownikId
         {
+            get => _PracownikId;
+            set
+            {
+                if (_PracownikId != value)
+                {
+                    _PracownikId = value;
+                    OnPropertyChanged(() => PracownikId);
+                    //TODO
+                    //MessageBox.Show
+                    WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Pracownik.Where(arg => arg.Id == value).ToArray()[0]);
+                    OnRequestClose();
+                }
+            }
         }
+        #endregion
+        public WszyscyPracownicyViewModel() : base("Pracownicy") { }
         protected override void Load()
         {
             List = new ObservableCollection<PracownikForAllView>

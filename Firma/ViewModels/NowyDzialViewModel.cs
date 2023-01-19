@@ -86,7 +86,7 @@ namespace Firma.ViewModels
                 switch (columnName)
                 {
                     case nameof(Nazwa):
-                        return StringValidator.CannotBeTooLong(Nazwa) + StringValidator.CannotBeNull(Nazwa);
+                        return StringValidator.CannotBeTooLong(Nazwa, 64) + StringValidator.CannotBeNull(Nazwa);
                     default:
                         return string.Empty;
                 }

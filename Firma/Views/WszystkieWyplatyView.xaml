@@ -17,7 +17,8 @@
                 <DataGridTextColumn Header="Waluta" Binding="{Binding Path=Waluta}" />
                 <DataGridTextColumn Header="Data od" Binding="{Binding Path=DataOd, 
                                     StringFormat={}{0:dd MMMM yyyy}, ConverterCulture=pl-PL}" />
-                <DataGridTextColumn Header="Data do" Binding="{Binding Path=DataDo}" />
+                <DataGridTextColumn Header="Data do" Binding="{Binding Path=DataDo,
+                                    StringFormat={}{0:dd MMMM yyyy}, ConverterCulture=pl-PL}" />
                 <DataGridTextColumn Header="Aktywny" Binding="{Binding Path=CzyAktywny}" />
                 <DataGridTextColumn Header="Data utworzenia" Binding="{Binding Path=DataUtworzenia}" />
                 <DataGridTextColumn Header="Data modyfikacji" Binding="{Binding Path=DataModyfikacji}" Visibility="Hidden"/>

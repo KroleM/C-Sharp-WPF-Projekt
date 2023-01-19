@@ -32,8 +32,7 @@ namespace Firma.ViewModels
 
         public ICommand NowaFakturaCommand => new BaseCommand(() => createView(new NowaFakturaViewModel()));
         public ICommand FakturyCommand => new BaseCommand(showAllFaktury);
-        public ICommand NowyKontrahentCommand => new BaseCommand(() => createView(new NowyKontrahentViewModel()));
-        public ICommand OperacjeMagazynoweCommand => new BaseCommand(showOperacjeMagazynowe); 
+        public ICommand OperacjeMagazynoweCommand => new BaseCommand(showOperacjeMagazynowe);
         public ICommand SprzedazCommand => new BaseCommand(() => createView(new SprzedazViewModel()));
         // Nowy...  bez klucza obcego        
         public ICommand NowyDzialCommand => new BaseCommand(() => createView(new NowyDzialViewModel()));
@@ -47,6 +46,9 @@ namespace Firma.ViewModels
         // Nowy... z kluczem obcym
         public ICommand NowaGrupaTowarowaCommand => new BaseCommand(() => createView(new NowaGrupaTowarowaViewModel()));
         public ICommand NowyPracownikCommand => new BaseCommand(() => createView(new NowyPracownikViewModel()));
+        public ICommand NowyKontrahentCommand => new BaseCommand(() => createView(new NowyKontrahentViewModel()));
+        public ICommand NowaWyplataCommand => new BaseCommand(() => createView(new NowaWyplataViewModel()));
+        public ICommand NowyNumerTelefonuCommand => new BaseCommand(() => createView(new NowyNumerTelefonuViewModel()));
         // Wszystkie... bez klucza obcego
         public ICommand WszystkieDzialyCommand => new BaseCommand(showAllDzialy);
         public ICommand WszystkieStanowiskaCommand => new BaseCommand(showAllStanowiska);
@@ -72,6 +74,25 @@ namespace Firma.ViewModels
         //}
         public ICommand ZamykanieCommand => new BaseCommand(zamykanieKart);
         public ICommand ZakonczCommand => new BaseCommand(zakonczClick);
+        public ICommand ChangeButtonsVisibilityCommand => new BaseCommand(changeButtonsVisibility);
+        #endregion
+
+        #region Pasek widoczności lewego menu
+        private bool _ButtonsVisible = true;
+        public bool ButtonsVisible
+        {
+            get => _ButtonsVisible;
+            set
+            {
+                if (_ButtonsVisible != value)
+                {
+                    _ButtonsVisible = value;
+                }
+                OnPropertyChanged(() => ButtonsVisible);
+                OnPropertyChanged(() => ButtonsNotVisible);
+            }
+        }
+        public bool ButtonsNotVisible { get => !_ButtonsVisible; }
         #endregion
 
         #region Przyciski w menu po lewej stronie
@@ -114,45 +135,6 @@ namespace Firma.ViewModels
                 new CommandViewModel(
                     "Operacje magazynowe",
                     new BaseCommand(() => this.showOperacjeMagazynowe())),
-                new CommandViewModel(
-                    "Nowy typ umowy",
-                    new BaseCommand(() =>createView(new NowyTypUmowyViewModel()))),
-                new CommandViewModel(
-                    "Typy umowy",
-                    new BaseCommand(() => this.showTypyUmowy())),
-                new CommandViewModel(
-                    "Nowy typ wypłaty",
-                    new BaseCommand(()  =>createView(new NowyTypWyplatyViewModel()))),
-                new CommandViewModel(
-                    "Typy wypłaty",
-                    new BaseCommand(() => this.showTypyWyplaty())),
-                new CommandViewModel(
-                    "Nowy adres",
-                    new BaseCommand(()  =>createView(new NowyAdresViewModel()))),
-                new CommandViewModel(
-                    "Wszystkie adresy",
-                    new BaseCommand(() => this.showAllAdresy())),
-                new CommandViewModel(
-                    "Nowy rodzaj kontrah.",
-                    new BaseCommand(()  =>createView(new NowyRodzajViewModel()))),
-                new CommandViewModel(
-                    "Rodzaje kontrahentów",
-                    new BaseCommand(() => this.showAllRodzaje())),
-                new CommandViewModel(
-                    "Nowa grupa rabatowa",
-                    new BaseCommand(()  =>createView(new NowaGrupaRabatowaViewModel()))),
-                new CommandViewModel(
-                    "Grupy rabatowe",
-                    new BaseCommand(() => this.showGrupyRabatowe())),
-                new CommandViewModel(
-                    "Nowy rynek",
-                    new BaseCommand(()  =>createView(new NowyRynekViewModel()))),
-                new CommandViewModel(
-                    "Rynki",
-                    new BaseCommand(() => this.showAllRynki())),
-                new CommandViewModel(
-                    "Wszystkie wypłaty",
-                    new BaseCommand(() => this.showAllWyplaty())),
             };
         }
         #endregion
@@ -224,11 +206,29 @@ namespace Firma.ViewModels
                 case "Rodzaje kontrahentów Add":
                     createView(new NowyRodzajViewModel());
                     break;
+                case "Kontrahenci Add":
+                    createView(new NowyKontrahentViewModel());
+                    break;
+                case "Pracownicy Add":
+                    createView(new NowyPracownikViewModel());
+                    break;
+                case "Wyplaty Add":
+                    createView(new NowaWyplataViewModel());
+                    break;
+                case "Numery telefonów Add":
+                    createView(new NowyNumerTelefonuViewModel());
+                    break;
                 case "Adresy Show":
                     showAllAdresy();
                     break;
                 case "Kontrahenci Show":
-                    showAllAdresy();
+                    showAllKontrahenci();
+                    break;
+                case "Pracownicy Show":
+                    showAllPracownicy();
+                    break;
+                case "Wypłaty Show":
+                    showAllWyplaty();
                     break;
             }
             
@@ -449,7 +449,7 @@ namespace Firma.ViewModels
             }
             this.SetActiveWorkspace(workspace);
         }
-        
+
         private void zamykanieKart()
         {
             this.Workspaces.Clear();
@@ -467,6 +467,10 @@ namespace Firma.ViewModels
                 collectionView.MoveCurrentTo(workspace);
         }
 
+        private void changeButtonsVisibility()
+        {
+            ButtonsVisible = !_ButtonsVisible;
+        }
         #endregion
 
         #region Konstruktor
