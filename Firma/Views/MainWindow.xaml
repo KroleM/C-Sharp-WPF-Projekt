@@ -115,6 +115,7 @@
                     <MenuItem Header="Nowy pracownik" Command="{Binding NowyPracownikCommand}"/>
                     <MenuItem Header="Nowa wypłata" Command="{Binding NowaWyplataCommand}"/>
                     <MenuItem Header="Nowy numer telefonu" Command="{Binding NowyNumerTelefonuCommand}"/>
+                    <MenuItem Header="Nowe zamówienie" Command="{Binding NoweZamowienieCommand}"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Widoki '_Wszystkie'">

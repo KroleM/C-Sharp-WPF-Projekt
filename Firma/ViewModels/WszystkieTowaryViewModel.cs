@@ -1,4 +1,6 @@
-﻿using Firma.Models.EntitiesForView;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using Firma.Helpers;
+using Firma.Models.EntitiesForView;
 using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
@@ -11,10 +13,28 @@ namespace Firma.ViewModels
 {
     public class WszystkieTowaryViewModel : WszystkieViewModel<TowarForAllView>
     {
-        #region Konstruktor
-        public WszystkieTowaryViewModel() : base("Towary")
+        #region Pola i Właściwości
+        private int _TowarId;
+        public int TowarId
         {
+            get => _TowarId;
+            set
+            {
+                if (_TowarId != value)
+                {
+                    _TowarId = value;
+                    OnPropertyChanged(() => TowarId);
+                    //TODO
+                    //MessageBox.Show
+                    WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Towar.Select(arg => arg.Id == value));  //być może trzeba wysyłać int, bo instancje BD mogą być różne
+                    WeakReferenceMessenger.Default.Send(new MessengerNumberMessage<int> { Number = _TowarId});
+                    OnRequestClose();
+                }
+            }
         }
+        #endregion
+        #region Konstruktor
+        public WszystkieTowaryViewModel() : base("Towary") { }
         #endregion
         protected override void Load()
         {

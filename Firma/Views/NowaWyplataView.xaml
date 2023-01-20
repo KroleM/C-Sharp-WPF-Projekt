@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
         <Label  Grid.Column="0"  Grid.Row="0"  Content="Pracownik"  Margin="0,8,0,8"/>
         <StackPanel Grid.Column="1"  Grid.Row="0" Grid.RowSpan="2" Margin="0,8,0,8"  HorizontalAlignment="Left" Orientation="Horizontal">
-            <Label  HorizontalAlignment="Left" Content="{Binding DanePracownika}" Visibility="{Binding CzyPracownikWybrany, Converter={StaticResource boolToVisibility}}"/>
+            <Label Margin="0,0,8,0" HorizontalAlignment="Left" MinWidth="150" Content="{Binding DanePracownika, ValidatesOnDataErrors=True}"/>
             <Button Width="120" HorizontalAlignment="Left" Content="Wybierz Pracownika" Command="{Binding WybierzPracownikaCommand}"/>
         </StackPanel>
 

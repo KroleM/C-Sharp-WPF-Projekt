@@ -52,19 +52,6 @@ namespace Firma.ViewModels
                 }
             }
         }
-        private bool _CzyAdresWybrany;
-        public bool CzyAdresWybrany
-        {
-            get => _DaneAdresu != null;
-            set
-            {
-                if(value != _CzyAdresWybrany)
-                {
-                    _CzyAdresWybrany = value;
-                    OnPropertyChanged(() => CzyAdresWybrany);
-                }
-            }
-        }
         public string Imie
         {
             get
@@ -278,7 +265,7 @@ namespace Firma.ViewModels
                     case nameof(StanowiskoId):
                         return DecimalValidator.CzyWybranyComboBox(StanowiskoId);
                     case nameof(DaneAdresu):
-                        return StringValidator.CannotBeNull(DaneAdresu);    // FIXME: Nie zaimplementowane!
+                        return StringValidator.CannotBeNull(DaneAdresu);
                     default:
                         return string.Empty;
                 }

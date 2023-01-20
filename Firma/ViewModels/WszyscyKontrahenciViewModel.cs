@@ -1,4 +1,5 @@
-﻿using Firma.Models.Entities;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using Firma.Models.Entities;
 using Firma.Models.EntitiesForView;
 using Firma.ViewModels.Abstract;
 using System;
@@ -12,6 +13,25 @@ namespace Firma.ViewModels
 {
     public class WszyscyKontrahenciViewModel : WszystkieViewModel<KontrahentForAllView>
     {
+        #region Pola i Właściwości
+        private int _KontrahentId;
+        public int KontrahentId
+        {
+            get => _KontrahentId;
+            set
+            {
+                if (_KontrahentId != value)
+                {
+                    _KontrahentId = value;
+                    OnPropertyChanged(() => KontrahentId);
+                    //TODO
+                    //MessageBox.Show
+                    WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Towar.Select(arg => arg.Id == value));
+                    OnRequestClose();
+                }
+            }
+        }
+        #endregion
         #region Konstruktor
         public WszyscyKontrahenciViewModel() : base("Kontrahenci")
         {

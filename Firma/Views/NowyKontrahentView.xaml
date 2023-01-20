@@ -37,8 +37,8 @@
         <TextBox  Grid.Column="1"  Grid.Row="2" Margin="0,8,0,8"  Width="80" HorizontalAlignment="Left"  Text="{Binding Path=NIP, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
         <Label  Grid.Column="0"  Grid.Row="3"  Content="Adres"  Margin="0,8,0,8"/>
-        <StackPanel Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Margin="0,8,0,8"  HorizontalAlignment="Left" Orientation="Horizontal">
-            <Label  HorizontalAlignment="Left" Content="{Binding DaneAdresu}" Visibility="{Binding CzyAdresWybrany, Converter={StaticResource boolToVisibility}}"/>
+        <StackPanel Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Margin="0,8,0,8"  HorizontalAlignment="Left" Orientation="Horizontal" >
+            <Label Margin="0,0,8,0" HorizontalAlignment="Left" MinWidth="150" Content="{Binding DaneAdresu, ValidatesOnDataErrors=True}"/>
             <Button Width="100" HorizontalAlignment="Left" Content="Wybierz Adres" Command="{Binding WybierzAdresCommand}"/>
         </StackPanel>
         <!--<Label  Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Margin="0,8,0,8"  Width="300" HorizontalAlignment="Left" Content="{Binding DaneAdresu}" />

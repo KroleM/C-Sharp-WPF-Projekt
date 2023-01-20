@@ -16,10 +16,16 @@
     <Compile Update="Views\NowaGrupaTowarowaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NowaPozycjaZamowieniaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\NowaWyplataView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\NoweStanowiskoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\NoweZamowienieView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\NowyAdresView.xaml.cs">
@@ -123,10 +129,16 @@
     <Page Update="Views\NowaGrupaTowarowaView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\NowaPozycjaZamowieniaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\NowaWyplataView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NoweStanowiskoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NoweZamowienieView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowyAdresView.xaml">

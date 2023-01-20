@@ -26,17 +26,17 @@
         </Grid.RowDefinitions>
 
         <Label  Grid.Column="0"  Grid.Row="0"  Content="Nazwa" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="0"	Margin="0,8,0,8"  Width="200" HorizontalAlignment="Left"  Text="{Binding  Path=Nazwa, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <TextBox  Grid.Column="1"  Grid.Row="0"	Margin="0,8,0,8"  Width="200" HorizontalAlignment="Left" Text="{Binding  Path=Nazwa, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
         <Label  Grid.Column="0"  Grid.Row="1"  Content="Numer" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="1" Margin="0,8,0,8"  Width="150" HorizontalAlignment="Left"  Text="{Binding Path=Numer, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <TextBox  Grid.Column="1"  Grid.Row="1" Margin="0,8,0,8"  Width="150" HorizontalAlignment="Left" Text="{Binding Path=Numer, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
         <Label  Grid.Column="0"  Grid.Row="2"  Content="Kraj"  Margin="0,8,0,8"/>
         <TextBox  Grid.Column="1"  Grid.Row="2" Margin="0,8,0,8"  Width="150" HorizontalAlignment="Left"  Text="{Binding Path=Kraj, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
         <Label  Grid.Column="0"  Grid.Row="3"  Content="Pracownik"  Margin="0,8,0,8"/>
         <StackPanel Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Margin="0,8,0,8"  HorizontalAlignment="Left" Orientation="Horizontal">
-            <Label  HorizontalAlignment="Left" Content="{Binding DanePracownika}" Visibility="{Binding CzyPracownikWybrany, Converter={StaticResource boolToVisibility}}"/>
+            <Label  Margin="0,0,8,0" HorizontalAlignment="Left" MinWidth="150" Content="{Binding DanePracownika}" Visibility="{Binding CzyPracownikWybrany, Converter={StaticResource boolToVisibility}}"/>
             <Button Width="120" HorizontalAlignment="Left" Content="Wybierz Pracownika" Command="{Binding WybierzPracownikaCommand}"/>
         </StackPanel>
 

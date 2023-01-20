@@ -164,7 +164,7 @@ namespace Firma.ViewModels
         #region Metody
         private void przypiszPracownika(Pracownik pracownik)
         {
-            DanePracownika = pracownik.Nazwa + $"\n{Db.Dzial.Where(arg => arg.Id == pracownik.DzialId).ToList()[0].Nazwa}";
+            DanePracownika = pracownik.Nazwa + $"\n{Db.Dzial.First(arg => arg.Id == pracownik.DzialId).Nazwa}";
 
             Item.PracownikId = pracownik.Id;
         }
@@ -190,11 +190,11 @@ namespace Firma.ViewModels
                 switch (columnName)
                 {
                     case nameof(Nazwa):
-                        return StringValidator.CannotBeTooLong(Nazwa, 64) + StringValidator.CannotBeEmpty(Nazwa);
+                        return StringValidator.CannotBeTooLong(Nazwa, 64) + StringValidator.CannotBeNull(Nazwa);
                     case nameof(Numer):
-                        return StringValidator.CannotBeTooLong(Numer, 20) + StringValidator.CannotBeEmpty(Numer);
+                        return StringValidator.CannotBeTooLong(Numer, 20) + StringValidator.CannotBeNull(Numer);
                     case nameof(Kraj):
-                        return StringValidator.CannotBeTooLong(Kraj, 64) + StringValidator.CannotBeEmpty(Kraj);
+                        return StringValidator.CannotBeTooLong(Kraj, 64) + StringValidator.CannotBeNull(Kraj);
                     default:
                         return string.Empty;
                 }

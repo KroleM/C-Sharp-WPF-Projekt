@@ -49,6 +49,7 @@ namespace Firma.ViewModels
         public ICommand NowyKontrahentCommand => new BaseCommand(() => createView(new NowyKontrahentViewModel()));
         public ICommand NowaWyplataCommand => new BaseCommand(() => createView(new NowaWyplataViewModel()));
         public ICommand NowyNumerTelefonuCommand => new BaseCommand(() => createView(new NowyNumerTelefonuViewModel()));
+        public ICommand NoweZamowienieCommand => new BaseCommand(() => createView(new NoweZamowienieViewModel()));
         // Wszystkie... bez klucza obcego
         public ICommand WszystkieDzialyCommand => new BaseCommand(showAllDzialy);
         public ICommand WszystkieStanowiskaCommand => new BaseCommand(showAllStanowiska);
@@ -218,6 +219,9 @@ namespace Firma.ViewModels
                 case "Numery telefonów Add":
                     createView(new NowyNumerTelefonuViewModel());
                     break;
+                case "Pozycja zamówienia Add":
+                    createView(new NowaPozycjaZamowieniaViewModel());
+                    break;
                 case "Adresy Show":
                     showAllAdresy();
                     break;
@@ -229,6 +233,9 @@ namespace Firma.ViewModels
                     break;
                 case "Wypłaty Show":
                     showAllWyplaty();
+                    break;
+                case "Towary Show":
+                    showAllTowary();
                     break;
             }
             

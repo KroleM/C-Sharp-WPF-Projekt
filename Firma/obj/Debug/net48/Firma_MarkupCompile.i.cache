@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETFRAMEWORK;NET48;
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\App.xaml
-37-302798026
+391854971585
 
-952085544279
+104-1352123808
 32-1674057190
-Themes\Generic.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\NowaFakturaView.xaml;Views\NowaGrupaRabatowaView.xaml;Views\NowaGrupaTowarowaView.xaml;Views\NowaWyplataView.xaml;Views\NoweStanowiskoView.xaml;Views\NowyAdresView.xaml;Views\NowyDzialView.xaml;Views\NowyKontrahentView.xaml;Views\NowyNumerTelefonuView.xaml;Views\NowyPracownikView.xaml;Views\NowyRodzajView.xaml;Views\NowyRynekView.xaml;Views\NowyTowarView.xaml;Views\NowyTypUmowyView.xaml;Views\NowyTypWyplatyView.xaml;Views\OperacjeMagazynoweView.xaml;Views\SprzedazView.xaml;Views\StyleZakladekResources.xaml;Views\WszyscyKontrahenciView.xaml;Views\WszyscyPracownicyView.xaml;Views\WszystkieAdresyView.xaml;Views\WszystkieDzialyView.xaml;Views\WszystkieFakturyView.xaml;Views\WszystkieGrupyRabatoweView.xaml;Views\WszystkieGrupyTowaroweView.xaml;Views\WszystkieNumeryTelefonuView.xaml;Views\WszystkieRodzajeView.xaml;Views\WszystkieRynkiView.xaml;Views\WszystkieStanowiskaView.xaml;Views\WszystkieTowaryView.xaml;Views\WszystkieTypyUmowyView.xaml;Views\WszystkieTypyWyplatyView.xaml;Views\WszystkieWyplatyView.xaml;Views\WszystkieZamowieniaView.xaml;
+Themes\Generic.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\NowaFakturaView.xaml;Views\NowaGrupaRabatowaView.xaml;Views\NowaGrupaTowarowaView.xaml;Views\NowaPozycjaZamowieniaView.xaml;Views\NowaWyplataView.xaml;Views\NoweStanowiskoView.xaml;Views\NoweZamowienieView.xaml;Views\NowyAdresView.xaml;Views\NowyDzialView.xaml;Views\NowyKontrahentView.xaml;Views\NowyNumerTelefonuView.xaml;Views\NowyPracownikView.xaml;Views\NowyRodzajView.xaml;Views\NowyRynekView.xaml;Views\NowyTowarView.xaml;Views\NowyTypUmowyView.xaml;Views\NowyTypWyplatyView.xaml;Views\OperacjeMagazynoweView.xaml;Views\SprzedazView.xaml;Views\StyleZakladekResources.xaml;Views\WszyscyKontrahenciView.xaml;Views\WszyscyPracownicyView.xaml;Views\WszystkieAdresyView.xaml;Views\WszystkieDzialyView.xaml;Views\WszystkieFakturyView.xaml;Views\WszystkieGrupyRabatoweView.xaml;Views\WszystkieGrupyTowaroweView.xaml;Views\WszystkieNumeryTelefonuView.xaml;Views\WszystkieRodzajeView.xaml;Views\WszystkieRynkiView.xaml;Views\WszystkieStanowiskaView.xaml;Views\WszystkieTowaryView.xaml;Views\WszystkieTypyUmowyView.xaml;Views\WszystkieTypyWyplatyView.xaml;Views\WszystkieWyplatyView.xaml;Views\WszystkieZamowieniaView.xaml;
 
-True
+False
 

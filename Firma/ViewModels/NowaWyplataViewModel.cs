@@ -34,19 +34,6 @@ namespace Firma.ViewModels
                 }
             }
         }
-        private bool _CzyPracownikWybrany;
-        public bool CzyPracownikWybrany
-        {
-            get => _DanePracownika != null;
-            set
-            {
-                if (value != _CzyPracownikWybrany)
-                {
-                    _CzyPracownikWybrany = value;
-                    OnPropertyChanged(() => _CzyPracownikWybrany);
-                }
-            }
-        }
         public decimal Kwota
         {
             get
@@ -199,7 +186,7 @@ namespace Firma.ViewModels
         #region Metody
         private void przypiszPracownika(Pracownik pracownik)
         {
-            DanePracownika = pracownik.Nazwa + $"\n{Db.Dzial.Where(arg => arg.Id == pracownik.DzialId).ToList()[0].Nazwa}";
+            DanePracownika = pracownik.Nazwa + $"\n{Db.Dzial.First(arg => arg.Id == pracownik.DzialId).Nazwa}";
 
             Item.PracownikId = pracownik.Id;
         }
