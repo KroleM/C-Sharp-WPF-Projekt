@@ -9,7 +9,6 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="150"/>
-            <ColumnDefinition  Width="200"/>
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -27,8 +26,10 @@
         <DatePicker  Grid.Column="1"  Grid.Row="0"	Margin="0,8,0,8"  Width="120" HorizontalAlignment="Left"  SelectedDate="{Binding  Path=DataWyslania, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label  Grid.Column="0"  Grid.Row="1"  Content="Kontrahent"  Margin="0,8,0,8"/>
-        <Label  Grid.Column="1"  Grid.Row="1"  Margin="0,8,0,8"  Width="120" HorizontalAlignment="Left" Content="{Binding DaneKontrahenta}" />
-        <Button Grid.Column="2" Grid.Row="1" Margin="0,0,0,0" Width="120" HorizontalAlignment="Left" Content="Wybierz Kontrahenta" Command="{Binding WybierzKontrahentaCommand}"/>
+        <StackPanel Grid.Column="1"  Grid.Row="1" Margin="0,8,0,8"  HorizontalAlignment="Left" Orientation="Horizontal">
+            <Label Margin="0,0,8,0" HorizontalAlignment="Left" MinWidth="200" Content="{Binding DaneKontrahenta, ValidatesOnDataErrors=True}"/>
+            <Button Width="120" HorizontalAlignment="Left" Content="Wybierz kontrahenta" Command="{Binding WybierzKontrahentaCommand}"/>
+        </StackPanel>
 
         <Label Grid.Row="2" Grid.Column="0" Content="Aktywne" Margin="0,8,0,8"/>
         <CheckBox Grid.Row="2" Grid.Column="1" Margin="0,8,0,8" HorizontalAlignment="Left" IsChecked="{Binding Path=CzyAktywny, UpdateSourceTrigger=PropertyChanged}"/>

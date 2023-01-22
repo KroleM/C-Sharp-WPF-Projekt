@@ -32,18 +32,18 @@ namespace Firma.ViewModels
                 }
             }
         }
-        public int ZamowienieId
-        {
-            get => Item.ZamowienieId;
-            set
-            {
-                if (value != Item.ZamowienieId)
-                {
-                    Item.ZamowienieId = value;
-                    base.OnPropertyChanged(() => ZamowienieId);
-                }
-            }
-        }
+        //public int ZamowienieId
+        //{
+        //    get => Item.ZamowienieId;
+        //    set
+        //    {
+        //        if (value != Item.ZamowienieId)
+        //        {
+        //            Item.ZamowienieId = value;
+        //            base.OnPropertyChanged(() => ZamowienieId);
+        //        }
+        //    }
+        //}
         public int TowarId
         {
             get => Item.TowarId;
@@ -76,7 +76,7 @@ namespace Firma.ViewModels
             {
                 CzyAktywny = true
             };
-            WeakReferenceMessenger.Default.Register<Towar>(this, (r, m) => przypiszTowar(m));
+            //WeakReferenceMessenger.Default.Register<Towar>(this, (r, m) => przypiszTowar(m));
             WeakReferenceMessenger.Default.Register<MessengerNumberMessage<int>>(this, (r, m) => przypiszTowar(m));
         }
         #endregion
@@ -95,7 +95,7 @@ namespace Firma.ViewModels
         }
         #endregion
         #region Metody
-        private void przypiszTowar(Towar towar)
+        private void przypiszTowar(Towar towar) // ta funkcja staje się niepotrzebna
         {
             DaneTowaru = towar.Nazwa;
 
@@ -105,6 +105,7 @@ namespace Firma.ViewModels
         {
             Item.TowarId = towarId.Number;
             DaneTowaru = Db.Towar.First(arg => arg.Id == towarId.Number).Nazwa;
+            Item.Nazwa = Db.Towar.First(arg => arg.Id == towarId.Number).Nazwa;
         }
         private void wybierzTowar()
         {
@@ -114,6 +115,9 @@ namespace Firma.ViewModels
         {
             Item.DataUtworzenia = DateTime.Now;
             Item.DataModyfikacji = DateTime.Now;
+
+            //Db.PozycjaZamowienia.AddObject(Item);
+            //Db.SaveChanges();
 
             WeakReferenceMessenger.Default.Send(Item);
         }

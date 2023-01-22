@@ -27,7 +27,8 @@ namespace Firma.ViewModels
                     OnPropertyChanged(() => PracownikId);
                     //TODO
                     //MessageBox.Show
-                    WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Pracownik.Where(arg => arg.Id == value).ToArray()[0]);
+                    WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Pracownik.First(arg => arg.Id == value));
+                    //WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Pracownik.Where(arg => arg.Id == value).ToList()[0]);
                     OnRequestClose();
                 }
             }

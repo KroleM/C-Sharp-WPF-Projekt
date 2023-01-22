@@ -87,7 +87,6 @@ namespace Firma.Models.EntitiesForView
                 _Sztuki = value;
             }
         }
-
         private decimal _Rabat;
         public decimal Rabat
         {

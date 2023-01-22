@@ -26,7 +26,8 @@ namespace Firma.ViewModels
                     OnPropertyChanged(() => KontrahentId);
                     //TODO
                     //MessageBox.Show
-                    WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Towar.Select(arg => arg.Id == value));
+                    //Czy trzeba wysyłać samo ID?
+                    WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Kontrahent.First(arg => arg.Id == value));
                     OnRequestClose();
                 }
             }

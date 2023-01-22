@@ -26,7 +26,7 @@ namespace Firma.ViewModels
                     OnPropertyChanged(() => TowarId);
                     //TODO
                     //MessageBox.Show
-                    WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Towar.Select(arg => arg.Id == value));  //być może trzeba wysyłać int, bo instancje BD mogą być różne
+                    //WeakReferenceMessenger.Default.Send(ProjektDesktopyEntities.Towar.Select(arg => arg.Id == value));  //być może trzeba wysyłać int, bo instancje BD mogą być różne
                     WeakReferenceMessenger.Default.Send(new MessengerNumberMessage<int> { Number = _TowarId});
                     OnRequestClose();
                 }

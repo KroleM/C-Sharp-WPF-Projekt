@@ -128,7 +128,7 @@ namespace Firma.ViewModels
 
             WeakReferenceMessenger.Default.Register<Kontrahent>(this, (r, m) => przypiszKontrahenta(m));
             //Zarejestrowanie wiadomości
-            //WeakReferenceMessenger.Default.Register<PozycjaZamowienia>(this, (r, m) => addPozycjaZamowienia(m));
+            WeakReferenceMessenger.Default.Register<PozycjaZamowienia>(this, (r, m) => addPozycjaZamowienia(m));
             //Poniżej odbiór wiadomości ze sprawdzeniem, czy dany obiekt tej klasy był nadawcą (aby uniknąć błędów z instancjami bazy danych)
             WeakReferenceMessenger.Default.Register<MessengerMessage<NoweZamowienieViewModel, PozycjaZamowienia>>(this, (r, m) => addPozycja(m));
 
@@ -144,9 +144,9 @@ namespace Firma.ViewModels
             }).ToList());
         }
 
-        private void addPozycja(MessengerMessage<NoweZamowienieViewModel, PozycjaZamowienia> obj)
+        private void addPozycja(MessengerMessage<NoweZamowienieViewModel, PozycjaZamowienia> obj)       // zły argument?
         {
-            bool cond = obj.Nadawca == this;
+            bool cond = obj.Nadawca == this;    // FIXME
         }
         #endregion
 
@@ -168,7 +168,7 @@ namespace Firma.ViewModels
         #region Metody
         private void przypiszKontrahenta(Kontrahent kontrahent)
         {
-            DaneKontrahenta = $"{kontrahent.Nazwa} - {kontrahent.NIP} ({kontrahent.Kod})";
+            DaneKontrahenta = $"{kontrahent.Nazwa} - {kontrahent.NIP} ({kontrahent.Kod.Trim()})";
             //kontrahent.IdKontrahenta = kontrahent.IdKontrahenta;
             //IdKontrahenta = kontrahent.IdKontrahenta; ??
             KontrahentId = kontrahent.Id;
@@ -177,16 +177,23 @@ namespace Firma.ViewModels
         {
             //Tutaj należałoby jeszcze załączać nadawcę wiadomości!! FIXME
             WeakReferenceMessenger.Default.Send("Kontrahenci Show");
-        }/*
+        }
         private void addPozycjaZamowienia(PozycjaZamowienia pozycjaZamowienia)
         {
             //Item z klasy JedenViewModel -> PozycjaZamowienia to kolekcja
-            //Jeśli PozycjaZamowienia pochodzi z innej kontekstu, to należy stworzyć nową PozycjęZamowienia i przepisać wartość
+            //Jeśli PozycjaZamowienia pochodzi z innego kontekstu, to należy stworzyć nową PozycjęZamowienia i przepisać wartość
             //Item.PozycjaZamowienia.Add(pozycjaZamowienia);
             Item.PozycjaZamowienia.Add(new PozycjaZamowienia()    //to jest rozwiązanie zastępcze, trochę naokoło
             {
-                Nazwa = 
+                Nazwa = pozycjaZamowienia.Nazwa,
+                DataUtworzenia = pozycjaZamowienia.DataUtworzenia,
+                DataModyfikacji = pozycjaZamowienia.DataModyfikacji,
+                CzyAktywny = pozycjaZamowienia.CzyAktywny,
+                Notatki = pozycjaZamowienia.Notatki,
+                KtoUtworzyl = pozycjaZamowienia.KtoUtworzyl,
+                KtoZmodyfikowal = pozycjaZamowienia.KtoZmodyfikowal,
                 TowarId = pozycjaZamowienia.TowarId,
+                ZamowienieId = pozycjaZamowienia.ZamowienieId,
                 Sztuki = pozycjaZamowienia.Sztuki,
             });
 
@@ -198,24 +205,32 @@ namespace Firma.ViewModels
 
             List.Add(new PozycjaZamowieniaForAllView()
             {
-
-                Cena = pozycjaZamowienia.Cena,
-                Ilosc = pozycjaFaktury.Ilosc
+                TowarKod = towar.Kod,
+                TowarNazwa = towar.Nazwa,
+                CenaNetto = towar.CenaNetto,
+                Waluta = towar.Waluta,
+                StawkaVAT = towar.StawkaVatSprzedazy,
+                Sztuki = pozycjaZamowienia.Sztuki,
+                //Rabat = pozycjaZamowienia.Zamowienie.Kontrahent.GrupaRabatowa.Rabat   // problem z Rabatem - przenieść do property?
+                //TowarKod = pozycjaZamowienia.Towar.Kod,
+                //TowarNazwa = pozycjaZamowienia.Towar.Nazwa,
+                //CenaNetto = pozycjaZamowienia.Towar.CenaNetto,
+                //Waluta = pozycjaZamowienia.Towar.Waluta,
+                //StawkaVAT = pozycjaZamowienia.Towar.StawkaVatSprzedazy,
+                //Sztuki = pozycjaZamowienia.Sztuki,
+                //Rabat = pozycjaZamowienia.Zamowienie.Kontrahent.GrupaRabatowa.Rabat
             });
         }
-        */
+        
         public override void Save()
         {
+            Item.DataUtworzenia = DateTime.Now;
+            Item.DataModyfikacji = DateTime.Now;
+            Item.KtoZmodyfikowal = Uzytkownik;
+            Item.Nazwa = $"Order {KontrahentId}/{Item.DataUtworzenia} ";
             Db.Zamowienie.AddObject(Item);
 
-            ProjektDesktopyEntities entities1 = new ProjektDesktopyEntities(), entities2 = new ProjektDesktopyEntities();
-            Kontrahent kontrahent = entities1.Kontrahent.First();
-
-            entities2.Zamowienie.First().Kontrahent = entities2.Kontrahent.First(item => item.Id == kontrahent.Id);
-            entities2.SaveChanges();
-
-
-            //Db.SaveChanges();
+            Db.SaveChanges();
         }
         #endregion
 
