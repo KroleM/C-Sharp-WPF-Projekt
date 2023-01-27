@@ -255,7 +255,7 @@ namespace Firma.ViewModels
                     case nameof(Nazwisko):
                         return StringValidator.CannotBeTooLong(Nazwisko, 64) + StringValidator.CannotBeNull(Nazwisko) + StringValidator.CannotBeEmpty(Nazwisko);
                     case nameof(Pesel):
-                        return StringValidator.CannotBeNull(Pesel);
+                        return StringValidator.CannotBeNull(Pesel) + StringValidator.CannotBeTooLong(Pesel, 11);
                     case nameof(AdresId):
                         return DecimalValidator.CzyWybranyComboBox(AdresId);
                     case nameof(TypUmowyId):

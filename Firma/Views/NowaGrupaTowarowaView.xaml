@@ -22,19 +22,19 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <Label  Grid.Column="0"  Grid.Row="0"  Content="Kod"  Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="0"	Margin="0,8,0,8"  Width="120" HorizontalAlignment="Left"  Text="{Binding  Path=Kod, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="0"  Content="Kod" />
+        <TextBox  Grid.Column="1"  Grid.Row="0"  Width="120" HorizontalAlignment="Left"  Text="{Binding  Path=Kod, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="1"  Content="Nazwa" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="1"	Margin="0,8,0,8"  Width="300" HorizontalAlignment="Left"  Text="{Binding  Path=Nazwa, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="1" Content="Nazwa"/>
+        <TextBox  Grid.Column="1"  Grid.Row="1" Width="300" HorizontalAlignment="Left"  Text="{Binding  Path=Nazwa, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="2"  Content="Grupa nadrzędna"  Margin="0,8,0,8"/>
-        <ComboBox  Grid.Column="1"  Grid.Row="2"  Margin="0,8,0,8"  Width="120" HorizontalAlignment="Left" ItemsSource="{Binding GrupyTowarowe}" DisplayMemberPath="Value" SelectedValue="{Binding GrupaNadrzednaId, ValidatesOnDataErrors=True}" SelectedValuePath="Key" />
+        <Label  Grid.Column="0"  Grid.Row="2"  Content="Grupa nadrzędna" />
+        <ComboBox  Grid.Column="1"  Grid.Row="2"  Width="200" HorizontalAlignment="Left" ItemsSource="{Binding GrupyTowarowe}" DisplayMemberPath="Value" SelectedValue="{Binding GrupaNadrzednaId, ValidatesOnDataErrors=True}" SelectedValuePath="Key" />
 
-        <Label Grid.Column="0"  Grid.Row="3"  Content="Notatka" Margin="0,8,0,8"/>
-        <TextBox Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Margin="0,8,0,8" Width="300" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Column="0"  Grid.Row="3"  Content="Notatka" />
+        <TextBox Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Width="300" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
 
-        <Label Grid.Column="0"  Grid.Row="5" Content="Użytkownik" Margin="0,8,0,8"/>
-        <TextBox Grid.Column="1"  Grid.Row="5" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Column="0"  Grid.Row="5" Content="Użytkownik" />
+        <TextBox Grid.Column="1"  Grid.Row="5"  Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
     </Grid>
 </local:JedenViewBase>

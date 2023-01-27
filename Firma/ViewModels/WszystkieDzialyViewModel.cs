@@ -24,9 +24,48 @@ namespace Firma.ViewModels
             List = new ObservableCollection<Dzial>
                 (
                 from dzial in ProjektDesktopyEntities.Dzial
-                where dzial.CzyAktywny == true
+                where dzial.CzyAktywny == true || dzial.CzyAktywny != CzyNieaktywne
                 select dzial
                 );
+        }
+        protected override List<string> getSearchComboBoxItems()
+        {
+            return new List<string>() { "Nazwa" };
+        }
+
+        protected override List<string> getSortComboBoxItems()
+        {
+            return new List<string>() { "Nazwa" };
+        }
+
+        protected override void Search()
+        {
+            if (!string.IsNullOrEmpty(SearchText) && !string.IsNullOrEmpty(SearchField))
+            {
+                switch (SearchField)
+                {
+                    case "Nazwa":
+                        List = new ObservableCollection<Dzial>(List.Where(item => item.Nazwa?.Contains(SearchText) ?? false));
+                        break;
+                }
+            }
+            else
+            {
+                List = new ObservableCollection<Dzial>(List);
+            }
+            Sort();
+        }
+
+        protected override void Sort()
+        {
+            switch (SortField)
+            {
+                case "Nazwa":
+                    // obsługa sortowania rosnąco i malejąco
+                    List = new ObservableCollection<Dzial>(SortDescending ? List.OrderByDescending(item => item.Nazwa) : List.OrderBy(item => item.Nazwa));
+                    break;
+            }
+            //throw new NotImplementedException();
         }
         #endregion
     }

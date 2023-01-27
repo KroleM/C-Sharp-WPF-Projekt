@@ -41,6 +41,7 @@ namespace Firma.ViewModels
             List = new ObservableCollection<TowarForAllView>
                 (
                     from towar in ProjektDesktopyEntities.Towar
+                    where towar.CzyAktywny == true || towar.CzyAktywny != CzyNieaktywne
                     select new TowarForAllView
                     {
                         Id = towar.Id,
@@ -62,6 +63,47 @@ namespace Firma.ViewModels
                         Notatki = towar.Notatki
                     }
                 );
+            AllList = new List<TowarForAllView>(List);
+        }
+        protected override List<string> getSearchComboBoxItems()
+        {
+            return new List<string>() { "Nazwa" };
+        }
+
+        protected override List<string> getSortComboBoxItems()
+        {
+            return new List<string>() { "Nazwa", "Cena netto" };
+        }
+
+        protected override void Search()
+        {
+            if (!string.IsNullOrEmpty(SearchText) && !string.IsNullOrEmpty(SearchField))
+            {
+                switch (SearchField)
+                {
+                    case "Nazwa":
+                        List = new ObservableCollection<TowarForAllView>(AllList.Where(item => item.Nazwa?.ToLower().Contains(SearchText.Trim().ToLower()) ?? false));
+                        break;
+                }
+            }
+            else
+            {
+                List = new ObservableCollection<TowarForAllView>(AllList);
+            }
+            Sort();
+        }
+
+        protected override void Sort()
+        {
+            switch (SortField)
+            {
+                case "Nazwa":
+                    List = new ObservableCollection<TowarForAllView>(SortDescending ? List.OrderByDescending(item => item.Nazwa) : List.OrderBy(item => item.Nazwa));
+                    break;
+                case "Cena netto":
+                    List = new ObservableCollection<TowarForAllView>(SortDescending ? List.OrderByDescending(item => item.CenaNetto) : List.OrderBy(item => item.CenaNetto));
+                    break;
+            }
         }
     }
 }

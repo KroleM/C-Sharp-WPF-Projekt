@@ -35,11 +35,13 @@ namespace Firma.ViewModels
         }
         #endregion
         public WszyscyPracownicyViewModel() : base("Pracownicy") { }
+        #region Helpers
         protected override void Load()
         {
             List = new ObservableCollection<PracownikForAllView>
                 (
                     from pracownik in ProjektDesktopyEntities.Pracownik
+                    where pracownik.CzyAktywny == true || pracownik.CzyAktywny != CzyNieaktywne
                     select new PracownikForAllView
                     {
                         Id = pracownik.Id,
@@ -60,6 +62,49 @@ namespace Firma.ViewModels
                         Notatki = pracownik.Notatki
                     }   
                 );
+            AllList = new List<PracownikForAllView>(List);
         }
+        protected override List<string> getSearchComboBoxItems()
+        {
+            return new List<string>() { "Nazwisko", "Adres" };
+        }
+
+        protected override List<string> getSortComboBoxItems()
+        {
+            return new List<string>() { "Nazwa", "NIP" };
+        }
+
+        protected override void Search()
+        {
+            if (!string.IsNullOrEmpty(SearchText) && !string.IsNullOrEmpty(SearchField))
+            {
+                switch (SearchField)
+                {
+                    case "Nazwisko":
+                        List = new ObservableCollection<PracownikForAllView>(AllList.Where(item => item.Nazwa?.ToLower().Contains(SearchText.Trim().ToLower()) ?? false));
+                        break;
+                    case "Adres":
+                        List = new ObservableCollection<PracownikForAllView>(AllList.Where(item => item.PracownikAdres?.ToLower().Contains(SearchText.Trim().ToLower()) ?? false));
+                        break;
+                }
+            }
+            else
+            {
+                List = new ObservableCollection<PracownikForAllView>(AllList);
+            }
+            Sort();
+        }
+
+        protected override void Sort()
+        {
+            switch (SortField)
+            {
+                case "Nazwisko":
+                    // obsługa sortowania rosnąco i malejąco
+                    List = new ObservableCollection<PracownikForAllView>(SortDescending ? List.OrderByDescending(item => item.Nazwisko) : List.OrderBy(item => item.Nazwisko));
+                    break;
+            }
+        }
+        #endregion
     }
 }

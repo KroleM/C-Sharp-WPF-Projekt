@@ -29,40 +29,40 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <Label  Grid.Column="0"  Grid.Row="0"  Content="Kod"  Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="0"	Margin="0,8,0,8"  Width="120" HorizontalAlignment="Left"  Text="{Binding  Path=Kod, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="0"  Content="Kod" />
+        <TextBox  Grid.Column="1"  Grid.Row="0"	Width="120" HorizontalAlignment="Left"  Text="{Binding  Path=Kod, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="1"  Content="Nazwa" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="1"	Margin="0,8,0,8"  Width="300" HorizontalAlignment="Left"  Text="{Binding  Path=Nazwa, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="1"  Content="Nazwa"/>
+        <TextBox  Grid.Column="1"  Grid.Row="1" Width="300" HorizontalAlignment="Left"  Text="{Binding  Path=Nazwa, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="2"  Content="Cena netto zakupu" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="2"	Margin="0,8,0,8"  Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=CenaNetto, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="2"  Content="Cena netto zakupu" />
+        <TextBox  Grid.Column="1"  Grid.Row="2" Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=CenaNetto, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="3"  Content="Stawka VAT zakupu" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="3"	Margin="0,8,0,8"  Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=StawkaVatZakupu, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="3"  Content="Stawka VAT zakupu"/>
+        <TextBox  Grid.Column="1"  Grid.Row="3" Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=StawkaVatZakupu, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="4"  Content="Stawka VAT sprzedaży" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="4"	Margin="0,8,0,8"  Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=StawkaVatSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="4"  Content="Stawka VAT sprzedaży"/>
+        <TextBox  Grid.Column="1"  Grid.Row="4" Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=StawkaVatSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="5"  Content="Waluta" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="5"	Margin="0,8,0,8"  Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=Waluta, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="5"  Content="Waluta"/>
+        <TextBox  Grid.Column="1"  Grid.Row="5"	 Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=Waluta, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="6"  Content="Marża" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="6"	Margin="0,8,0,8"  Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=Marza, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="6"  Content="Marża" />
+        <TextBox  Grid.Column="1"  Grid.Row="6"  Width="100" HorizontalAlignment="Left"  Text="{Binding  Path=Marza, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="7"  Content="Cena netto sprzedaży" Margin="0,8,0,8"/>
-        <TextBlock  Grid.Column="1"  Grid.Row="7"	Margin="0,8,0,8"  Width="100" HorizontalAlignment="Left" Text="{Binding Path=CenaNettoSprzedazy}"/>
+        <Label  Grid.Column="0"  Grid.Row="7"  Content="Cena netto sprzedaży" />
+        <TextBlock  Grid.Column="1"  Grid.Row="7" Width="100" HorizontalAlignment="Left" Text="{Binding Path=CenaNettoSprzedazy}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="8"  Content="Grupa towarowa"  Margin="0,8,0,8"/>
-        <ComboBox  Grid.Column="1"  Grid.Row="8"  Margin="0,8,0,8"  Width="200" HorizontalAlignment="Left" ItemsSource="{Binding GrupyTowarowe}" DisplayMemberPath="Value" SelectedValue="{Binding GrupaTowarowaId, ValidatesOnDataErrors=True, NotifyOnValidationError=true}" SelectedValuePath="Key" />
+        <Label  Grid.Column="0"  Grid.Row="8"  Content="Grupa towarowa"/>
+        <ComboBox  Grid.Column="1"  Grid.Row="8"   Width="200" HorizontalAlignment="Left" ItemsSource="{Binding GrupyTowarowe}" DisplayMemberPath="Value" SelectedValue="{Binding GrupaTowarowaId, ValidatesOnDataErrors=True, NotifyOnValidationError=true}" SelectedValuePath="Key" />
 
-        <Label  Grid.Column="0"  Grid.Row="9"  Content="Rynek"  Margin="0,8,0,8"/>
-        <ComboBox  Grid.Column="1"  Grid.Row="9"  Margin="0,8,0,8"  Width="80" HorizontalAlignment="Left" ItemsSource="{Binding Rynki}" DisplayMemberPath="Skrot" SelectedValue="{Binding RynekId, ValidatesOnDataErrors=True}" SelectedValuePath="Id" />
+        <Label  Grid.Column="0"  Grid.Row="9"  Content="Rynek" />
+        <ComboBox  Grid.Column="1"  Grid.Row="9"  Width="80" HorizontalAlignment="Left" ItemsSource="{Binding Rynki}" DisplayMemberPath="Skrot" SelectedValue="{Binding RynekId, ValidatesOnDataErrors=True}" SelectedValuePath="Id" />
 
-        <Label Grid.Column="0"  Grid.Row="10"  Content="Notatka" Margin="0,8,0,8"/>
-        <TextBox Grid.Column="1"  Grid.Row="10" Grid.RowSpan="2" Margin="0,8,0,8" Width="300" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Column="0"  Grid.Row="10"  Content="Notatka" />
+        <TextBox Grid.Column="1"  Grid.Row="10" Grid.RowSpan="2" Width="300" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Column="0"  Grid.Row="12" Content="Użytkownik" Margin="0,8,0,8"/>
-        <TextBox Grid.Column="1"  Grid.Row="12" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Column="0"  Grid.Row="12" Content="Użytkownik" />
+        <TextBox Grid.Column="1"  Grid.Row="12" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </local:JedenViewBase>

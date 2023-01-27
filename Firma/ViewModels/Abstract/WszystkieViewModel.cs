@@ -78,13 +78,63 @@ namespace Firma.ViewModels.Abstract
                 }
             }
         }
+        public List<T> AllList { get; set; }
+        public List<string> SortComboBoxItems { get; set; }
+        public string SortField { get; set; }
+        public bool SortDescending { get; set; }
+
+        private ICommand _SortCommand;
+        public ICommand SortCommand
+        {
+            get
+            {
+                if (_SortCommand == null)
+                {
+                    _SortCommand = new BaseCommand(() => Sort());
+                }
+                return _SortCommand;
+            }
+        }
+
+        public List<string> SearchComboBoxItems { get; set; }
+        public string SearchField { get; set; }
+        private ICommand _SearchCommand;
+        public ICommand SearchCommand
+        {
+            get
+            {
+                if (_SearchCommand == null)
+                {
+                    _SearchCommand = new BaseCommand(() => Search());
+                }
+                return _SearchCommand;
+            }
+        }
+
+        private string _SearchText;
+        public string SearchText
+        {
+            get => _SearchText;
+            set
+            {
+                if (value != _SearchText)
+                {
+                    _SearchText = value?.ToLower().Trim();
+                    OnPropertyChanged(() => SearchText);
+                }
+            }
+        }
         #endregion
         #region Constructor
         public WszystkieViewModel(string displayName)
         {
             base.DisplayName = displayName; //tu ustawiamy nazwę zakładki
             this.projektDesktopyEntities = new ProjektDesktopyEntities();
-            _CzyNieaktywne = true;
+            _CzyNieaktywne = false;
+            SortComboBoxItems = getSortComboBoxItems();
+            SearchComboBoxItems = getSearchComboBoxItems();
+            SearchField = SearchComboBoxItems.First();
+            SortField = SortComboBoxItems.First();
         }
         #endregion
         #region Helpers
@@ -93,6 +143,10 @@ namespace Firma.ViewModels.Abstract
             WeakReferenceMessenger.Default.Send(DisplayName + " Add");
         }
         protected abstract void Load();
+        abstract protected List<string> getSortComboBoxItems();
+        abstract protected void Sort();
+        abstract protected List<string> getSearchComboBoxItems();
+        abstract protected void Search();
         #endregion
     }
 }

@@ -14,7 +14,7 @@
                     <Grid Margin="0,10,0,0" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="34"/>
-                            <RowDefinition Height="68"/>
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0" Height="30" Margin="0,2,0,0">
@@ -23,9 +23,33 @@
                             <ToggleButton Content="Kasuj" Margin="0,2,0,0"/>
                             <ToggleButton Content="Odswiez" Margin="0,2,0,0"/>
                         </ToolBar>
-                        <StackPanel Grid.Row="1" Background="Azure">
-                            <CheckBox Content="Nieaktywne" IsChecked="{Binding CzyNieaktywne}"/>
-                            <Label>Tu bedzie filtrowanie i sortowanie</Label>
+                        <StackPanel Grid.Row="1" Background="Azure" Orientation="Horizontal">
+                            <Border Margin="2" BorderThickness="1" BorderBrush="CadetBlue">
+                                <StackPanel>
+                                    <CheckBox Margin="2" Content="Nieaktywne" IsChecked="{Binding CzyNieaktywne}"/>
+                                    <CheckBox Margin="2" Content="Dodatkowe kolumny" />
+                                </StackPanel>
+                            </Border>
+                            <Border  Margin="2" BorderThickness="1" BorderBrush="CadetBlue">
+                                <StackPanel>
+                                    <Label HorizontalAlignment="Center" FontWeight="Bold" Content="Sortowanie"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ComboBox Width="120" Margin="2" ItemsSource="{Binding SortComboBoxItems}" SelectedValue="{Binding SortField}"/>
+                                        <CheckBox Content="Sortuj malejaco" Margin="2" IsChecked="{Binding SortDescending}" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+                                    <Button Width="100" Height="24" Margin="2" HorizontalAlignment="Left" Content="Sortuj" Command="{Binding SortCommand}"/>
+                                </StackPanel>
+                            </Border>
+                            <Border  Margin="2" BorderThickness="1" BorderBrush="CadetBlue">
+                                <StackPanel>
+                                    <Label HorizontalAlignment="Center" FontWeight="Bold" Content="Wyszukiwanie" Name="label1"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ComboBox Width="120" Margin="2" ItemsSource="{Binding SearchComboBoxItems}" SelectedValue="{Binding SearchField}"/>
+                                        <Button Width="100" Margin="2" Height="24" Content="Szukaj" Command="{Binding SearchCommand}"/>
+                                    </StackPanel>
+                                    <TextBox Width="224" Height="24" Margin="2" Text="{Binding SearchText}"/>
+                                </StackPanel>
+                            </Border>
                         </StackPanel>
                         <ContentPresenter Grid.Row="2" Margin="0,5,0,5" />
                     </Grid>

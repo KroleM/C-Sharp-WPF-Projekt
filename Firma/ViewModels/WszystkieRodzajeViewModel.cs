@@ -25,9 +25,49 @@ namespace Firma.ViewModels
                 (
                 //zapytanie LINQ (obiektowa wersja SQL)
                 from rodzaj in ProjektDesktopyEntities.RodzajKontrahenta
-                where rodzaj.CzyAktywny == true
+                where rodzaj.CzyAktywny == true || rodzaj.CzyAktywny != CzyNieaktywne
                 select rodzaj
                 );
+        }
+        protected override List<string> getSearchComboBoxItems()
+        {
+            return new List<string>() { "Nazwa", "Opis" };
+        }
+
+        protected override List<string> getSortComboBoxItems()
+        {
+            return new List<string>() { "Nazwa" };
+        }
+
+        protected override void Search()
+        {
+            if (!string.IsNullOrEmpty(SearchText) && !string.IsNullOrEmpty(SearchField))
+            {
+                switch (SearchField)
+                {
+                    case "Nazwa":
+                        List = new ObservableCollection<RodzajKontrahenta>(List.Where(item => item.Nazwa?.ToLower().Contains(SearchText.Trim().ToLower()) ?? false));
+                        break;
+                    case "Opis":
+                        List = new ObservableCollection<RodzajKontrahenta>(List.Where(item => item.Opis?.ToLower().Contains(SearchText.Trim().ToLower()) ?? false));
+                        break;
+                }
+            }
+            else
+            {
+                List = new ObservableCollection<RodzajKontrahenta>(List);
+            }
+            Sort();
+        }
+
+        protected override void Sort()
+        {
+            switch (SortField)
+            {
+                case "Nazwa":
+                    List = new ObservableCollection<RodzajKontrahenta>(SortDescending ? List.OrderByDescending(item => item.Nazwa) : List.OrderBy(item => item.Nazwa));
+                    break;
+            }
         }
         #endregion
     }

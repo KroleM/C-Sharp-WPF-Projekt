@@ -2,18 +2,21 @@
 using Firma.Helpers;
 using Firma.Models.Entities;
 using Firma.Models.EntitiesForView;
+using Firma.Models.Validators;
 using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Firma.ViewModels
 {
-    public class NoweZamowienieViewModel : JedenWszystkieViewModel<Zamowienie, PozycjaZamowieniaForAllView>
+    public class NoweZamowienieViewModel : JedenWszystkieViewModel<Zamowienie, PozycjaZamowieniaForAllView>, IDataErrorInfo
     {
         #region PolaIWlasciwosci
         private string _DaneKontrahenta;
@@ -168,7 +171,7 @@ namespace Firma.ViewModels
         #region Metody
         private void przypiszKontrahenta(Kontrahent kontrahent)
         {
-            DaneKontrahenta = $"{kontrahent.Nazwa} - {kontrahent.NIP} ({kontrahent.Kod.Trim()})";
+            DaneKontrahenta = $"{kontrahent.Kod.Trim()}: {kontrahent.Nazwa}, NIP: {kontrahent.NIP}";
             //kontrahent.IdKontrahenta = kontrahent.IdKontrahenta;
             //IdKontrahenta = kontrahent.IdKontrahenta; ??
             KontrahentId = kontrahent.Id;
@@ -228,9 +231,27 @@ namespace Firma.ViewModels
             Item.DataModyfikacji = DateTime.Now;
             Item.KtoZmodyfikowal = Uzytkownik;
             Item.Nazwa = $"Order {KontrahentId}/{Item.DataUtworzenia} ";
+            
             Db.Zamowienie.AddObject(Item);
-
             Db.SaveChanges();
+        }
+        public string Error => string.Empty;
+        public string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(DaneKontrahenta):
+                        return StringValidator.CannotBeNull(DaneKontrahenta);
+                    default:
+                        return string.Empty;
+                }
+            }
+        }
+        protected override bool IsValid()
+        {
+            return this[nameof(DaneKontrahenta)] == string.Empty;
         }
         #endregion
 

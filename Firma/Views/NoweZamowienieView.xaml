@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:Firma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="StyleZakladekResources.xaml"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="150"/>
@@ -22,24 +25,24 @@
             <RowDefinition  Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label  Grid.Column="0"  Grid.Row="0"  Content="Data wysłania do realizacji" Margin="0,8,0,8"/>
-        <DatePicker  Grid.Column="1"  Grid.Row="0"	Margin="0,8,0,8"  Width="120" HorizontalAlignment="Left"  SelectedDate="{Binding  Path=DataWyslania, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label  Grid.Column="0"  Grid.Row="0"  Content="Data wysłania do realizacji" />
+        <DatePicker  Grid.Column="1"  Grid.Row="0" Width="120" HorizontalAlignment="Left"  SelectedDate="{Binding  Path=DataWyslania, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="1"  Content="Kontrahent"  Margin="0,8,0,8"/>
-        <StackPanel Grid.Column="1"  Grid.Row="1" Margin="0,8,0,8"  HorizontalAlignment="Left" Orientation="Horizontal">
-            <Label Margin="0,0,8,0" HorizontalAlignment="Left" MinWidth="200" Content="{Binding DaneKontrahenta, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="1"  Content="Kontrahent" />
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,4,0,4" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Label HorizontalAlignment="Left" MinWidth="200" Margin="0,0,8,0" Content="{Binding DaneKontrahenta, ValidatesOnDataErrors=True}"/>
             <Button Width="120" HorizontalAlignment="Left" Content="Wybierz kontrahenta" Command="{Binding WybierzKontrahentaCommand}"/>
         </StackPanel>
 
         <Label Grid.Row="2" Grid.Column="0" Content="Aktywne" Margin="0,8,0,8"/>
         <CheckBox Grid.Row="2" Grid.Column="1" Margin="0,8,0,8" HorizontalAlignment="Left" IsChecked="{Binding Path=CzyAktywny, UpdateSourceTrigger=PropertyChanged}"/>
         
-        <Label Grid.Row="3" Grid.Column="0" Content="Notatka" Margin="0,8,0,8"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Width="200" Margin="0,8,0,8" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged}"/>
-        <Label Grid.Row="5" Grid.Column="0" Content="Użytkownik" Margin="0,8,0,8"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Notatka" />
+        <TextBox Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="5" Grid.Column="0" Content="Użytkownik" />
+        <TextBox Grid.Row="5" Grid.Column="1" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged}"/>
         
-        <Label Grid.Row="6" Grid.Column="0" Content="Pozycje faktury:" Margin="0,8,0,8"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Pozycje faktury:" />
         <DataGrid Grid.Row="7" Grid.ColumnSpan="3" ItemsSource="{Binding List}">
 
         </DataGrid>

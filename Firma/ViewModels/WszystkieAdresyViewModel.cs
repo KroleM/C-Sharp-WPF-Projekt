@@ -44,9 +44,47 @@ namespace Firma.ViewModels
             List = new ObservableCollection<Adres>
                 (
                 from adres in ProjektDesktopyEntities.Adres
-                where adres.CzyAktywny == true
+                where adres.CzyAktywny == true || adres.CzyAktywny != CzyNieaktywne
                 select adres
                 );
+        }
+        protected override List<string> getSearchComboBoxItems()
+        {
+            return new List<string>() { "Nazwa" };
+        }
+
+        protected override List<string> getSortComboBoxItems()
+        {
+            return new List<string>() { "Miejscowość" };
+        }
+
+        protected override void Search()
+        {
+            if (!string.IsNullOrEmpty(SearchText) && !string.IsNullOrEmpty(SearchField))
+            {
+                switch (SearchField)
+                {
+                    case "Nazwa":
+                        List = new ObservableCollection<Adres>(List.Where(item => item.Nazwa?.ToLower().Contains(SearchText.Trim().ToLower()) ?? false));
+                        break;
+                }
+            }
+            else
+            {
+                List = new ObservableCollection<Adres>(List);
+            }
+            Sort();
+        }
+
+        protected override void Sort()
+        {
+            switch (SortField)
+            {
+                case "Miejscowość":
+                    // obsługa sortowania rosnąco i malejąco
+                    List = new ObservableCollection<Adres>(SortDescending ? List.OrderByDescending(item => item.Miejscowosc) : List.OrderBy(item => item.Miejscowosc));
+                    break;
+            }
         }
         #endregion
     }

@@ -127,6 +127,10 @@ namespace Firma.ViewModels
                         return StringValidator.CannotBeTooLong(Nazwa, 64) + StringValidator.CannotBeEmpty(Nazwa) + StringValidator.CannotBeNull(Nazwa);
                     case nameof(GrupaNadrzednaId):
                         return DecimalValidator.CzyWybranyComboBox(GrupaNadrzednaId);
+                    case nameof(Notatka):
+                        return StringValidator.CannotBeTooLong(Notatka, 1000);
+                    case nameof(Uzytkownik):
+                        return StringValidator.CannotBeTooLong(Uzytkownik, 64);
                     default:
                         return string.Empty;
                 }
@@ -136,7 +140,9 @@ namespace Firma.ViewModels
         {
             return this[nameof(Nazwa)] == string.Empty
                 && this[nameof(Kod)] == string.Empty
-                && this[nameof(GrupaNadrzednaId)] == string.Empty;
+                && this[nameof(GrupaNadrzednaId)] == string.Empty
+                && this[nameof(Notatka)] == string.Empty
+                && this[nameof(Uzytkownik)] == string.Empty;
         }
         #endregion
     }

@@ -1,14 +1,16 @@
 ﻿using Firma.Models.Entities;
+using Firma.Models.Validators;
 using Firma.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Firma.ViewModels
 {
-    public class NowaGrupaRabatowaViewModel : JedenViewModel<GrupaRabatowa>
+    public class NowaGrupaRabatowaViewModel : JedenViewModel<GrupaRabatowa>, IDataErrorInfo
     {
         #region Konstruktor
         public NowaGrupaRabatowaViewModel()
@@ -89,6 +91,33 @@ namespace Firma.ViewModels
             Item.KtoZmodyfikowal = Uzytkownik;
             Db.GrupaRabatowa.AddObject(Item);
             Db.SaveChanges();
+        }
+        public string Error => string.Empty;
+        public string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(Nazwa):
+                        return StringValidator.CannotBeTooLong(Nazwa, 64) + StringValidator.CannotBeEmpty(Nazwa) + StringValidator.CannotBeNull(Nazwa);
+                    case nameof(Rabat):
+                        return DecimalValidator.CzyProcent(Rabat);
+                    case nameof(Notatka):
+                        return StringValidator.CannotBeTooLong(Notatka, 1000);
+                    case nameof(Uzytkownik):
+                        return StringValidator.CannotBeTooLong(Uzytkownik, 64);
+                    default:
+                        return string.Empty;
+                }
+            }
+        }
+        protected override bool IsValid()
+        {
+            return this[nameof(Nazwa)] == string.Empty
+                && this[nameof(Rabat)] == string.Empty
+                && this[nameof(Notatka)] == string.Empty
+                && this[nameof(Uzytkownik)] == string.Empty;
         }
         #endregion
     }

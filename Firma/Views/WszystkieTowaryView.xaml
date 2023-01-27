@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:Firma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="StyleZakladekResources.xaml"/>
+    </UserControl.Resources>
     <Grid>
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectedValue="{Binding TowarId, ValidatesOnDataErrors=True}" SelectedValuePath="Id">
             <DataGrid.Columns>

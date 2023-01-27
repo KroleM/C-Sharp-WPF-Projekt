@@ -18,11 +18,13 @@ namespace Firma.ViewModels
         {
         }
         #endregion
+        #region Helpers
         protected override void Load()
         {
             List = new ObservableCollection<NumerTelefonuForAllView>
                 (
                     from numerTel in ProjektDesktopyEntities.NumerTelefonu
+                    where numerTel.CzyAktywny == true || numerTel.CzyAktywny != CzyNieaktywne
                     select new NumerTelefonuForAllView
                     {
                         Id = numerTel.Id,
@@ -39,6 +41,46 @@ namespace Firma.ViewModels
                         Notatki = numerTel.Notatki
                     }
                 );
+            AllList = new List<NumerTelefonuForAllView>(List);
         }
+        protected override List<string> getSearchComboBoxItems()
+        {
+            return new List<string>() { "Kraj" };
+        }
+
+        protected override List<string> getSortComboBoxItems()
+        {
+            return new List<string>() { "Kraj" };
+        }
+
+        protected override void Search()
+        {
+            if (!string.IsNullOrEmpty(SearchText) && !string.IsNullOrEmpty(SearchField))
+            {
+                switch (SearchField)
+                {
+                    case "Kraj":
+                        List = new ObservableCollection<NumerTelefonuForAllView>(AllList.Where(item => item.Kraj?.ToLower().Contains(SearchText.Trim().ToLower()) ?? false));
+                        break;
+                }
+            }
+            else
+            {
+                List = new ObservableCollection<NumerTelefonuForAllView>(AllList);
+            }
+            Sort();
+        }
+
+        protected override void Sort()
+        {
+            switch (SortField)
+            {
+                case "Kraj":
+                    // obsługa sortowania rosnąco i malejąco
+                    List = new ObservableCollection<NumerTelefonuForAllView>(SortDescending ? List.OrderByDescending(item => item.Kraj) : List.OrderBy(item => item.Kraj));
+                    break;
+            }
+        }
+        #endregion
     }
 }
