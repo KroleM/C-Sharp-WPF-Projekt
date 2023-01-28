@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Firma.Views.RaportDzialyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Margin="8" MinWidth="200" Background="Azure" VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical" >
+            <TextBlock HorizontalAlignment="Center">Stan kadr dla wybranego działu</TextBlock>
+            <ComboBox Margin="3" ItemsSource="{Binding Dzialy}" SelectedItem="{Binding WybranyDzial}" DisplayMemberPath="Nazwa"/>
+            <Button Grid.Row="3" Margin="3" Content="Wyświetl" Command="{Binding ObliczCommand}"/>
+            <Grid Margin="8,3,8,3" Visibility="{Binding Path=CzyWybrane, Converter={StaticResource boolToVisibility}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Liczba pracowników:"/>
+                <TextBlock Grid.Column="2" TextAlignment="Right" Text="{Binding LiczebnoscDzialu}"/>
+            </Grid>
+            <ListBox ItemsSource="{Binding TypUmowyPracownik}" Visibility="{Binding CzyWybrane, Converter={StaticResource boolToVisibility}}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="30"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding Key}"/>
+                            <TextBlock Grid.Column="1" Text="--> "/>
+                            <TextBlock Grid.Column="2" TextAlignment="Right" Text="{Binding Value}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Control.Margin" Value="1" />
+                        <Setter Property="Control.BorderBrush" Value="DarkBlue" />
+                        <Setter Property="Control.BorderThickness" Value="1" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

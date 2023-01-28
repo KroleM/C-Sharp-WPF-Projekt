@@ -136,6 +136,15 @@ namespace Firma.ViewModels
                 new CommandViewModel(
                     "Operacje magazynowe",
                     new BaseCommand(() => this.showOperacjeMagazynowe())),
+                new CommandViewModel(
+                    "Raport wypłat",
+                    new BaseCommand(() =>createView(new RaportWyplatViewModel()))),
+                new CommandViewModel(
+                    "Raport zamówień",
+                    new BaseCommand(() =>createView(new RaportZamowienViewModel()))),
+                new CommandViewModel(
+                    "Raport działów",
+                    new BaseCommand(() =>createView(new RaportDzialyViewModel()))),
             };
         }
         #endregion
@@ -213,11 +222,17 @@ namespace Firma.ViewModels
                 case "Pracownicy Add":
                     createView(new NowyPracownikViewModel());
                     break;
-                case "Wyplaty Add":
+                case "Wypłaty Add":
                     createView(new NowaWyplataViewModel());
+                    break;
+                case "Towary Add":
+                    createView(new NowyTowarViewModel());
                     break;
                 case "Numery telefonów Add":
                     createView(new NowyNumerTelefonuViewModel());
+                    break;
+                case "Zamówienia Add":
+                    createView(new NoweZamowienieViewModel());
                     break;
                 case "Pozycja zamówienia Add":
                     createView(new NowaPozycjaZamowieniaViewModel());

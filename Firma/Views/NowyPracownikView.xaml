@@ -27,16 +27,16 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <Label  Grid.Column="0"  Grid.Row="0"  Content="Imię"  Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="0"	Margin="0,8,0,8"  Width="200" HorizontalAlignment="Left"  Text="{Binding  Path=Imie, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="0"  Content="Imię" />
+        <TextBox  Grid.Column="1"  Grid.Row="0" Width="200" HorizontalAlignment="Left"  Text="{Binding  Path=Imie, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="1"  Content="Nazwisko" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="1"	Margin="0,8,0,8"  Width="200" HorizontalAlignment="Left"  Text="{Binding  Path=Nazwisko, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="1"  Content="Nazwisko"/>
+        <TextBox  Grid.Column="1"  Grid.Row="1" Width="200" HorizontalAlignment="Left"  Text="{Binding  Path=Nazwisko, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="2"  Content="PESEL" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="2" Margin="0,8,0,8"  Width="100" HorizontalAlignment="Left"  Text="{Binding Path=Pesel, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
+        <Label  Grid.Column="0"  Grid.Row="2"  Content="PESEL" />
+        <TextBox  Grid.Column="1"  Grid.Row="2" Width="100" HorizontalAlignment="Left"  Text="{Binding Path=Pesel, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
 
-        <Label  Grid.Column="0"  Grid.Row="3"  Content="Adres"  Margin="0,8,0,8"/>
+        <Label  Grid.Column="0"  Grid.Row="3"  Content="Adres" />
         <StackPanel Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Margin="0,8,0,8"  HorizontalAlignment="Left" Orientation="Horizontal">
             <Label Margin="0,0,8,0" HorizontalAlignment="Left" MinWidth="150" Content="{Binding DaneAdresu, ValidatesOnDataErrors=True}"/>
             <Button Width="100" HorizontalAlignment="Left" Content="Wybierz Adres" Command="{Binding WybierzAdresCommand}"/>
@@ -44,19 +44,19 @@
         <!--<Label  Grid.Column="1"  Grid.Row="3" Grid.RowSpan="2" Margin="0,8,0,8"  Width="300" HorizontalAlignment="Left" Content="{Binding DaneAdresu}" />
         <Button Grid.Column="2" Grid.Row="3" Margin="0,0,0,0" Width="100" HorizontalAlignment="Left" Content="Wybierz Adres" Command="{Binding WybierzAdresCommand}"/>-->
         
-        <Label  Grid.Column="0"  Grid.Row="5"  Content="Dział"  Margin="0,8,0,8"/>
-        <ComboBox  Grid.Column="1"  Grid.Row="5"  Margin="0,8,0,8"  Width="100" HorizontalAlignment="Left" ItemsSource="{Binding Dzialy}" DisplayMemberPath="Nazwa" SelectedValue="{Binding DzialId, ValidatesOnDataErrors=True}" SelectedValuePath="Id" />
+        <Label  Grid.Column="0"  Grid.Row="5"  Content="Dział" />
+        <ComboBox  Grid.Column="1"  Grid.Row="5"  Width="100" HorizontalAlignment="Left" ItemsSource="{Binding Dzialy}" DisplayMemberPath="Nazwa" SelectedValue="{Binding DzialId, ValidatesOnDataErrors=True}" SelectedValuePath="Id" />
 
-        <Label  Grid.Column="0"  Grid.Row="6"  Content="Typ umowy"  Margin="0,8,0,0"/>
-        <ComboBox  Grid.Column="1"  Grid.Row="6"  Margin="0,8,0,8"  Width="200" HorizontalAlignment="Left" ItemsSource="{Binding TypyUmowy}" DisplayMemberPath="Nazwa" SelectedValue="{Binding TypUmowyId, ValidatesOnDataErrors=True}" SelectedValuePath="Id" />
+        <Label  Grid.Column="0"  Grid.Row="6"  Content="Typ umowy" />
+        <ComboBox  Grid.Column="1"  Grid.Row="6"  Width="200" HorizontalAlignment="Left" ItemsSource="{Binding TypyUmowy}" DisplayMemberPath="Nazwa" SelectedValue="{Binding TypUmowyId, ValidatesOnDataErrors=True}" SelectedValuePath="Id" />
 
-        <Label  Grid.Column="0"  Grid.Row="7"  Content="Stanowisko"  Margin="0,8,0,8"/>
-        <ComboBox  Grid.Column="1"  Grid.Row="7"  Margin="0,8,0,8"  Width="200" HorizontalAlignment="Left" ItemsSource="{Binding Stanowiska}" DisplayMemberPath="Value" SelectedValue="{Binding StanowiskoId, ValidatesOnDataErrors=True, NotifyOnValidationError=true}" SelectedValuePath="Key" />
+        <Label  Grid.Column="0"  Grid.Row="7"  Content="Stanowisko" />
+        <ComboBox  Grid.Column="1"  Grid.Row="7"  Width="200" HorizontalAlignment="Left" ItemsSource="{Binding Stanowiska}" DisplayMemberPath="Value" SelectedValue="{Binding StanowiskoId, ValidatesOnDataErrors=True, NotifyOnValidationError=true}" SelectedValuePath="Key" />
 
-        <Label Grid.Column="0"  Grid.Row="8"  Content="Notatka" Margin="0,8,0,8"/>
-        <TextBox Grid.Column="1"  Grid.Row="8" Grid.RowSpan="2" Margin="0,8,0,8" Width="300" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Column="0"  Grid.Row="8"  Content="Notatka" />
+        <TextBox Grid.Column="1"  Grid.Row="8" Grid.RowSpan="2" Width="300" HorizontalAlignment="Left" Text="{Binding Path=Notatka, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Column="0"  Grid.Row="10" Content="Użytkownik" Margin="0,8,0,8"/>
-        <TextBox Grid.Column="1"  Grid.Row="10" Margin="0,8,0,8" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Column="0"  Grid.Row="10" Content="Użytkownik" />
+        <TextBox Grid.Column="1"  Grid.Row="10" Width="200" HorizontalAlignment="Left" Text="{Binding Path=Uzytkownik, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </local:JedenViewBase>

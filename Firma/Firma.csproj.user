@@ -55,6 +55,15 @@
     <Compile Update="Views\NowyTypWyplatyView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\RaportDzialyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RaportWyplatView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RaportZamowienView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\SprzedazView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -130,6 +139,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowyTypWyplatyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RaportDzialyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RaportWyplatView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RaportZamowienView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SprzedazView.xaml">

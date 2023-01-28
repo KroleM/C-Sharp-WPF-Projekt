@@ -13,7 +13,7 @@
                 <DataGridTextColumn Header="Nazwa" Binding="{Binding Path=Nazwa}" />
                 <DataGridTextColumn Header="Imie i Nazwisko" Binding="{Binding Path=PracownikImieNazwisko}" />
                 <DataGridTextColumn Header="Typ wypłaty" Binding="{Binding Path=TypWyplatyNazwa}" />
-                <DataGridTextColumn Header="Kwota" Binding="{Binding Path=Kwota}" />
+                <DataGridTextColumn Header="Kwota" Binding="{Binding Path=Kwota, StringFormat={}{0:0.##}}" />
                 <DataGridTextColumn Header="Waluta" Binding="{Binding Path=Waluta}" />
                 <DataGridTextColumn Header="Data od" Binding="{Binding Path=DataOd, 
                                     StringFormat={}{0:dd MMMM yyyy}, ConverterCulture=pl-PL}" />

@@ -21,13 +21,13 @@
                             <ToggleButton Content="Dodaj" Margin="0,2,0,0" Command="{Binding AddCommand}"/>
                             <ToggleButton Content="Modyfikuj" Margin="0,2,0,0"/>
                             <ToggleButton Content="Kasuj" Margin="0,2,0,0"/>
-                            <ToggleButton Content="Odswiez" Margin="0,2,0,0"/>
+                            <ToggleButton Content="Odswiez" Margin="0,2,0,0" Command="{Binding LoadCommand}"/>
                         </ToolBar>
                         <StackPanel Grid.Row="1" Background="Azure" Orientation="Horizontal">
                             <Border Margin="2" BorderThickness="1" BorderBrush="CadetBlue">
                                 <StackPanel>
                                     <CheckBox Margin="2" Content="Nieaktywne" IsChecked="{Binding CzyNieaktywne}"/>
-                                    <CheckBox Margin="2" Content="Dodatkowe kolumny" />
+                                    <CheckBox Margin="2" Content="Dodatkowe kolumny" IsChecked="{Binding CzyDodatkowe}"/>
                                 </StackPanel>
                             </Border>
                             <Border  Margin="2" BorderThickness="1" BorderBrush="CadetBlue">

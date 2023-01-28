@@ -100,3 +100,9 @@ E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\F
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma.csproj.CopyComplete
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma.exe
 E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Firma.pdb
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\RaportWyplatView.g.cs
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\RaportWyplatView.baml
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\RaportZamowienView.g.cs
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\RaportZamowienView.baml
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\RaportDzialyView.g.cs
+E:\Uczelnia\WSB-NLU Informatyka\Tworzenie interfejsów użytkownika II\Projekt\Firma\obj\Debug\net48\Views\RaportDzialyView.baml

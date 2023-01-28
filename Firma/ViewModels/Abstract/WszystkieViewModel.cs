@@ -48,6 +48,7 @@ namespace Firma.ViewModels.Abstract
                 return _AddCommand;
             }
         }
+
         // W tym obiekcie będą wszystkie przedstawiane obiekty T
         private ObservableCollection<T> _List;
         public ObservableCollection<T> List
@@ -73,8 +74,23 @@ namespace Firma.ViewModels.Abstract
                 if(_CzyNieaktywne != value)
                 {
                     _CzyNieaktywne = value;
-                    Load();
                     OnPropertyChanged(() => CzyNieaktywne);
+                    Load();
+                    
+                }
+            }
+        }
+        private bool _CzyDodatkowe;
+        public bool CzyDodatkowe
+        {
+            get => _CzyDodatkowe;
+            set
+            {
+                if (_CzyDodatkowe != value)
+                {
+                    _CzyDodatkowe = value;
+                    OnPropertyChanged(() => CzyDodatkowe);
+                    //Load();                  
                 }
             }
         }
@@ -130,7 +146,7 @@ namespace Firma.ViewModels.Abstract
         {
             base.DisplayName = displayName; //tu ustawiamy nazwę zakładki
             this.projektDesktopyEntities = new ProjektDesktopyEntities();
-            _CzyNieaktywne = false;
+            //_CzyNieaktywne = false;
             SortComboBoxItems = getSortComboBoxItems();
             SearchComboBoxItems = getSearchComboBoxItems();
             SearchField = SearchComboBoxItems.First();

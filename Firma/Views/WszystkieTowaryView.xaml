@@ -9,27 +9,35 @@
     <UserControl.Resources>
         <ResourceDictionary Source="StyleZakladekResources.xaml"/>
     </UserControl.Resources>
-    <Grid>
+    <WrapPanel>
+        <FrameworkElement x:Name="dummyElement" Visibility="Collapsed"/>
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectedValue="{Binding TowarId, ValidatesOnDataErrors=True}" SelectedValuePath="Id">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" 
+                                    Visibility="{Binding DataContext.CzyDodatkowe, Source={x:Reference dummyElement}, Converter={StaticResource boolToVisibility}}"/>
                 <DataGridTextColumn Header="Kod" Binding="{Binding Path=Kod}" />
                 <DataGridTextColumn Header="Nazwa" Binding="{Binding Path=Nazwa}" />
                 <DataGridTextColumn Header="Grupa towarowa" Binding="{Binding Path=GrupaTowarowaNazwa}" />
                 <DataGridTextColumn Header="Rynek" Binding="{Binding Path=RynekSkrot}" />
-                <DataGridTextColumn Header="Cena netto" Binding="{Binding Path=CenaNetto}" />
+                <DataGridTextColumn Header="Cena netto" Binding="{Binding Path=CenaNetto, StringFormat={}{0:0.##}}" />
                 <DataGridTextColumn Header="Waluta" Binding="{Binding Path=Waluta}" />
                 <DataGridTextColumn Header="Marża" Binding="{Binding Path=Marza}" />
-                <DataGridTextColumn Header="Stawka VAT zakupu" Binding="{Binding Path=StawkaVatZakupu}" />
-                <DataGridTextColumn Header="Stawka VAT sprzedaży" Binding="{Binding Path=StawkaVatSprzedazy}" />
+                <DataGridTextColumn Header="Stawka VAT zakupu" Binding="{Binding Path=StawkaVatZakupu, StringFormat={}{0:#}}" />
+                <DataGridTextColumn Header="Stawka VAT sprzedaży" Binding="{Binding Path=StawkaVatSprzedazy, StringFormat={}{0:#}}" />
 
-                <DataGridTextColumn Header="Aktywny" Binding="{Binding Path=CzyAktywny}" />
-                <DataGridTextColumn Header="Data utworzenia" Binding="{Binding Path=DataUtworzenia}" />
-                <DataGridTextColumn Header="Data modyfikacji" Binding="{Binding Path=DataModyfikacji}" Visibility="Hidden"/>
-                <DataGridTextColumn Header="Kto utworzył" Binding="{Binding Path=KtoUtworzyl}" />
-                <DataGridTextColumn Header="Kto zmodyfikował" Binding="{Binding Path=KtoZmodyfikowal}" />
-                <DataGridTextColumn Header="Notatka" Binding="{Binding Path=Notatki}" />
+                <DataGridTextColumn Header="Aktywny" Binding="{Binding Path=CzyAktywny}" 
+                                    Visibility="{Binding DataContext.CzyDodatkowe, Source={x:Reference dummyElement}, Converter={StaticResource boolToVisibility}}"/>
+                <DataGridTextColumn Header="Data utworzenia" Binding="{Binding Path=DataUtworzenia}" 
+                                    Visibility="{Binding DataContext.CzyDodatkowe, Source={x:Reference dummyElement}, Converter={StaticResource boolToVisibility}}"/>
+                <DataGridTextColumn Header="Data modyfikacji" Binding="{Binding Path=DataModyfikacji}" 
+                                    Visibility="{Binding DataContext.CzyDodatkowe, Source={x:Reference dummyElement}, Converter={StaticResource boolToVisibility}}"/>
+                <DataGridTextColumn Header="Kto utworzył" Binding="{Binding Path=KtoUtworzyl}" 
+                                    Visibility="{Binding DataContext.CzyDodatkowe, Source={x:Reference dummyElement}, Converter={StaticResource boolToVisibility}}"/>
+                <DataGridTextColumn Header="Kto zmodyfikował" Binding="{Binding Path=KtoZmodyfikowal}" 
+                                    Visibility="{Binding DataContext.CzyDodatkowe, Source={x:Reference dummyElement}, Converter={StaticResource boolToVisibility}}"/>
+                <DataGridTextColumn Header="Notatka" Binding="{Binding Path=Notatki}" 
+                                    Visibility="{Binding DataContext.CzyDodatkowe, Source={x:Reference dummyElement}, Converter={StaticResource boolToVisibility}}"/>
             </DataGrid.Columns>
         </DataGrid>
-    </Grid>
+    </WrapPanel>
 </local:WszystkieViewBase>

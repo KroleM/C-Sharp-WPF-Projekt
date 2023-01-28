@@ -105,7 +105,7 @@ namespace Firma.ViewModels
                     List = new ObservableCollection<KontrahentForAllView>(SortDescending ? List.OrderByDescending(item => item.Nazwa) : List.OrderBy(item => item.Nazwa));
                     break;
                 case "NIP":
-                    List = new ObservableCollection<KontrahentForAllView>(SortDescending ? List.OrderByDescending(item => int.Parse(item.NIP)) : List.OrderBy(item => int.Parse(item.NIP)));
+                    List = new ObservableCollection<KontrahentForAllView>(SortDescending ? List.OrderByDescending(item => Int64.Parse(item.NIP)) : List.OrderBy(item => Int64.Parse(item.NIP)));
                     break;
             }
         }

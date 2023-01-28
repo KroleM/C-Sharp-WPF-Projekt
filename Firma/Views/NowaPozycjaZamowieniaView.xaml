@@ -18,7 +18,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <Label  Grid.Column="0"  Grid.Row="0"  Content="Towar"  Margin="0,8,0,8"/>
+        <Label  Grid.Column="0"  Grid.Row="0"  Content="Towar" />
         <StackPanel Grid.Column="1"  Grid.Row="0" Margin="0,8,0,8"  HorizontalAlignment="Left" Orientation="Horizontal">
             <Label Margin="0,0,8,0" HorizontalAlignment="Left" MinWidth="200" Content="{Binding DaneTowaru, ValidatesOnDataErrors=True}"/>
             <Button Width="120" HorizontalAlignment="Left" Content="Wybierz Towar" Command="{Binding WybierzTowarCommand}"/>
@@ -26,8 +26,8 @@
         
         <!--Towar Kod ??-->
 
-        <Label  Grid.Column="0"  Grid.Row="1"  Content="Sztuki" Margin="0,8,0,8"/>
-        <TextBox  Grid.Column="1"  Grid.Row="1"	Margin="0,8,0,8"  Width="100" HorizontalAlignment="Left"  
+        <Label  Grid.Column="0"  Grid.Row="1"  Content="Sztuki" />
+        <TextBox  Grid.Column="1"  Grid.Row="1" Width="100" HorizontalAlignment="Left"  
                      Text="{Binding Path=Sztuki, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
     </Grid>
 </local:JedenViewBase>

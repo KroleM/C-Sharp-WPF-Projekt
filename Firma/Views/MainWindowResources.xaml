@@ -147,6 +147,17 @@
     <DataTemplate DataType="{x:Type vm:NowaPozycjaZamowieniaViewModel}">
         <vw:NowaPozycjaZamowieniaView/>
     </DataTemplate>
+    
+    <!--Raporty-->
+    <DataTemplate DataType="{x:Type vm:RaportWyplatViewModel}">
+        <vw:RaportWyplatView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RaportZamowienViewModel}">
+        <vw:RaportZamowienView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RaportDzialyViewModel}">
+        <vw:RaportDzialyView/>
+    </DataTemplate>
     <!--TU jest koniec łączenia View z ViewModel zakładek-->
 
     <!--To jest styl, który wyświetla błąd walidacji w ToolTip-->
